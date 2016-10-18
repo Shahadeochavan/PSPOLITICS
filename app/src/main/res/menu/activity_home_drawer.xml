@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_action_home"
+            android:title="Personal Info" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="About Nitin Shelke" />
+        <item
+            android:id="@+id/nav_social_work"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Social work" />
+    </group>
+
+    <item android:title="Election">
+        <menu>
+            <item
+                android:id="@+id/nav_rally"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Rally" />
+            <item
+                android:id="@+id/nav_news"
+                android:icon="@drawable/ic_menu_send"
+                android:title="News" />
+            <item
+                android:id="@+id/nav_party"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Party" />
+            <item
+                android:id="@+id/nav_voting_schedule"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Voting Schedule" />
+            <item
+                android:id="@+id/nav_voting_centers"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Voting Centers" />
+            <item
+                android:id="@+id/nav_voting_list"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Voting List"/>
+        </menu>
+    </item>
+
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+
+</menu>

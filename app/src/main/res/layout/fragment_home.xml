@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ViewFlipper
+            android:id="@+id/bckgrndViewFlipper1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/bckgrndImageView5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_action_home"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_menu_send"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_menu_gallery"/>
+        </ViewFlipper>
+
+    </RelativeLayout>
