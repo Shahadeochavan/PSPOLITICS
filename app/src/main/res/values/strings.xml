@@ -5,4 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="news">Jaipur, Oct 17 ( PTI) The Rajasthan government
+        today announced an ad-hoc bonus to all state government employees
+        which would be twice what was given the previous financial year.
+About six lakh employees would be benefited by the decision taken by Chief Minister Vasundhara Raje, a release issued here said.</string>
+    <string name="element_text">Element</string>
+    <string name="grid_layout_manager">Grid Layout Manager</string>
+    <string name="linear_layout_manager">Linear Layout Manager</string>
 </resources>

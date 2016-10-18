@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <ViewFlipper
             android:id="@+id/bckgrndViewFlipper1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/bckgrndImageView5"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_action_home"/>
+                android:src="@drawable/pelicans_bird_nature_216803"/>
             <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_menu_send"/>
+                android:src="@drawable/seagull_bird_nature_275104"/>
             <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_menu_gallery"/>
+                android:src="@drawable/winter_beautiful_snow_216404"/>
         </ViewFlipper>
 
     </RelativeLayout>
