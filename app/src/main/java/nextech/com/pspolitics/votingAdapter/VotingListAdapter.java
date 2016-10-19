@@ -50,21 +50,27 @@ public class VotingListAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = mInflater.inflate(R.layout.fragment_voting_list, null);
             holder = new ViewHolder();
-            holder.txtname = (TextView) convertView.findViewById(R.id.contact_name);
-            holder.txtphone = (TextView) convertView.findViewById(R.id.phone_number);
+            holder.txtlastName= (TextView)convertView.findViewById(R.id.last_name);
+            holder.txtfirstName= (TextView)convertView.findViewById(R.id.first_name);
+            holder.txtmiddleName= (TextView)convertView.findViewById(R.id.middle_name);
+            holder.txtphoneNumber= (TextView)convertView.findViewById(R.id.phone_number);
+            holder.txtwardDetails= (TextView)convertView.findViewById(R.id.ward_details);
 
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.txtname.setText(listContact.get(position).getName());
-        holder.txtphone.setText(listContact.get(position).getNumber());
+        holder.txtlastName.setText(listContact.get(position).getLastName());
+        holder.txtfirstName.setText(listContact.get(position).getFirstName());
+        holder.txtmiddleName.setText(listContact.get(position).getMiddleName());
+        holder.txtphoneNumber.setText(listContact.get(position).getPhoneNumber());
+        holder.txtwardDetails.setText(listContact.get(position).getWardDetails());
 
         return convertView;
     }
 
     static class ViewHolder{
-        TextView txtname, txtphone;
+        TextView txtfirstName,txtlastName,txtmiddleName,txtphoneNumber,txtwardDetails;
     }
 }

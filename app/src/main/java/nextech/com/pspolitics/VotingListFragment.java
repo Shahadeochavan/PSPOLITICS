@@ -21,7 +21,7 @@ public class VotingListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        getActivity().setTitle("Voting List");
         View rootView = inflater.inflate(R.layout.fragment_voting_list, container, false);
 
         ArrayList<VotingListPojo> listContact = getContactList();
@@ -35,38 +35,52 @@ public class VotingListFragment extends Fragment {
 
         VotingListPojo contact = new VotingListPojo();
 
-        contact.setName("Shahadeo");
-        contact.setNumber("9403633306");
+        contact.setLastName("Chavan");
+        contact.setFirstName("Shahadeo");
+        contact.setMiddleName("Gowardhan");
+        contact.setPhoneNumber("9403633306");
+        contact.setWardDetails("ward number 1");
         contactlist.add(contact);
 
         contact = new VotingListPojo();
-        contact.setName("Ankush");
-        contact.setNumber("01213869102");
+        contact.setLastName("Chavan");
+        contact.setFirstName("Anil");
+        contact.setMiddleName("Ramkisan");
+        contact.setPhoneNumber("8275266891");
+        contact.setWardDetails("ward number 2");
         contactlist.add(contact);
 
         contact = new VotingListPojo();
-        contact.setName("Abhishek");
-        contact.setNumber("01213123985");
-        contactlist.add(contact);
-        contact = new VotingListPojo();
-
-        contact.setName("Mahesh");
-        contact.setNumber("21323444444");
+        contact.setLastName("Chavan");
+        contact.setFirstName("Ankush");
+        contact.setMiddleName("Janardhan");
+        contact.setPhoneNumber("9960454648");
+        contact.setWardDetails("ward number 3");
         contactlist.add(contact);
 
-        contact = new VotingListPojo();
-        contact.setName("Lahu");
-        contact.setNumber("122254565656");
-        contactlist.add(contact);
 
         contact = new VotingListPojo();
-        contact.setName("Anil");
-        contact.setNumber("33332143434");
+        contact.setLastName("Chavan");
+        contact.setFirstName("Sunil");
+        contact.setMiddleName("Devidas");
+        contact.setPhoneNumber("9421342030");
+        contact.setWardDetails("ward number 4");
         contactlist.add(contact);
 
         contact = new VotingListPojo();
-        contact.setName("Sunli");
-        contact.setNumber("5656463664");
+        contact.setLastName("Chavan");
+        contact.setFirstName("Mahadeo");
+        contact.setMiddleName("Gowardhan");
+        contact.setPhoneNumber("9403633296");
+        contact.setWardDetails("ward number 5");
+        contactlist.add(contact);
+
+        contact = new VotingListPojo();
+        contact.setLastName("Chavan");
+        contact.setFirstName("Vilas");
+        contact.setMiddleName("Prabhakar");
+        contact.setPhoneNumber("9630384656");
+        contact.setWardDetails("ward number 6");
         contactlist.add(contact);
 
         return contactlist;

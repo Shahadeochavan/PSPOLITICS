@@ -18,19 +18,12 @@ import android.view.View;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private CharSequence mDrawerTitle;
-
-    // used to store app title
-    private CharSequence mTitle;
-    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mTitle = mDrawerTitle = getTitle();
-        navigationView=(NavigationView)findViewById(R.id.nav_view);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +86,9 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             HomeFragment homeFragment= new HomeFragment();
             fragmentTransaction.replace(R.id.fragment_container,homeFragment).commit();
-        } else if (id == R.id.nav_gallery) {
-            SocialWorkFragment socialWorkFragment= new SocialWorkFragment();
-            fragmentTransaction.replace(R.id.fragment_container,socialWorkFragment).commit();
+        } else if (id == R.id.nav_about) {
+            AboutFragment aboutFragment= new AboutFragment();
+            fragmentTransaction.replace(R.id.fragment_container,aboutFragment).commit();
         } else if (id == R.id.nav_news) {
             NewsFragment newsFragment = new NewsFragment();
             fragmentTransaction.replace(R.id.fragment_container,newsFragment).commit();
@@ -123,4 +116,6 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
+

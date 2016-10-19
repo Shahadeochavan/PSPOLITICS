@@ -1,83 +1,74 @@
 package nextech.com.pspolitics.votingAdapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import java.util.Collections;
+import java.util.List;
 
 import nextech.com.pspolitics.R;
+import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
+import nextech.com.pspolitics.votinglistpojo.View_Holder;
 
 /**
  * Created by welcome on 10/18/2016.
  */
-public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
-    private static final String TAG = "NewsAdapter";
+public class NewsAdapter  extends RecyclerView.Adapter<View_Holder> {
+    List<NewsListPojo> list = Collections.emptyList();
+    Context context;
 
-    private String[] mDataSet;
-
-    // BEGIN_INCLUDE(recyclerViewSampleViewHolder)
-    /**
-     * Provide a reference to the type of views that you are using (custom ViewHolder)
-     */
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
-
-        public ViewHolder(View v) {
-            super(v);
-            // Define click listener for the ViewHolder's View.
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d(TAG, "Element " + getPosition() + " clicked.");
-                }
-            });
-            textView = (TextView) v.findViewById(R.id.textView);
-        }
-
-        public TextView getTextView() {
-            return textView;
-        }
-    }
-    // END_INCLUDE(recyclerViewSampleViewHolder)
-
-    /**
-     * Initialize the dataset of the Adapter.
-     *
-     * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
-     */
-    public NewsAdapter(String[] dataSet) {
-        mDataSet = dataSet;
+    public NewsAdapter(List<NewsListPojo> list, Context context) {
+        this.list = list;
+        this.context = context;
     }
 
-    // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
-    // Create new views (invoked by the layout manager)
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        // Create a new view.
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.text_row_item, viewGroup, false);
+    public View_Holder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        return new ViewHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
+        View_Holder holder = new View_Holder(v);
+        return holder;
     }
-    // END_INCLUDE(recyclerViewOnCreateViewHolder)
 
-    // BEGIN_INCLUDE(recyclerViewOnBindViewHolder)
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        Log.d(TAG, "Element " + position + " set.");
+    public void onBindViewHolder(View_Holder holder, int position) {
+        holder.title.setText(list.get(position).title);
+        holder.description.setText(list.get(position).description);
+        holder.imageView.setImageResource(list.get(position).imageId);
 
-        // Get element from your dataset at this position and replace the contents of the view
-        // with that element
-        viewHolder.getTextView().setText(mDataSet[position]);
+        animate(holder);
     }
-    // END_INCLUDE(recyclerViewOnBindViewHolder)
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataSet.length;
+        return list.size();
     }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    // Insert a new item to the RecyclerView
+    public void insert(int position, NewsListPojo data) {
+        list.add(position, data);
+        notifyItemInserted(position);
+    }
+    // Remove a RecyclerView item containing the Data object
+    public void remove(NewsListPojo data) {
+        int position = list.indexOf(data);
+        list.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void animate(RecyclerView.ViewHolder viewHolder) {
+        final Animation animAnticipateOvershoot = AnimationUtils.loadAnimation(context, R.anim.anticipate_overshoot_interpolator);
+        viewHolder.itemView.setAnimation(animAnticipateOvershoot);
+    }
+
 }
