@@ -1,102 +1,147 @@
 package nextech.com.pspolitics;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import nextech.com.pspolitics.votingAdapter.NewsAdapter;
-import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
+import nextech.com.pspolitics.votinglistpojo.Config;
+import nextech.com.pspolitics.votinglistpojo.GetBitmap;
 
 public  class NewsFragment extends Fragment {
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
 
-    RecyclerView recyclerView;
-    private NewsAdapter adapter;
+    private Config config;
+
     public NewsFragment() {
         // Required empty public constructor
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news, container, false);
+     View rootView= inflater.inflate(R.layout.fragment_news, container, false);
+
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this.getContext());
+
+        recyclerView.setLayoutManager(layoutManager);
+
+        getData();
+        return rootView;
     }
 
 
+    private void getData(){
+        class GetData extends AsyncTask<Void,Void,String> {
+            ProgressDialog progressDialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressDialog = ProgressDialog.show(NewsFragment.this.getContext(), "Fetching Data", "Please wait...",false,false);
+            }
 
-    List<NewsListPojo> data = fill_with_data();
-    recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-    adapter = new Recycler_View_Adapter(data, getApplication());
-    recyclerView.setAdapter(adapter);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                progressDialog.dismiss();
+                parseJSON(s);
+            }
 
+            @Override
+            protected String doInBackground(Void... params) {
+                BufferedReader bufferedReader = null;
+                try {
+                    URL url = new URL(Config.GET_URL);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
 
-//        Modify the DefaultItemAnimator
-//        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
-//        itemAnimator.setAddDuration(1000);
-//        itemAnimator.setRemoveDuration(1000);
-//        recyclerView.setItemAnimator(itemAnimator);
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-}
+                    String json;
+                    while((json = bufferedReader.readLine())!= null){
+                        sb.append(json+"\n");
+                    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+                    return sb.toString().trim();
+
+                }catch(Exception e){
+                    return null;
+                }
+            }
+        }
+        GetData gd = new GetData();
+        gd.execute();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void showData(){
+        adapter = new NewsAdapter(Config.names,Config.urls, Config.bitmaps);
+        recyclerView.setAdapter(adapter);
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+    private void parseJSON(String json){
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray array = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
+
+            config = new Config(array.length());
+
+            for(int i=0; i<array.length(); i++){
+                JSONObject j = array.getJSONObject(i);
+                Config.names[i] = getName(j);
+                Config.urls[i] = getURL(j);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-        return super.onOptionsItemSelected(item);
+        GetBitmap gb = new GetBitmap(this.getContext(),this, Config.urls);
+        gb.execute();
     }
 
-    //Create a list of Data objects
-    public List<NewsListPojo> fill_with_data() {
-
-        List<NewsListPojo> data = new ArrayList<>();
-
-        data.add(new NewsListPojo("Batman vs Superman", "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("X-Men: Apocalypse", "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Warcraft", "Fleeing their dying home to colonize another, fearsome orc warriors invade the peaceful realm of Azeroth. ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Alice in Wonderland", "Alice in Wonderland: Through the Looking Glass ", R.drawable.ic_action_home));
-
-        data.add(new NewsListPojo("Batman vs Superman", "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("X-Men: Apocalypse", "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Warcraft", "Fleeing their dying home to colonize another, fearsome orc warriors invade the peaceful realm of Azeroth. ", R.drawable.ic_action_home));
-        data.add(new NewsListPojo("Alice in Wonderland", "Alice in Wonderland: Through the Looking Glass ", R.drawable.ic_action_home));
-
-        return data;
+    private String getName(JSONObject j){
+        String name = null;
+        try {
+            name = j.getString(Config.TAG_IMAGE_NAME);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return name;
     }
 
+    private String getURL(JSONObject j){
+        String url = null;
+        try {
+            url = j.getString(Config.TAG_IMAGE_URL);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return url;
+    }
 
 }
+
 
