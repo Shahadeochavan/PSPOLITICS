@@ -6,8 +6,11 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/socil_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="socil" />
+        android:layout_marginTop="10dp"
+        android:layout_margin="20dp"
+        android:text="@string/social" />
 
 </FrameLayout>

@@ -8,12 +8,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +24,12 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_navigation_arrow_back);
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -72,8 +80,15 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
+                return true;
+        }
         return super.onOptionsItemSelected(item);
+
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -92,9 +107,9 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_news) {
             NewsFragment newsFragment = new NewsFragment();
             fragmentTransaction.replace(R.id.fragment_container,newsFragment).commit();
-        } else if (id == R.id.nav_home) {
-            UpdatesFragment updatesFragment= new UpdatesFragment();
-            fragmentTransaction.replace(R.id.fragment_container,updatesFragment).commit();
+        } else if (id == R.id.nav_social_work) {
+            SocialWorkFragment socialWorkFragment = new SocialWorkFragment();
+            fragmentTransaction.replace(R.id.fragment_container,socialWorkFragment).commit();
         } else if (id == R.id.nav_share) {
             HomeFragment homeFragment= new HomeFragment();
             fragmentTransaction.replace(R.id.fragment_container,homeFragment).commit();

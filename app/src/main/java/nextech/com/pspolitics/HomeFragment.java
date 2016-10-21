@@ -24,7 +24,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
+        getActivity().setTitle("Personal Phots");
         View v = inflater.inflate(R.layout.fragment_home,
                 container, false);
         viewFlipper = (ViewFlipper) v.findViewById(R.id.bckgrndViewFlipper1);

@@ -22,6 +22,8 @@ public class VotingScheduleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        getActivity().setTitle("Voting Schedule");
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_voting_schedule, container, false);
     }

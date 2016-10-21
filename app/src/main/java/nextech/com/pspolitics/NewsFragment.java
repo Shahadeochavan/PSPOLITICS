@@ -28,12 +28,7 @@ public  class NewsFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
 
-    private Config config;
-
-    public NewsFragment() {
-        // Required empty public constructor
-    }
-
+    private Config config;;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,12 +44,12 @@ public  class NewsFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         getData();
-        return rootView;
+        return  rootView;
+
     }
 
-
     private void getData(){
-        class GetData extends AsyncTask<Void,Void,String> {
+        class GetData extends AsyncTask<Void,Void,String>{
             ProgressDialog progressDialog;
             @Override
             protected void onPreExecute() {
@@ -99,7 +94,6 @@ public  class NewsFragment extends Fragment {
         adapter = new NewsAdapter(Config.names,Config.urls, Config.bitmaps);
         recyclerView.setAdapter(adapter);
     }
-
 
     private void parseJSON(String json){
         try {

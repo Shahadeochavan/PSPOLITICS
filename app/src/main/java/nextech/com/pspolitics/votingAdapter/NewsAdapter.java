@@ -18,6 +18,7 @@ import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
  * Created by welcome on 10/18/2016.
  */
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter .ViewHolder> {
+
     List<NewsListPojo> items;
 
     public NewsAdapter(String[] names, String[] urls, Bitmap[] images){
