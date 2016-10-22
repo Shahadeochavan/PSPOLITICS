@@ -1,0 +1,20 @@
+{
+  "result":[
+    {
+      "name":"Popeye",
+      "url":"http:\/\/simplifiedcoding.16mb.com\/CardView\/uploads\/popeye.png"
+    },
+    {
+      "name":"Goku",
+      "url":"http:\/\/simplifiedcoding.16mb.com\/CardView\/uploads\/goku.png"
+    },
+    {
+      "name":"Girl",
+      "url":"http:\/\/simplifiedcoding.16mb.com\/CardView\/uploads\/girl.png"
+    },
+    {
+      "name":"Ghost",
+      "url":"http:\/\/simplifiedcoding.16mb.com\/CardView\/uploads\/ghost.png"
+    }
+  ]
+}
