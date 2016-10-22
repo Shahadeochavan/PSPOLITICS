@@ -125,6 +125,9 @@ public class HomeActivity extends AppCompatActivity
         }else if(id==R.id.nav_voting_list){
             VotingListFragment votingListFragment= new VotingListFragment();
             fragmentTransaction.replace(R.id.fragment_container,votingListFragment).commit();
+        }else if(id==R.id.nav_rally){
+            Rally rally =new Rally();
+            fragmentTransaction.replace(R.id.fragment_container,rally).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

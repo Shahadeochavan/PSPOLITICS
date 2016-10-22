@@ -50,11 +50,11 @@ public class RallyAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = mInflater.inflate(R.layout.fragment_rally, null);
             holder = new ViewHolder();
-            holder.txtstartPlace= (TextView)convertView.findViewById(R.id.last_name);
-            holder.txtendPlace= (TextView)convertView.findViewById(R.id.first_name);
-            holder.txtdate= (TextView)convertView.findViewById(R.id.middle_name);
-            holder.txtstarttime= (TextView)convertView.findViewById(R.id.phone_number);
-            holder.txtendtime= (TextView)convertView.findViewById(R.id.ward_details);
+            holder.txtstartPlace= (TextView)convertView.findViewById(R.id.start_place_name);
+            holder.txtendPlace= (TextView)convertView.findViewById(R.id.end_place_name);
+            holder.txtdate= (TextView)convertView.findViewById(R.id.date);
+            holder.txtstarttime= (TextView)convertView.findViewById(R.id.start_time);
+            holder.txtendtime= (TextView)convertView.findViewById(R.id.end_time);
 
             convertView.setTag(holder);
         } else {
