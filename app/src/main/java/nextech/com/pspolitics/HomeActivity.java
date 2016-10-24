@@ -126,7 +126,7 @@ public class HomeActivity extends AppCompatActivity
             VotingListFragment votingListFragment= new VotingListFragment();
             fragmentTransaction.replace(R.id.fragment_container,votingListFragment).commit();
         }else if(id==R.id.nav_rally){
-            Rally rally =new Rally();
+            RallyFragment rally =new RallyFragment();
             fragmentTransaction.replace(R.id.fragment_container,rally).commit();
         }
 

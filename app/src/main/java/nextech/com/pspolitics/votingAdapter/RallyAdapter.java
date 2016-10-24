@@ -1,13 +1,13 @@
 package nextech.com.pspolitics.votingAdapter;
 
-import android.content.Context;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import nextech.com.pspolitics.R;
 import nextech.com.pspolitics.votinglistpojo.RallyPojo;
@@ -15,63 +15,58 @@ import nextech.com.pspolitics.votinglistpojo.RallyPojo;
 /**
  * Created by welcome on 10/21/2016.
  */
-public class RallyAdapter extends BaseAdapter {
-    private static ArrayList<RallyPojo> rallyList;
+public class RallyAdapter extends RecyclerView.Adapter<RallyAdapter.RallyViewHolder> {
+    public static class RallyViewHolder extends RecyclerView.ViewHolder {
 
-    private LayoutInflater mInflater;
+        CardView cv;
+        TextView rallyStartPlace;
+        TextView rallyEndPlace;
+        TextView rallytextDate;
+        TextView rallyStartTime;
+        TextView rallyEndTime;
 
-    public RallyAdapter(Context context, ArrayList<RallyPojo> results){
-        rallyList = results;
-        mInflater = LayoutInflater.from(context);
-    }
+        RallyViewHolder(View itemView) {
+            super(itemView);
+            cv = (CardView)itemView.findViewById(R.id.cv);
+            rallyStartPlace = (TextView)itemView.findViewById(R.id.start_place_name);
+            rallyEndPlace = (TextView)itemView.findViewById(R.id.end_place_name);
+            rallytextDate = (TextView)itemView.findViewById(R.id.rally_date);
+            rallyStartTime = (TextView)itemView.findViewById(R.id.rally_start_time);
+            rallyEndTime = (TextView)itemView.findViewById(R.id.rally_end_time);
 
-    @Override
-    public int getCount() {
-        // TODO Auto-generated method stub
-        return rallyList.size();
-    }
-
-    @Override
-    public Object getItem(int arg0) {
-        // TODO Auto-generated method stub
-        return rallyList.get(arg0);
-    }
-
-    @Override
-    public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
-        return arg0;
-    }
-
-
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        ViewHolder holder;
-        if(convertView == null){
-            convertView = mInflater.inflate(R.layout.fragment_rally, null);
-            holder = new ViewHolder();
-            holder.txtstartPlace= (TextView)convertView.findViewById(R.id.start_place_name);
-            holder.txtendPlace= (TextView)convertView.findViewById(R.id.end_place_name);
-            holder.txtdate= (TextView)convertView.findViewById(R.id.date);
-            holder.txtstarttime= (TextView)convertView.findViewById(R.id.start_time);
-            holder.txtendtime= (TextView)convertView.findViewById(R.id.end_time);
-
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
         }
-
-        holder.txtstartPlace.setText(rallyList.get(position).getStartPlaceName());
-        holder.txtendPlace.setText(rallyList.get(position).getEndPlaceName());
-        holder.txtdate.setText(rallyList.get(position).getDate());
-        holder.txtstarttime.setText(rallyList.get(position).getStartTime());
-        holder.txtendtime.setText(rallyList.get(position).getEndTime());
-
-        return convertView;
     }
 
-    static class ViewHolder{
-        TextView txtstartPlace,txtendPlace,txtdate,txtstarttime,txtendtime;
+    List<RallyPojo> rallyPojos;
+
+    public RallyAdapter(List<RallyPojo> rallyPojos){
+        this.rallyPojos = rallyPojos;
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    @Override
+    public RallyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_rally_card, viewGroup, false);
+        RallyViewHolder pvh = new RallyViewHolder(v);
+        return pvh;
+    }
+
+    @Override
+    public void onBindViewHolder(RallyViewHolder rallyViewHolder, int i) {
+        rallyViewHolder.rallyStartPlace.setText(rallyPojos.get(i).startPlaceName);
+        rallyViewHolder.rallyEndPlace.setText(rallyPojos.get(i).endPlaceName);
+        rallyViewHolder.rallytextDate.setText(rallyPojos.get(i).rallyDate);
+        rallyViewHolder.rallyStartTime.setText(rallyPojos.get(i).startTime);
+        rallyViewHolder.rallyEndTime.setText(rallyPojos.get(i).endTime);
+    }
+
+    @Override
+    public int getItemCount() {
+        return rallyPojos.size();
     }
 }
 

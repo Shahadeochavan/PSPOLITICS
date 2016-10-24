@@ -12,19 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nextech.com.pspolitics.votingAdapter.NewsAdapter;
-import nextech.com.pspolitics.votinglistpojo.Config;
 import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
 
 public  class NewsFragment extends Fragment {
     private List<NewsListPojo> persons;
     private RecyclerView rv;
 
-    private Config config;;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().setTitle("News");
      View rootView= inflater.inflate(R.layout.fragment_news, container, false);
 
         rv=(RecyclerView)rootView.findViewById(R.id.rv);

@@ -33,15 +33,17 @@ public class VotingCentersFragment extends Fragment {
         ArrayList<VotingCenterPojo> votingCenterList = new ArrayList<VotingCenterPojo>();
 
         VotingCenterPojo votingCenterPojo = new VotingCenterPojo();
-        votingCenterPojo.setPlaceName("Wadegon");
-        votingCenterPojo.setAddress("High School");
+
+        votingCenterPojo.setPlaceName("Wadegon ,");
+        votingCenterPojo.setAddress("High School.");
         votingCenterPojo.setDate("12/12/2016");
         votingCenterPojo.setStartTime("07 Am");
         votingCenterPojo.setEndTime("05 pm");
         votingCenterList.add(votingCenterPojo);
 
-        votingCenterPojo.setPlaceName("Wadi");
-        votingCenterPojo.setAddress("Z P School");
+        votingCenterPojo = new VotingCenterPojo();
+        votingCenterPojo.setPlaceName("Malkapur ,");
+        votingCenterPojo.setAddress("Z. P.School.");
         votingCenterPojo.setDate("12/12/2016");
         votingCenterPojo.setStartTime("07 Am");
         votingCenterPojo.setEndTime("05 pm");

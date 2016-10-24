@@ -35,7 +35,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.PersonViewHol
             personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
             newsPhoto = (ImageView)itemView.findViewById(R.id.news_photo);
             persontime = (TextView)itemView.findViewById(R.id.news_time);
-            photsInformatin = (TextView)itemView.findViewById(R.id.news_time);
+            photsInformatin = (TextView)itemView.findViewById(R.id.phots_info);
 
         }
     }
@@ -53,7 +53,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.PersonViewHol
 
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.text_row_item, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_card_news, viewGroup, false);
         PersonViewHolder pvh = new PersonViewHolder(v);
         return pvh;
     }
