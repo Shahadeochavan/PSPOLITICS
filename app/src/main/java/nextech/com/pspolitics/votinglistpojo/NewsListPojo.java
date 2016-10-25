@@ -1,37 +1,23 @@
 package nextech.com.pspolitics.votinglistpojo;
 
-import android.graphics.Bitmap;
-
 /**
  * Created by welcome on 10/19/2016.
  */
 public class NewsListPojo {
-    private String name;
-    private String url;
-    private Bitmap image;
+    public String name;
+   public String date;
+    public String time;
+    public String informationofphots;
+   public int photoId,photsNews;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public NewsListPojo(String name, String date,String time, int photoId,int photsNews,String informationofphots) {
         this.name = name;
-    }
+        this.date = date;
+        this.time=time;
+        this.photoId = photoId;
+        this.photsNews=photsNews;
+        this.informationofphots=informationofphots;
+        this.informationofphots=informationofphots;
 
-    public String getUrl() {
-        return url;
     }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public Bitmap getImage() {
-        return image;
-    }
-
-    public void setImage(Bitmap image) {
-        this.image = image;
-    }
-
 }
