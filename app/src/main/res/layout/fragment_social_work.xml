@@ -1,16 +1,47 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nextech.com.pspolitics.SocialWorkFragment">
+    android:background="@color/fent_red"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/socil_text"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_margin="20dp"
-        android:text="@string/social" />
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        >
 
-</FrameLayout>
+        <RelativeLayout
+            android:background="@color/fent_red_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/social_phots"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/socila_information"
+                android:textColor="@color/black"
+                android:layout_below="@+id/social_phots"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/social_date"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/socila_information"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
