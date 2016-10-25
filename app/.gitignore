@@ -1,1 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
 /build
+/app/build
+/captures
+.idea/
+gradle/
+gradlew
+hs_err_pid3116.log
+replay_pid3116.log
