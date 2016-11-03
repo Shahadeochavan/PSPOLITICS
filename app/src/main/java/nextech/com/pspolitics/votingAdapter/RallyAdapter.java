@@ -24,7 +24,6 @@ public class RallyAdapter extends RecyclerView.Adapter<RallyAdapter.RallyViewHol
         TextView rallytextDate;
         TextView rallyStartTime;
         TextView rallyEndTime;
-
         RallyViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);

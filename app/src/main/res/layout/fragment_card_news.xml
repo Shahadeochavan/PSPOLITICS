@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fent_red"
+    android:padding="16dp"
+    >
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/cv"
-    android:background="@color/dark_brown"
     >
 
     <RelativeLayout
         android:id="@+id/card"
-        android:padding="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/nevi_blue">
@@ -20,7 +24,6 @@
             android:id="@+id/person_photo"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
             />
 
         <TextView
@@ -62,16 +65,17 @@
             android:layout_toRightOf="@+id/person_photo"
             android:textColor="@color/black"/>
         <ImageView
-            android:layout_below="@+id/person_photo"
+            android:layout_below="@+id/phots_info"
             android:id="@+id/news_photo"
             android:layout_alignParentLeft="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <ImageView
-            android:layout_below="@+id/person_photo"
+            android:layout_below="@+id/phots_info"
             android:id="@+id/share"
             android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 </android.support.v7.widget.CardView>
+</LinearLayout>

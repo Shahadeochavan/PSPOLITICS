@@ -1,5 +1,12 @@
 package nextech.com.pspolitics.votingAdapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +25,8 @@ import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
  */
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
+    private final Context context;
+
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;
@@ -28,7 +37,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
         ImageView textShare;
         ImageView personPhoto,newsPhoto;
 
-        NewsViewHolder(View itemView) {
+         NewsViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             personName = (TextView)itemView.findViewById(R.id.person_name);
@@ -42,10 +51,11 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
         }
     }
 
-    List<NewsListPojo> persons;
+    List<NewsListPojo> newsListPojos;
 
-    public NewsAdapter(List<NewsListPojo> persons){
-        this.persons = persons;
+    public NewsAdapter(List<NewsListPojo> newsListPojos,Context context){
+        this.newsListPojos = newsListPojos;
+        this.context=context;
     }
 
     @Override
@@ -61,18 +71,37 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
     }
 
     @Override
-    public void onBindViewHolder(NewsViewHolder personViewHolder, int i) {
-        personViewHolder.personName.setText(persons.get(i).name);
-        personViewHolder.persondate.setText(persons.get(i).date);
-        personViewHolder.persontime.setText(persons.get(i).time);
-        personViewHolder.photsInformatin.setText(persons.get(i).informationofphots);
-        personViewHolder.personPhoto.setImageResource(persons.get(i).photoId);
-        personViewHolder.newsPhoto.setImageResource(persons.get(i).photsNews);
-        personViewHolder.textShare.setImageResource(persons.get(i).share);
+    public void onBindViewHolder(final NewsViewHolder newsViewHolder, int i) {
+        newsViewHolder.personName.setText(newsListPojos.get(i).name);
+        newsViewHolder.persondate.setText(newsListPojos.get(i).date);
+        newsViewHolder.persontime.setText(newsListPojos.get(i).time);
+        newsViewHolder.photsInformatin.setText(newsListPojos.get(i).informationofphots);
+        newsViewHolder.personPhoto.setImageResource(newsListPojos.get(i).photoId);
+        newsViewHolder.newsPhoto.setImageResource(newsListPojos.get(i).photsNews);
+        newsViewHolder.textShare.setImageResource(newsListPojos.get(i).share);
+
+        View.OnClickListener onClickListener=new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             Drawable mDrawable = ((ImageView)view).getDrawable();
+                Bitmap mBitmap = ((BitmapDrawable) mDrawable).getBitmap();
+                String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), mBitmap, "PSPImage", null);
+                Uri uri = Uri.parse(path);
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("image/jpeg");
+                intent.putExtra(Intent.EXTRA_STREAM, uri);
+               context.startActivity(Intent.createChooser(intent, "Share Image"));
+
+            }
+        };
+
+        newsViewHolder.textShare.setOnClickListener(onClickListener);
+
+
     }
 
     @Override
     public int getItemCount() {
-        return persons.size();
+        return newsListPojos.size();
     }
 }
