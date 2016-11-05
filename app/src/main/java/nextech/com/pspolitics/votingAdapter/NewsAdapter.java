@@ -3,8 +3,7 @@ package nextech.com.pspolitics.votingAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.widget.CardView;
@@ -78,13 +77,16 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
         newsViewHolder.photsInformatin.setText(newsListPojos.get(i).informationofphots);
         newsViewHolder.personPhoto.setImageResource(newsListPojos.get(i).photoId);
         newsViewHolder.newsPhoto.setImageResource(newsListPojos.get(i).photsNews);
-        newsViewHolder.textShare.setImageResource(newsListPojos.get(i).share);
+//        newsViewHolder.textShare.setImageResource(newsListPojos.get(i).share);
 
         View.OnClickListener onClickListener=new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             Drawable mDrawable = ((ImageView)view).getDrawable();
-                Bitmap mBitmap = ((BitmapDrawable) mDrawable).getBitmap();
+                Integer position = (Integer)view.getTag();
+//             Drawable mDrawable = context.getResources().getDrawable(newsListPojos.get(position).photsNews);
+//                Bitmap mBitmap =  Bitmap.createBitmap(mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight(), Bitmap.Config.RGB_565);
+                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), newsListPojos.get(position).photsNews);
+
                 String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), mBitmap, "PSPImage", null);
                 Uri uri = Uri.parse(path);
                 Intent intent = new Intent(Intent.ACTION_SEND);
@@ -96,7 +98,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
         };
 
         newsViewHolder.textShare.setOnClickListener(onClickListener);
-
+        newsViewHolder.textShare.setTag(i);
 
     }
 

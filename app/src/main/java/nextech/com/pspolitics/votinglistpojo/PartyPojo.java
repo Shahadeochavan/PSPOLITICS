@@ -8,11 +8,13 @@ public class PartyPojo {
     public int personImage;
     public String partyName;
     public int partyImage;
-    public PartyPojo(String personName,int personImage, String partyName,int partyImage){
+    public String desgination;
+    public PartyPojo(String personName,int personImage, String partyName,int partyImage,String desgination){
         this.personName=personName;
         this.personImage=personImage;
         this.partyName=partyName;
         this.partyImage=partyImage;
+        this.desgination=desgination;
     }
 
 }

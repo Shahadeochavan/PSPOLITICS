@@ -11,13 +11,15 @@ public class RallyPojo {
     public String rallyDate;
    public String startTime;
    public String endTime;
+    public String dayRally;
 
-    public RallyPojo(String startPlaceName,String endPlaceName,String rallyDate,String startTime,String endTime){
+    public RallyPojo(String startPlaceName,String endPlaceName,String rallyDate,String startTime,String endTime,String dayRally){
         this.startPlaceName=startPlaceName;
         this.endPlaceName=endPlaceName;
         this.rallyDate=rallyDate;
         this.startTime=startTime;
         this.endTime=endTime;
+        this.dayRally=dayRally;
     }
 }
 

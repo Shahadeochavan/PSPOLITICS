@@ -39,7 +39,7 @@ public class PartyFragment extends Fragment {
 
     private void initializeData(){
         partyPojos = new ArrayList<>();
-        partyPojos.add(new PartyPojo("Nitin Shelke",R.drawable.prashant1,"Party Name:BJP",R.drawable.is));
+        partyPojos.add(new PartyPojo("Name:Nitin Shelke",R.drawable.nitin,"Party Name:BJP",R.drawable.nitin,"Desgination:Nagar Sevak of Wadhegon"));
     }
 
     private void initializeAdapter(){

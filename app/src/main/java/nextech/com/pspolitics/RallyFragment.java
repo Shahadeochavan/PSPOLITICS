@@ -40,7 +40,9 @@ public class RallyFragment extends Fragment {
 
     private void initializeData(){
         rallyPojos = new ArrayList<>();
-        rallyPojos.add(new RallyPojo("Wadegon Chowk", "Shirur Phata","12/12/2016", "11:00 AM","03:00 PM"));
+        rallyPojos.add(new RallyPojo("Wadegon Chowk", "Shirur Phata","12/12/2016", "11:00 AM","03:00 PM","Sunday"));
+        rallyPojos.add(new RallyPojo("Baner", "Pune Statiobn","24/12/2016", "10:00 AM","02:00 PM","Monday"));
+        rallyPojos.add(new RallyPojo("Karve Nagar", "Hadpasr","01/01/2017", "12:00 PM","04:00 PM","Saturday"));
 
     }
 

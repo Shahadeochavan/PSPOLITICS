@@ -21,6 +21,7 @@ public class PartyAdapter extends  RecyclerView.Adapter<PartyAdapter.PartyViewHo
 
         CardView cv;
         TextView textPersonName;
+        TextView textdesgination;
         ImageView imagePerson;
         TextView textPartyName;
         ImageView imagePartyImages;
@@ -28,6 +29,7 @@ public class PartyAdapter extends  RecyclerView.Adapter<PartyAdapter.PartyViewHo
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             textPersonName = (TextView)itemView.findViewById(R.id.party_person_name);
+            textdesgination = (TextView)itemView.findViewById(R.id.party_desgination);
             imagePerson = (ImageView)itemView.findViewById(R.id.person_photo_party);
             textPartyName = (TextView)itemView.findViewById(R.id.party_name);
             imagePartyImages = (ImageView)itemView.findViewById(R.id.party_image);
@@ -55,6 +57,7 @@ public class PartyAdapter extends  RecyclerView.Adapter<PartyAdapter.PartyViewHo
     @Override
     public void onBindViewHolder(PartyViewHolder partyViewHolder, int i) {
         partyViewHolder.textPersonName.setText(partyPojos.get(i).personName);
+        partyViewHolder.textdesgination.setText(partyPojos.get(i).desgination);
         partyViewHolder.imagePerson.setImageResource(partyPojos.get(i).personImage);
         partyViewHolder.textPartyName.setText(partyPojos.get(i).partyName);
         partyViewHolder.imagePartyImages.setImageResource(partyPojos.get(i).partyImage);

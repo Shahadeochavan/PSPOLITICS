@@ -36,13 +36,14 @@ public  class NewsFragment extends Fragment {
 
     private void initializeData(){
         persons = new ArrayList<>();
-        persons.add(new NewsListPojo("Shahadeo Chavan", "12/12/2016","11:AM",R.drawable.prashant1,R.drawable.pelicans_bird_nature_216803, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
-        persons.add(new NewsListPojo("Shubhangi Dhole", "12/12/2016","11:AM", R.drawable.prashant1,R.drawable.winter_beautiful_snow_216404, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
-        persons.add(new NewsListPojo("Priyanka Patil", "12/12/2016","11:AM", R.drawable.prashant1,R.drawable.seagull_bird_nature_275104, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo("Shahadeo Chavan", "12/12/2016","11:AM",R.drawable.raje1,R.drawable.nitin, "NITIN SHELKE  PHOTS AT STUDIO",R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo("Shubhangi Dhole", "12/12/2016","11:AM", R.drawable.prashant1,R.drawable.cat, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo("Priyanka Patil", "12/12/2016","11:AM", R.drawable.prashant1,R.drawable.nature, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
     }
 
     private void initializeAdapter(){
         NewsAdapter adapter = new NewsAdapter(persons,getContext());
         rv.setAdapter(adapter);
     }
+
 }

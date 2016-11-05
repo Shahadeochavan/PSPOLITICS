@@ -24,10 +24,12 @@ public class RallyAdapter extends RecyclerView.Adapter<RallyAdapter.RallyViewHol
         TextView rallytextDate;
         TextView rallyStartTime;
         TextView rallyEndTime;
+        TextView textDay;
         RallyViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             rallyStartPlace = (TextView)itemView.findViewById(R.id.start_place_name);
+            textDay = (TextView)itemView.findViewById(R.id.rally_day);
             rallyEndPlace = (TextView)itemView.findViewById(R.id.end_place_name);
             rallytextDate = (TextView)itemView.findViewById(R.id.rally_date);
             rallyStartTime = (TextView)itemView.findViewById(R.id.rally_start_time);
@@ -57,6 +59,7 @@ public class RallyAdapter extends RecyclerView.Adapter<RallyAdapter.RallyViewHol
     @Override
     public void onBindViewHolder(RallyViewHolder rallyViewHolder, int i) {
         rallyViewHolder.rallyStartPlace.setText(rallyPojos.get(i).startPlaceName);
+        rallyViewHolder.textDay.setText(rallyPojos.get(i).dayRally);
         rallyViewHolder.rallyEndPlace.setText(rallyPojos.get(i).endPlaceName);
         rallyViewHolder.rallytextDate.setText(rallyPojos.get(i).rallyDate);
         rallyViewHolder.rallyStartTime.setText(rallyPojos.get(i).startTime);

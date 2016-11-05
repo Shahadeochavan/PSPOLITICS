@@ -16,7 +16,7 @@
             android:title="About Nitin Shelke" />
         <item
             android:id="@+id/nav_social_work"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_action_work"
             android:title="Social work" />
     </group>
 
@@ -24,7 +24,7 @@
         <menu>
             <item
                 android:id="@+id/nav_rally"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_maps_directions_bike"
                 android:title="Rally" />
             <item
                 android:id="@+id/nav_news"
