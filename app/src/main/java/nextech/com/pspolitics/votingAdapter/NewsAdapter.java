@@ -83,8 +83,6 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
             @Override
             public void onClick(View view) {
                 Integer position = (Integer)view.getTag();
-//             Drawable mDrawable = context.getResources().getDrawable(newsListPojos.get(position).photsNews);
-//                Bitmap mBitmap =  Bitmap.createBitmap(mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight(), Bitmap.Config.RGB_565);
                 Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), newsListPojos.get(position).photsNews);
 
                 String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), mBitmap, "PSPImage", null);

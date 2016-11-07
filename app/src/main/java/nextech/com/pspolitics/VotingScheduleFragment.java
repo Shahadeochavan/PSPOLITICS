@@ -45,7 +45,7 @@ public class VotingScheduleFragment extends Fragment {
 
     private void initializeData(){
         votingSchedulePojos = new ArrayList<>();
-        votingSchedulePojos.add(new VotingSchedulePojo("Day:Sunday","Date:01/01/2017","07:00 AM","05:00 PM"));
+        votingSchedulePojos.add(new VotingSchedulePojo("Sunday"," 01/01/2017","07:00 AM","05:00 PM"));
 
     }
 

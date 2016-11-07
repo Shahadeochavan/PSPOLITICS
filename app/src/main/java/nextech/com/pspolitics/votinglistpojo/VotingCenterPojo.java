@@ -5,9 +5,6 @@ package nextech.com.pspolitics.votinglistpojo;
  */
 public class VotingCenterPojo {
     private int id;
-
-
-
     private String placeName;
     private  String address;
     private  String date;

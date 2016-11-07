@@ -1,44 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/fent_red"
+    android:layout_height="wrap_content"
     >
-
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cv"
         >
-
         <RelativeLayout
-            android:background="@color/fent_red_dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/text_border"
+            android:padding="10dp"
             >
-            <ImageView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_tree_plan"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/social_phots"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:text="Social Work of Nitin Bhaiya:"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/socila_information"
-                android:textColor="@color/black"
-                android:layout_below="@+id/social_phots"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/text_tree_plan"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/text_date"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/dark_grreen"
+                android:text="Date :"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/socila_information"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/social_date"
-                android:textColor="@color/colorPrimary"
-                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:text="asxacsacscsc"
+                android:layout_toRightOf="@+id/text_date"
+                android:textColor="@color/dark_grreen"
                 android:layout_below="@+id/socila_information"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="italic" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/social_phots"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/text_date"
+                android:src="@drawable/social_work" />
 
         </RelativeLayout>
 

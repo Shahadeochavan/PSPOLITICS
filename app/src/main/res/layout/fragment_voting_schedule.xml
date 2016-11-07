@@ -1,61 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/seashell"
-    android:padding="16dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/cv"
+    android:background="@drawable/text_border"
     >
-
-    <android.support.v7.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cv"
-        android:background="@color/cornflowerblue"
+        android:background="@drawable/text_border"
+        android:padding="10dp"
         >
-
-        <RelativeLayout
-            android:background="@color/papayawhip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            <TextView
+                android:id="@+id/text_voting_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voting Day:"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_day"
-                android:textColor="@color/colorPrimary"
-                android:layout_alignParentTop="true"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="axczxcxc"
+                android:layout_toRightOf="@+id/text_voting_day"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                />
+            <TextView
+                android:id="@+id/text_voting_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voting Date:"
+                android:layout_below="@+id/text_voting_day"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/colourBlue"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_date"
-                android:textColor="@color/black"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/voting_day"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:textColor="@color/colourBlue"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/voting_day"
+                android:layout_toRightOf="@+id/text_voting_date"
+                android:layout_marginLeft="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/text_voting_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voting Start Time:"
+                android:layout_toRightOf="@+id/text_start_time"
+                android:layout_below="@+id/voting_date"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_start"
-                android:textColor="@color/dark_grreen"
-                android:layout_alignParentLeft="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/red"
+                android:layout_toRightOf="@+id/text_voting_start_time"
                 android:layout_below="@+id/voting_date"
-                android:textSize="15sp"
-                android:textStyle="italic" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/text_voting_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voting End Time:"
+                android:layout_toRightOf="@+id/text_start_time"
+                android:layout_below="@+id/text_voting_start_time"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/dark_grreen"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_end"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/text_voting_end_time"
                 android:textColor="@color/dark_grreen"
-                android:layout_alignParentLeft="true"
                 android:layout_below="@+id/voting_start"
-                android:textSize="15sp"
-                android:textStyle="normal" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/voting_end"
+            android:src="@drawable/bjp"/>
 
         </RelativeLayout>
-
     </android.support.v7.widget.CardView>
-
-</LinearLayout>
