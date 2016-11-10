@@ -2,22 +2,28 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:background="@drawable/text_border"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
         <ImageView
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/image_nitin"
-            android:background="@color/dark_brown"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/raje1"/>
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/nitin"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/about_nitin"
-            android:padding="10dp"
+            android:gravity="left"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_below="@+id/image_nitin"
             android:text="@string/about_nitin"/>
     </RelativeLayout>

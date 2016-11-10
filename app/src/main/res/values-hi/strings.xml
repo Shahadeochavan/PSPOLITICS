@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="News">बातमी</string>
+    <string name="Party"> पार्टी</string>
+    <string name="actins_hn">Hindi</string>
+    <string-array name="lang_select">
+        <item>English</item>
+        <item>Hindi</item>
+    </string-array>
+</resources>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="nextech.com.pspolitics.HomeActivity">
 
     <group android:checkableBehavior="single">
         <item
@@ -29,11 +32,11 @@
             <item
                 android:id="@+id/nav_news"
                 android:icon="@drawable/ic_menu_send"
-                android:title="News" />
+                android:title="@string/News" />
             <item
                 android:id="@+id/nav_party"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Party" />
+                android:title="@string/Party" />
             <item
                 android:id="@+id/nav_voting_schedule"
                 android:icon="@drawable/ic_menu_send"

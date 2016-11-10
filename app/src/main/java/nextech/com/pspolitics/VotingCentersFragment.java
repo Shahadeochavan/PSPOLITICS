@@ -1,57 +1,54 @@
 package nextech.com.pspolitics;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import nextech.com.pspolitics.votingAdapter.VotingCenterAdapter;
 import nextech.com.pspolitics.votinglistpojo.VotingCenterPojo;
 
 
 public class VotingCentersFragment extends Fragment {
-    public VotingCentersFragment(){}
-    EditText inputSearch;
+    private List<VotingCenterPojo> votingCenterPojos;
+    private RecyclerView rv;
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         getActivity().setTitle("Voting Center");
+        View rootView= inflater.inflate(R.layout.fragment_rally, container, false);
 
-        View rootView = inflater.inflate(R.layout.fragment_voting_centers, container, false);
+        rv=(RecyclerView)rootView.findViewById(R.id.rv);
 
-        ArrayList<VotingCenterPojo> listContact = getContactList();
-        ListView lv = (ListView)rootView.findViewById(R.id.list_item);
-        lv.setAdapter(new VotingCenterAdapter(getActivity(), listContact));
-        return rootView;
+        LinearLayoutManager llm = new LinearLayoutManager(this.getContext());
+        rv.setLayoutManager(llm);
+        rv.setHasFixedSize(true);
+
+        initializeData();
+        initializeAdapter();
+        return  rootView;
     }
 
-    private ArrayList<VotingCenterPojo> getContactList(){
-        ArrayList<VotingCenterPojo> votingCenterList = new ArrayList<VotingCenterPojo>();
+    private void initializeData(){
+        votingCenterPojos = new ArrayList<>();
+        votingCenterPojos.add(new VotingCenterPojo("High Scholl","Wadwgon","01/01/2017","07:AM","08:AM"));
+        votingCenterPojos.add(new VotingCenterPojo("Z.P Scholl","Pune","01/01/2017","07:AM","08:AM"));
+        votingCenterPojos.add(new VotingCenterPojo("Shivaji Vidyalya","Malkapur","01/01/2017","07:AM","08:AM"));
 
-        VotingCenterPojo votingCenterPojo = new VotingCenterPojo();
-
-        votingCenterPojo.setPlaceName("Wadegon ,");
-        votingCenterPojo.setAddress("High School.");
-        votingCenterPojo.setDate("12/12/2016");
-        votingCenterPojo.setStartTime("07 Am");
-        votingCenterPojo.setEndTime("05 pm");
-        votingCenterList.add(votingCenterPojo);
-
-        votingCenterPojo = new VotingCenterPojo();
-        votingCenterPojo.setPlaceName("Malkapur ,");
-        votingCenterPojo.setAddress("Z. P.School.");
-        votingCenterPojo.setDate("12/12/2016");
-        votingCenterPojo.setStartTime("07 Am");
-        votingCenterPojo.setEndTime("05 pm");
-        votingCenterList.add(votingCenterPojo);
-        return votingCenterList;
-
-
+    }
+    private void initializeAdapter(){
+        VotingCenterAdapter adapter = new VotingCenterAdapter(votingCenterPojos);
+        rv.setAdapter(adapter);
     }
 
 }

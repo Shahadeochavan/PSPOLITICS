@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="News">बातमी</string>
+    <string name="Party"> पार्टी</string>
+    <string name="action_devinfo">डेवेलपर</string>
+    <string name="action_logout">लॉग आउट</string>
+    <string name="action_search">खोज</string>
+    <string name="action_settings">सेटिंग</string>
+    <string name="share_app">एप शेयर कीजिए</string>
+    <string name="language_setting">भाषा बदलें</string>
+    <string name="action_change_pass">पासवर्ड बदलें</string>
+
+    <!-- Language select dialog -->
+    <string-array name="lang_select">
+        <item>English</item>
+        <item>Hindi</item>
+    </string-array>
+
+</resources>

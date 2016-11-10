@@ -1,9 +1,10 @@
 package nextech.com.pspolitics;
 
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -13,31 +14,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
+import android.webkit.WebView;
 
+import java.util.Locale;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private NavigationView navigationView;
+    private WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setSupportActionBar(toolbar);
+ /*       ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getActiveNetworkInfo();
+        if (info != null) {
+            if (!info.isConnected()) {
+                Toast.makeText(this, "Please check your wireless connection and try again.", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            Toast.makeText(this, "Please check your wireless connection and try again.", Toast.LENGTH_SHORT).show();
+        }*/
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        Configuration config = getBaseContext().getResources().getConfiguration();
+
+        String lang = settings.getString("LANG", "");
+        if (! "".equals(lang) && ! config.locale.getLanguage().equals(lang)) {
+            Locale locale = new Locale(lang);
+            Locale.setDefault(locale);
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
         }
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -68,20 +79,43 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
         switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
-                return true;
+            case R.id.get_marathi:
+                String languageToLoad = "mr"; // your language
+                Locale locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+                this.setContentView(R.layout.activity_home);
+                break;
+            case R.id.get_hindi:
+                languageToLoad = "hi"; // your language
+                locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+                this.setContentView(R.layout.activity_home);
+
+                break;
+            case R.id.get_english:
+                languageToLoad = "en"; // your language
+                locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+                this.setContentView(R.layout.activity_home);
+                break;
+            default:
+                break;
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+
         }
         return super.onOptionsItemSelected(item);
 
@@ -136,6 +170,17 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Locale locale = null;
+        if (locale != null)
+        {
+            newConfig.locale = locale;
+            Locale.setDefault(locale);
+            getBaseContext().getResources().updateConfiguration(newConfig, getBaseContext().getResources().getDisplayMetrics());
+        }
+    }
 
 }
 

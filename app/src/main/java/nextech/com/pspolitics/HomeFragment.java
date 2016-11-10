@@ -4,11 +4,9 @@ package nextech.com.pspolitics;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.widget.ViewFlipper;
+import android.webkit.WebView;
 
 
 /**
@@ -19,15 +17,20 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
     }
 
-    ViewFlipper viewFlipper;
-    Animation Fade_in, Fade_out;
+  /*  ViewFlipper viewFlipper;
+    Animation Fade_in, Fade_out;*/
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         getActivity().setTitle("Personal Phots");
-        View v = inflater.inflate(R.layout.fragment_home,
+        View v = inflater.inflate(R.layout.fragment_about,
                 container, false);
-        viewFlipper = (ViewFlipper) v.findViewById(R.id.bckgrndViewFlipper1);
+
+        WebView view = new WebView(this.getContext());
+        view.setVerticalScrollBarEnabled(false);
+
+        view.loadData(getString(R.string.about_nitin), "text/html; charset=utf-8", "utf-8");
+  /*      viewFlipper = (ViewFlipper) v.findViewById(R.id.bckgrndViewFlipper1);
         viewFlipper.setInAnimation(Fade_in);
         viewFlipper.setOutAnimation(Fade_out);
         viewFlipper.setAutoStart(true);
@@ -52,7 +55,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 viewFlipper.showPrevious();
             }
-        });
+        });*/
         return v;
     }
 }

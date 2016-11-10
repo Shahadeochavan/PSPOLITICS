@@ -1,13 +1,13 @@
 package nextech.com.pspolitics.votingAdapter;
 
-import android.content.Context;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import nextech.com.pspolitics.R;
 import nextech.com.pspolitics.votinglistpojo.VotingCenterPojo;
@@ -15,63 +15,58 @@ import nextech.com.pspolitics.votinglistpojo.VotingCenterPojo;
 /**
  * Created by welcome on 10/19/2016.
  */
-public class VotingCenterAdapter extends BaseAdapter {
-    private static ArrayList<VotingCenterPojo> listCenter;
+public class VotingCenterAdapter extends RecyclerView.Adapter<VotingCenterAdapter.VotingCenterViewHolder>  {
 
-    private LayoutInflater mInflater;
+    public static class VotingCenterViewHolder extends RecyclerView.ViewHolder {
 
-    public VotingCenterAdapter(Context context, ArrayList<VotingCenterPojo> results){
-        listCenter = results;
-        mInflater = LayoutInflater.from(context);
-    }
+        CardView cv;
+        TextView textPlacename;
+        TextView textAddress;
+        TextView textDate;
+        TextView textStartTime;
+        TextView textEndTime;
 
-    @Override
-    public int getCount() {
-        // TODO Auto-generated method stub
-        return listCenter.size();
-    }
+        VotingCenterViewHolder(View itemView) {
+            super(itemView);
+            cv = (CardView)itemView.findViewById(R.id.cv);
+            textPlacename = (TextView)itemView.findViewById(R.id.text_location);
+            textAddress = (TextView)itemView.findViewById(R.id.text_address);
+            textDate = (TextView)itemView.findViewById(R.id.date);
+            textStartTime = (TextView)itemView.findViewById(R.id.start_time);
+            textEndTime = (TextView)itemView.findViewById(R.id.end_time);
 
-    @Override
-    public Object getItem(int arg0) {
-        // TODO Auto-generated method stub
-        return listCenter.get(arg0);
-    }
-
-    @Override
-    public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
-        return arg0;
-    }
-
-
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        ViewHolder holder;
-        if(convertView == null){
-            convertView = mInflater.inflate(R.layout.fragment_voting_centers, null);
-            holder = new ViewHolder();
-            holder.txtplacename = (TextView) convertView.findViewById(R.id.place_name);
-            holder.txtaddress = (TextView) convertView.findViewById(R.id.address);
-            holder.txtdate = (TextView) convertView.findViewById(R.id.date);
-            holder.txtstarttime = (TextView) convertView.findViewById(R.id.start_time);
-            holder.txtendtime = (TextView) convertView.findViewById(R.id.end_time);
-
-
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
         }
-
-        holder.txtplacename.setText(listCenter.get(position).getPlaceName());
-        holder.txtaddress.setText(listCenter.get(position).getAddress());
-        holder.txtdate.setText(listCenter.get(position).getDate());
-        holder.txtstarttime.setText(listCenter.get(position).getStartTime());
-        holder.txtendtime.setText(listCenter.get(position).getEndTime());
-
-        return convertView;
     }
 
-    static class ViewHolder{
-        TextView txtplacename,txtaddress,txtdate,txtstarttime,txtendtime ;
+    List<VotingCenterPojo> votingCenterPojos;
+
+    public VotingCenterAdapter(List<VotingCenterPojo> votingCenterPojos){
+        this.votingCenterPojos = votingCenterPojos;
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    @Override
+    public VotingCenterViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_voting_centers, viewGroup, false);
+        VotingCenterViewHolder pvh = new VotingCenterViewHolder(v);
+        return pvh;
+    }
+
+    @Override
+    public void onBindViewHolder(VotingCenterViewHolder votingCenterViewHolder, int i) {
+        votingCenterViewHolder.textPlacename.setText(votingCenterPojos.get(i).placeName);
+        votingCenterViewHolder.textAddress.setText(votingCenterPojos.get(i).address);
+        votingCenterViewHolder.textDate.setText(votingCenterPojos.get(i).date);
+        votingCenterViewHolder.textStartTime.setText(votingCenterPojos.get(i).startTime);
+        votingCenterViewHolder.textEndTime.setText(votingCenterPojos.get(i).endTime);
+    }
+
+    @Override
+    public int getItemCount() {
+        return votingCenterPojos.size();
     }
 }

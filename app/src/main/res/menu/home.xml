@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="nextech.com.pspolitics.HomeActivity" >
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
+    android:orderInCategory="100"
+    app:showAsAction="never" />
+    <item android:title="Langugae"
         android:orderInCategory="100"
-        app:showAsAction="never" />
+        app:showAsAction="never">
+        <menu xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:id="@+id/get_marathi"
+                android:title="@string/actins_marathi"
+                app:showAsAction="ifRoom" />
+            <item android:id="@+id/get_hindi"
+                android:title="@string/actins_hindi"
+                app:showAsAction="ifRoom" />
+            <item android:id="@+id/get_english"
+                android:title="@string/actions_english"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
 </menu>

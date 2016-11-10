@@ -37,6 +37,7 @@
             android:id="@+id/news_date"
             android:textColor="@color/counter_text_color"
             android:textStyle="italic"
+            android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/person_photo"
             android:layout_below="@+id/person_name"
             />
