@@ -29,7 +29,7 @@ public class VotingScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle("Voting Schedule");
+        getActivity().setTitle(R.string.VotingSchedule);
         View rootView= inflater.inflate(R.layout.fragment_rally, container, false);
 
         rv=(RecyclerView)rootView.findViewById(R.id.rv);
@@ -45,7 +45,7 @@ public class VotingScheduleFragment extends Fragment {
 
     private void initializeData(){
         votingSchedulePojos = new ArrayList<>();
-        votingSchedulePojos.add(new VotingSchedulePojo("Sunday"," 01/01/2017","07:00 AM","05:00 PM"));
+        votingSchedulePojos.add(new VotingSchedulePojo(getContext().getString(R.string.sunday),getContext().getString(R.string.voting_date),getContext().getString(R.string.voting_start_time),getContext().getString(R.string.voting_end_time)));
 
     }
 

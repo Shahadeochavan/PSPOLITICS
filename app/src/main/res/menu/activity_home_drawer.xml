@@ -8,27 +8,27 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_action_home"
-            android:title="Personal Info" />
+            android:title="@string/PersonalInfo" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="@string/Gallery" />
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="About Nitin Shelke" />
+            android:title="@string/AboutNitinShelke" />
         <item
             android:id="@+id/nav_social_work"
             android:icon="@drawable/ic_action_work"
-            android:title="Social work" />
+            android:title="@string/SocialWork" />
     </group>
 
-    <item android:title="Election">
+    <item android:title="@string/Election">
         <menu>
             <item
                 android:id="@+id/nav_rally"
                 android:icon="@drawable/ic_maps_directions_bike"
-                android:title="Rally" />
+                android:title="@string/Rally" />
             <item
                 android:id="@+id/nav_news"
                 android:icon="@drawable/ic_menu_send"
@@ -40,29 +40,29 @@
             <item
                 android:id="@+id/nav_voting_schedule"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Voting Schedule" />
+                android:title="@string/VotingSchedule" />
             <item
                 android:id="@+id/nav_voting_centers"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Voting Centers" />
+                android:title="@string/VotingCenters" />
             <item
                 android:id="@+id/nav_voting_list"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Voting List"/>
+                android:title="@string/VotingList"/>
         </menu>
     </item>
 
 
-    <item android:title="Communicate">
+    <item android:title="@string/Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="@string/Share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/Send" />
         </menu>
     </item>
 

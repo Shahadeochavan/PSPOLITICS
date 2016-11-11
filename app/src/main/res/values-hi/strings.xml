@@ -1,8 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="News">बातमी</string>
+    <string name="PersonalInfo">व्यक्तिगत जानकारी</string>
+    <string name="Gallery">गेलरी</string>
+    <string name="AboutNitinShelke">नितिन शेळके बारे में</string>
+    <string name="SocialWork">सामाजिक कार्य</string>
+    <string name="Election">मतदान सूची</string>
+    <string name="Rally">रैली</string>
+    <string name="News">समाचार</string>
     <string name="Party"> पार्टी</string>
+    <string name="VotingSchedule">मतदान अनुसूची</string>
+    <string name="VotingCenters">मतदान केन्द्रों</string>
+    <string name="VotingList">मतदान सूची</string>
+    <string name="Communicate">संवाद</string>
+    <string name="Share">शेयर</string>
+    <string name="Send">भेजना</string>
+    <string name="VotingDay">मतदान के दिन:</string>
+    <string name="VotingDate">मतदान की तारीख:</string>
+    <string name="VotingStartTime">मतदान शुरू समय:</string>
+    <string name="VotingEndTime">मतदान समाप्ति समय:</string>
+    <string name="Rally_start_point">रैली प्रारंभ बिंदु:</string>
+    <string name="Rally_End_point">रैली अंत बिंदु:</string>
+    <string name="Rally_Date">रैली की तिथि:</string>
+    <string name="Rally_day">रैली के दिन:</string>
+    <string name="Rally_start_time">रैली प्रारंभ समय:</string>
+    <string name="Rally_end_time">रॅली समाप्त वेळ:</string>
+    <string name="about_nitin">नितिन शेळके भारत में वाडेगाव के शहर में पले,
+        एक सड़क व्यापारी का बेटा। उन्होंने कहा कि एक युवा के रूप में राजनीति में प्रवेश किया और
+        जल्दी से, राष्ट्रीय स्वयंसेवक संघ के रैंकों के माध्यम से गुलाब
+        एक हिंदू राष्ट्रवादी राजनीतिक दल। शेळके बाद में, २००५ में मुख्यधारा के भारतीय जनता पार्टी में शामिल हो गए
+        अंत में राष्ट्रीय सचिव बनने। २०१० में, वह१,००० से अधिक लोगों की मृत्यु के लिए जिम्मेदार होने का आरोप लगाया गया था
+        नागरिक अशांति के दौरान मुसलमानों लेकिन बाद में बरी कर दिया था।
+        नितिन शेळके वाडेगाव के छोटे से शहर में पैदा हुआ था, महाराष्ट्र, भारत में।
+        उनके पिता एक सड़क व्यापारी जो परिवार का समर्थन करने के लिए संघर्ष करना पड़ा था। युवा नितिन और
+        अपने भाई की मदद से बाहर करने के लिए एक बस टर्मिनल के पास चाय बेच दिया।
+        स्कूल में एक औसत छात्र हालांकि, शेळके पुस्तकालय में घंटे बिताए और एक मजबूत बहस के रूप में जाना जाता था।
+        अपने प्रारंभिक किशोरावस्था में उन्होंने अखिल भारतीय विद्यार्थी परिषद में शामिल हो गए,
+        राष्ट्रीय स्वयंसेवक संघ की छात्र शाखा (आरएसएस),
+        एक हिंदू राष्ट्रवादी राजनीतिक दल।</string>
+    <string name="about_party_bjp">
+
+भाजपा के मूल भारतीय जनसंघ में झूठ बोलते हैं,
+        श्यामा प्रसाद मुखर्जी द्वारा 1951 में गठन किया था।
+        1977 में आपातकाल की स्थिति के बाद,
+        जनसंघ कई अन्य के साथ विलय
+        जनता पार्टी के लिए फार्म दलों;
+        यह 1977 में अवलंबी कांग्रेस पार्टी हराया
+        आम चुनाव। सत्ता में तीन साल बाद,
+        जनता पार्टी 1980 में भंग
+        तत्कालीन जनसंघ के सदस्यों ने भाजपा के लिए फार्म reconvening के साथ।
+        हालांकि शुरू में असफल, केवल दो सीटों पर जीत
+        1984 के आम चुनाव में,
+        यह की पीठ पर शक्ति में वृद्धि हुई है
+        राम जन्मभूमि आंदोलन।
+        कई राज्यों के चुनाव में जीत और बाद
+        राष्ट्रीय चुनावों में बेहतर प्रदर्शन,
+        भाजपा 1996 में संसद में सबसे बड़ी पार्टी बन गया है,
+        हालांकि, यह संसद के निचले सदन में बहुमत का अभाव है,
+        और अपनी सरकार केवल 13 दिन चली।
+    </string>
+    <string name="wadegonchowk">वाडेगाव चौक.</string>
+    <string name="shirurphata">शिरूर स्टेशन</string>
+    <string name="date_of_rally">12/12/2016</string>
+    <string name="rally_start1">११:00 सुबह</string>
+    <string name="rally_end1">0३:00दोपहर</string>
+    <string name="rally_day1">रविवार</string>
+    <string name="baner">बानेर</string>
+    <string name="pune_station">पुणे स्टेशन</string>
+    <string name="date_of_rally1">12/12/2016</string>
+    <string name="rally_start2">11:00 सुबह</string>
+    <string name="rally_end2">03:00 दोपहर</string>
+    <string name="rally_day2">सोमवार</string>
+    <string name="karave_nagar">काञज</string>
+    <string name="hadpasr">हडपसर</string>
+    <string name="date_of_rally3">01/01/2017</string>
+    <string name="rally_start3">01:00 दोपहर</string>
+    <string name="rally_end3">05:00 शाम</string>
+    <string name="rally_day3">शनिवार</string>
+    <string name="sunday">रविवारी</string>
+    <string name="voting_date">१२/०१/२०१७</string>
+    <string name="voting_start_time">०७:00 सुबह</string>
+    <string name="voting_end_time">०५:०० शाम</string>
+    <string name="tree_date">०१/०४/२०१६</string>
     <string name="actins_hn">Hindi</string>
+    <string name="TreePlantationAtWadego">पुणे में वृक्षारोपण</string>
+    <string name="SocialWorkOfNitin">नितीन भैया समाजसेवा करते हुए</string>
+    <string name="SocailDate">सामाजिक कार्य तारीख:</string>
+    <string name="person_name">व्यक्ति का नाम:</string>
+    <string name="party_name">दल का नाम:</string>
+    <string name="desgination">पद:</string>
+    <string name="about_party">पक्ष के बारे में:</string>
+    <string name="b_j_p">भारतीय जनता पार्टी</string>
+    <string name="nagar_sevek">महापालिका सेवक</string>
+    <string name="shahadeo_chavan">शहादेव चव्हाण</string>
+    <string name="date_of_news">१२/१२/२०१६</string>
+    <string name="time_news">११:सकाळी</string>
+    <string name="nitin_shelke_phots">नितीन शेळके फोटो</string>
+    <string name="high_school">हायस्कूल</string>
+    <string name="wadegon">वाडेगाव</string>
+    <string name="shivaji_vidyalya">शिवाजी विदयालय</string>
+    <string name="zp_school">जि.प.शाळा</string>
+    <string name="shubhangi_dhole">
+शुभांगी ढोले</string>
+    <string name="priyanka_patil">
+प्रियांक पाटील</string>
     <string-array name="lang_select">
         <item>English</item>
         <item>Hindi</item>

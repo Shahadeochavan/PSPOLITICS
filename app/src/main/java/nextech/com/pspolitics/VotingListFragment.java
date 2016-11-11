@@ -21,7 +21,7 @@ public class VotingListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().setTitle("Voting List");
+        getActivity().setTitle(R.string.VotingList);
         View rootView = inflater.inflate(R.layout.fragment_voting_list, container, false);
 
         ArrayList<VotingListPojo> listContact = getContactList();

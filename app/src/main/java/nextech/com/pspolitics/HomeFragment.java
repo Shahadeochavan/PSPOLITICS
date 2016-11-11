@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        getActivity().setTitle("Personal Phots");
+        getActivity().setTitle(R.string.PersonalInfo);
         View v = inflater.inflate(R.layout.fragment_about,
                 container, false);
 

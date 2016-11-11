@@ -29,7 +29,7 @@ public class SocialWorkFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle("Social Work");
+        getActivity().setTitle(R.string.SocialWork);
         View rootView= inflater.inflate(R.layout.fragment_rally, container, false);
 
         rv=(RecyclerView)rootView.findViewById(R.id.rv);
@@ -45,8 +45,8 @@ public class SocialWorkFragment extends Fragment {
 
     private void initializeData(){
         socialWorkPojos = new ArrayList<>();
-        socialWorkPojos.add(new SocialWorkPojo(R.drawable.social_work,"Tree Plantation at Wadegon","01/04/2015"));
-        socialWorkPojos.add(new SocialWorkPojo(R.drawable.social_work_tree,"Tree Plantation at Wadegon","01/04/2015"));
+        socialWorkPojos.add(new SocialWorkPojo(R.drawable.social_work,getContext().getString(R.string.TreePlantationAtWadego),getContext().getString(R.string.tree_date)));
+        socialWorkPojos.add(new SocialWorkPojo(R.drawable.social_work_tree,getContext().getString(R.string.TreePlantationAtWadego),getContext().getString(R.string.tree_date)));
 
     }
 

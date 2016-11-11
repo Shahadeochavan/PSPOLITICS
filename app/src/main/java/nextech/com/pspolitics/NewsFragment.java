@@ -22,7 +22,7 @@ public  class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle("News");
+        getActivity().setTitle(R.string.News);
      View rootView= inflater.inflate(R.layout.fragment_news, container, false);
         rv=(RecyclerView)rootView.findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(this.getContext());
@@ -36,9 +36,9 @@ public  class NewsFragment extends Fragment {
 
     private void initializeData(){
         persons = new ArrayList<>();
-        persons.add(new NewsListPojo("Shahadeo Chavan", "12/12/2016","11:AM",R.drawable.raje1,R.drawable.nitin, "NITIN SHELKE  PHOTS AT STUDIO",R.drawable.ic_menu_share));
-        persons.add(new NewsListPojo("Shubhangi Dhole", "12/12/2016","11:AM", R.drawable.prashant1,R.drawable.cat, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
-        persons.add(new NewsListPojo("Priyanka Patil", "12/12/2016","11:AM", R.drawable.prashant1,R.drawable.nature, "SAMPLE OF PHOTS",R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo(getContext().getString(nextech.com.pspolitics.R.string.shahadeo_chavan), getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.nitin, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo(getContext().getString(R.string.shubhangi_dhole),  getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.cat, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo(getContext().getString(R.string.priyanka_patil),  getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.nature, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
     }
 
     private void initializeAdapter(){

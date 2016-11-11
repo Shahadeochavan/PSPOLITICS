@@ -23,7 +23,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
-                android:text="Social Work of Nitin Bhaiya:"/>
+                android:text="@string/SocialWorkOfNitin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
                 android:id="@+id/text_date"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/dark_grreen"
-                android:text="Date :"
+                android:text="@string/SocailDate"
                 android:textSize="20dp"
                 android:textStyle="italic"
                 android:layout_marginTop="10dp"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/social_date"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="asxacsacscsc"
                 android:layout_toRightOf="@+id/text_date"
                 android:textColor="@color/dark_grreen"

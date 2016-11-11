@@ -25,7 +25,7 @@ public class VotingCentersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle("Voting Center");
+        getActivity().setTitle(R.string.VotingCenters);
         View rootView= inflater.inflate(R.layout.fragment_rally, container, false);
 
         rv=(RecyclerView)rootView.findViewById(R.id.rv);
@@ -41,9 +41,9 @@ public class VotingCentersFragment extends Fragment {
 
     private void initializeData(){
         votingCenterPojos = new ArrayList<>();
-        votingCenterPojos.add(new VotingCenterPojo("High Scholl","Wadwgon","01/01/2017","07:AM","08:AM"));
-        votingCenterPojos.add(new VotingCenterPojo("Z.P Scholl","Pune","01/01/2017","07:AM","08:AM"));
-        votingCenterPojos.add(new VotingCenterPojo("Shivaji Vidyalya","Malkapur","01/01/2017","07:AM","08:AM"));
+        votingCenterPojos.add(new VotingCenterPojo(getContext().getString(R.string.high_school),getContext().getString(R.string.wadegon),getContext().getString(R.string.voting_date),getContext().getString(R.string.voting_start_time),getContext().getString(R.string.voting_end_time)));
+        votingCenterPojos.add(new VotingCenterPojo(getContext().getString(R.string.zp_school),getContext().getString(R.string.wadegon),getContext().getString(R.string.voting_date),getContext().getString(R.string.voting_start_time),getContext().getString(R.string.voting_end_time)));
+        votingCenterPojos.add(new VotingCenterPojo(getContext().getString(R.string.shivaji_vidyalya),getContext().getString(R.string.wadegon),getContext().getString(R.string.voting_date),getContext().getString(R.string.voting_start_time),getContext().getString(R.string.voting_end_time)));
 
     }
     private void initializeAdapter(){

@@ -31,20 +31,6 @@ About six lakh employees would be benefited by the decision taken by Chief Minis
         a Hindu nationalist political party. </string>
     <string name="title_loading">Please Wait</string>
     <string name="msg_loading">Loading movies list…</string>
-    <string name="social"> About Party:
-        Child protection is a myriad of different experiences.
-        Sad, joyous, shocking, and scary are just a few descriptors.
-        There are not many jobs where you get to encounter uniquely
-        different situations every day.
-        These situations can bring out a
-        wide array of emotions from joy to anger.
-        To manage these situations and emotions,
-        supervision is one of the most important tools we have.
-        There is no one approach or perfect practice to strive for;
-        each situation demands its own assessment and tactic.
-        Just as no one worker is perfect, no one system is perfect.
-        If you can live with all of this,
-        you will discover that child protection is an awesome job.   </string>
     <string name="titel">Voting Center</string>
     <string name="action_language">Language</string>
     <string name="actins_marathi">मराठी</string>
@@ -62,4 +48,74 @@ About six lakh employees would be benefited by the decision taken by Chief Minis
     <string name="actins_fr">français</string>
     <string name="actins_es">
 Español</string>
+    <string name="PersonalInfo">Personal Info</string>
+    <string name="Gallery">Gallery</string>
+    <string name="AboutNitinShelke">About Nitin Shelke</string>
+    <string name="SocialWork">Social work</string>
+    <string name="Rally">Rally</string>
+    <string name="VotingSchedule">Voting Schedule</string>
+    <string name="VotingCenters">Voting Centers</string>
+    <string name="VotingList">Voting List</string>
+    <string name="Share">Share</string>
+    <string name="Send">Send</string>
+    <string name="Communicate">Communicate</string>
+    <string name="Election">Election</string>
+    <string name="TreePlantationAtWadego">Tree Plantation at Wadegon</string>
+    <string name="NitinShelke">Nitin Shelke</string>
+    <string name="address">Address:</string>
+    <string name="Location">Location:</string>
+    <string name="Date">Date :</string>
+    <string name="StartTime">Start Time :</string>
+    <string name="EndTime">End Time :</string>
+    <string name="zp_school">Z.P Scholl</string>
+    <string name="VotingDay">Voting Day:</string>
+    <string name="VotingDate">Voting Date:</string>
+    <string name="VotingStartTime">Voting Start Time:</string>
+    <string name="VotingEndTime">Voting End Time:</string>
+    <string name="SocialWorkOfNitin">Social Work of Nitin Bhaiya:</string>
+    <string name="SocailDate">Date :</string>
+    <string name="Rally_start_point">Rally Start Point:</string>
+    <string name="Rally_End_point">Rally End Point :</string>
+    <string name="Rally_Date">Rally Date:</string>
+    <string name="Rally_day">Rally Day:</string>
+    <string name="Rally_start_time">Rally Start Time:</string>
+    <string name="Rally_end_time">Rally End Time:</string>
+    <string name="wadegonchowk">Wadegon Chowk</string>
+    <string name="shirurphata">Shirur Phata</string>
+    <string name="date_of_rally">12/12/2016</string>
+    <string name="rally_start1">11:00 AM</string>
+    <string name="rally_end1">03:00 PM</string>
+    <string name="rally_day1">Sunday</string>
+    <string name="baner">Baner</string>
+    <string name="pune_station">Pune Station</string>
+    <string name="date_of_rally1">24/12/2016</string>
+    <string name="rally_start2">10:00 AM</string>
+    <string name="rally_end2">02:00 PM</string>
+    <string name="rally_day2">Monday</string>
+    <string name="karave_nagar">Katraj</string>
+    <string name="hadpasr">Hadpasr</string>
+    <string name="date_of_rally3">01/01/2017</string>
+    <string name="rally_start3">01:00 PM</string>
+    <string name="rally_end3">05:00 PM</string>
+    <string name="rally_day3">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="voting_date">" 012/01/2017"</string>
+    <string name="voting_start_time">07:00 AM</string>
+    <string name="voting_end_time">05:00 PM</string>
+    <string name="tree_date">01/04/2015</string>
+    <string name="person_name">Person Name:</string>
+    <string name="party_name">Party Name:</string>
+    <string name="desgination">Desgination:</string>
+    <string name="about_party">About Party:</string>
+    <string name="b_j_p">Bharatiya Janata Party</string>
+    <string name="nagar_sevek">Nagar Sevak</string>
+    <string name="shahadeo_chavan">Shahadeo Chavan</string>
+    <string name="date_of_news">12/12/2016</string>
+    <string name="time_news">11:AM</string>
+    <string name="nitin_shelke_phots">NITIN SHELKE  PHOTS AT STUDIO</string>
+    <string name="high_school">High Scholl</string>
+    <string name="wadegon">Wadwgon</string>
+    <string name="shivaji_vidyalya">Shivaji Vidyalya</string>
+    <string name="shubhangi_dhole">Shubhangi Dhole</string>
+    <string name="priyanka_patil">Priyanka Patil</string>
 </resources>

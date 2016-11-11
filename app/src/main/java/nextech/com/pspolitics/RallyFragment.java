@@ -24,7 +24,7 @@ public class RallyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle("Rally");
+        getActivity().setTitle(R.string.Rally);
         View rootView= inflater.inflate(R.layout.fragment_rally, container, false);
 
         rv=(RecyclerView)rootView.findViewById(R.id.rv);
@@ -40,9 +40,9 @@ public class RallyFragment extends Fragment {
 
     private void initializeData(){
         rallyPojos = new ArrayList<>();
-        rallyPojos.add(new RallyPojo("Wadegon Chowk", "Shirur Phata","12/12/2016", "11:00 AM","03:00 PM","Sunday"));
-        rallyPojos.add(new RallyPojo("Baner", "Pune Statiobn","24/12/2016", "10:00 AM","02:00 PM","Monday"));
-        rallyPojos.add(new RallyPojo("Karve Nagar", "Hadpasr","01/01/2017", "12:00 PM","04:00 PM","Saturday"));
+        rallyPojos.add(new RallyPojo(getContext().getString(R.string.wadegonchowk), getContext().getString(R.string.shirurphata),getContext().getString(R.string.date_of_rally), getContext().getString(R.string.rally_start1),getContext().getString(R.string.rally_end1),getContext().getString(R.string.rally_day1)));
+        rallyPojos.add(new RallyPojo(getContext().getString(R.string.baner), getContext().getString(R.string.pune_station),getContext().getString(R.string.date_of_rally1), getContext().getString(R.string.rally_start2),getContext().getString(R.string.rally_end2),getContext().getString(R.string.rally_day2)));
+        rallyPojos.add(new RallyPojo(getContext().getString(R.string.karave_nagar), getContext().getString(R.string.hadpasr),getContext().getString(R.string.date_of_rally3), getContext().getString(R.string.rally_start3),getContext().getString(R.string.rally_end3),getContext().getString(R.string.rally_day3)));
 
     }
 

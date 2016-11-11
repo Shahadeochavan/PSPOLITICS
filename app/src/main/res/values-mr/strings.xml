@@ -2,14 +2,114 @@
 <resources>
     <string name="News">बातमी</string>
     <string name="Party"> पार्टी</string>
-    <string name="action_devinfo">डेवेलपर</string>
-    <string name="action_logout">लॉग आउट</string>
-    <string name="action_search">खोज</string>
-    <string name="action_settings">सेटिंग</string>
-    <string name="share_app">एप शेयर कीजिए</string>
-    <string name="language_setting">भाषा बदलें</string>
-    <string name="action_change_pass">पासवर्ड बदलें</string>
+    <string name="VotingList">मतदान यादी</string>
+    <string name="VotingCenters">मतदान केंद्र</string>
+    <string name="Rally">रॅली</string>
+    <string name="VotingSchedule">मतदान वेळापत्रक</string>
+    <string name="Gallery">गॅलरी</string>
+    <string name="SocialWork">समाजकार्य</string>
+    <string name="AboutNitinShelke">नितीन शेळके बद्दल</string>
+    <string name="PersonalInfo">वैयक्तिक माहिती</string>
+    <string name="Share">शेअर</string>
+    <string name="Send">पाठवा</string>
+    <string name="Election">निवडणूक</string>
+    <string name="NitinShelkePhotosAtStudio">स्टुडिओ वेळी नितीन शेळके </string>
+    <string name="Communicate">संवाद</string>
+    <string name="TreePlantationAtWadego">पुणे येथे वृक्षारोपण</string>
+    <string name="NitinShelke">नितीन शेळके</string>
+    <string name="address">पत्ता:</string>
+    <string name="Location">स्थान:</string>
+    <string name="StartTime">सुरवातीची वेळ:</string>
+    <string name="EndTime">शेवटी वेळ:</string>
+    <string name="Date">तारीख:</string>
+    <string name="VotingDay">मतदान दिवस:</string>
+    <string name="VotingDate">मतदान तारीख:</string>
+    <string name="VotingStartTime">मतदान प्रारंभ वेळ:</string>
+    <string name="VotingEndTime">मतदान समाप्त वेळ:</string>
+    <string name="SocialWorkOfNitin">नितीन भैया समाजसेवा करताना </string>
+    <string name="SocailDate">सामाजिक कार्य तारीख:</string>
+    <string name="Rally_start_point">रॅली प्रारंभ बिंदू:</string>
+    <string name="Rally_End_point">रॅली शेवटचा बिंदू:</string>
+    <string name="Rally_Date">रॅली दिनांक:</string>
+    <string name="Rally_day">रॅली दिवस:</string>
+    <string name="Rally_start_time">रॅली प्रारंभ वेळ:</string>
+    <string name="Rally_end_time">रॅली समाप्त वेळ:</string>
+    <string name="about_nitin">
+नितीन शेळके, भारतात वाडेगाव गावात मोठा झालो
+        रस्त्यावर व्यापारी होता. तो एक तरुण म्हणून राजकारणात प्रवेश केला आणि
+        पटकन राष्ट्रीय स्वयंसेवक संघाचे मतभेद विसरून माध्यमातून गुलाब,
+        हिंदू राष्ट्रवादी राजकीय पक्ष. शेळके नंतर २००५ मध्ये मुख्य प्रवाहात भारतीय जनता पक्षात प्रवेश केला,
+        अखेरीस राष्ट्रीय सचिव होत. २०१० मध्ये त्यांनी१,००० हून अधिक मृत्यू जबाबदार आरोपित
+        नागरी अशांतता दरम्यान मुस्लिम परंतु नंतर exonerated.
+        नितीन शेळके महाराष्ट्र, भारतात वाडेगाव या छोट्या नगरात मध्ये जन्म झाला.
+        त्यांचे वडील कुटुंबाच्या कधी कठीण कोण रस्त्यावर व्यापार होता. तरुण नितीन आणि
+        त्याचा भाऊ मदत करण्यास बस टर्मिनल जवळ चहा विकले.
+        शाळेत एक सरासरी विद्यार्थी असले, तरी शेळके लायब्ररी मध्ये तास खर्च आणि मजबूत वाद घालणारा म्हणून ओळखले जात होते.
+        त्याच्या लवकर युवकासाठी, तो अखिल भारतीय विद्यार्थी परिषदेचे सामील झाले,
+        राष्ट्रीय स्वयंसेवक संघाचे विद्यार्थी विंग (RSS),
+        हिंदू राष्ट्रवादी राजकीय पक्ष.</string>
+    <string name="about_party_bjp">
 
+भाजपचे उद्भव, भारतीय जनसंघाचे पहात श्यामा
+         प्रसाद मुखर्जी यांनी 1951 मध्ये स्थापना केली.
+        1977 मध्ये आणीबाणी राज्य केल्यानंतर,
+        जनसंघाचे इतर अनेक विलीन
+        तयार करण्यासाठी जनता पक्षाचे पक्ष;
+        तो 1977 मध्ये पदाधिकारी काँग्रेस पक्ष पराभूत
+        सार्वत्रिक निवडणूक. शक्ती तीन वर्षे केल्यानंतर,
+        1980 मध्ये जनता पक्ष विसर्जित
+        भाजप तयार reconvening तत्कालीन जनसंघाचे सदस्य.
+        सुरुवातीला अयशस्वी असले तरी केवळ दोन जागा जिंकून
+        1984 निवडणुकीत,
+        तो परत वर शक्ती वाढ झाली आहे
+        राम जन्मभूमि चळवळ.
+        अनेक राज्य निवडणुकीत विजय खालील
+        राष्ट्रीय निवडणुकीत चांगले कामगिरी
+        भाजप 1996 मध्ये संसदेत सर्वात मोठा पक्ष झाला;
+        तथापि, तो संसदेच्या खालच्या घर बहुमत नव्हता
+        आणि सरकार केवळ 13 दिवस खेळलेला.
+    </string>
+    <string name="wadegonchowk">वाडेगाव चौक.</string>
+    <string name="shirurphata">शिरूर स्टेशन</string>
+    <string name="date_of_rally">१२/१२/२०१६</string>
+    <string name="rally_start1">११:00 सकाळी</string>
+    <string name="rally_end1">0३:00 दुपारी</string>
+    <string name="rally_day1">रविवारी</string>
+    <string name="baner">बानेर</string>
+    <string name="pune_station">पुणे स्टेशन</string>
+    <string name="date_of_rally1">२४/१२/२०१६</string>
+    <string name="rally_start2">१०:00 सकाळी</string>
+    <string name="rally_end2">०२:०० दुपारी</string>
+    <string name="rally_day2">सोमवार</string>
+    <string name="karave_nagar">काञज</string>
+    <string name="hadpasr">हडपसर</string>
+    <string name="date_of_rally3">०१/०१/२०१७</string>
+    <string name="rally_start3">०१:०० दुपारी</string>
+    <string name="rally_end3">०५:०० संध्याकाळी</string>
+    <string name="rally_day3">शनिवार</string>
+    <string name="sunday">रविवारी</string>
+    <string name="voting_date">१२/०१/२०१७</string>
+    <string name="voting_start_time">०७:00 सकाळी</string>
+    <string name="voting_end_time">०५:०० संध्याकाळी</string>
+    <string name="tree_date">०१/०४/२०१६</string>
+    <string name="person_name">व्यक्ती नाव:</string>
+    <string name="party_name">पार्टी नाव:</string>
+    <string name="desgination">पद:</string>
+    <string name="about_party">पक्ष बद्दल:</string>
+    <string name="b_j_p">भारतीय जनता पक्षाचे</string>
+    <string name="nagar_sevek">महापालिका सेवक</string>
+    <string name="shahadeo_chavan">शहादेव चव्हाण</string>
+    <string name="date_of_news">१२/१२/२०१६</string>
+    <string name="time_news">११:सकाळी</string>
+    <string name="nitin_shelke_phots">नितीन शेळके फोटो</string>
+    <string name="high_school">हायस्कूल</string>
+    <string name="wadegon">वाडेगाव</string>
+    <string name="shivaji_vidyalya">शिवाजी विदयालय</string>
+    <string name="zp_school">जि.प.शाळा</string>
+    <string name="shubhangi_dhole">
+शुभांगी ढोले</string>
+    <string name="priyanka_patil">
+प्रियांक पाटील</string>
     <!-- Language select dialog -->
     <string-array name="lang_select">
         <item>English</item>

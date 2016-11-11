@@ -1,5 +1,6 @@
 package nextech.com.pspolitics;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -20,9 +21,19 @@ import java.util.Locale;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private WebView webView;
+
+    SharedPreferences mPrefs1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this);
+        String languageToLoad = mPrefs1.getString("languagePref", Locale.getDefault().getLanguage());
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -36,16 +47,6 @@ public class HomeActivity extends AppCompatActivity
         else {
             Toast.makeText(this, "Please check your wireless connection and try again.", Toast.LENGTH_SHORT).show();
         }*/
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        Configuration config = getBaseContext().getResources().getConfiguration();
-
-        String lang = settings.getString("LANG", "");
-        if (! "".equals(lang) && ! config.locale.getLanguage().equals(lang)) {
-            Locale locale = new Locale(lang);
-            Locale.setDefault(locale);
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-        }
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
         }
@@ -79,44 +80,69 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = mPrefs1.edit();
+        Intent intent=new Intent(this,HomeActivity.class);
         switch (item.getItemId()) {
             case R.id.get_marathi:
-                String languageToLoad = "mr"; // your language
+                /*String languageToLoad = "mr"; // your language
                 Locale locale = new Locale(languageToLoad);
                 Locale.setDefault(locale);
                 Configuration config = new Configuration();
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config,
                         getBaseContext().getResources().getDisplayMetrics());
-                this.setContentView(R.layout.activity_home);
-                break;
-            case R.id.get_hindi:
-                languageToLoad = "hi"; // your language
-                locale = new Locale(languageToLoad);
-                Locale.setDefault(locale);
-                config = new Configuration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config,
-                        getBaseContext().getResources().getDisplayMetrics());
-                this.setContentView(R.layout.activity_home);
+                this.setContentView(R.layout.activity_home);*/
 
-                break;
-            case R.id.get_english:
-                languageToLoad = "en"; // your language
+                editor.putString("languagePref", "mr");
+                editor.commit(); // Very important to save the preference
+                finish();
+                startActivity(intent);
+                return true;
+            case R.id.get_hindi:
+                /*languageToLoad = "hi"; // your language
                 locale = new Locale(languageToLoad);
                 Locale.setDefault(locale);
                 config = new Configuration();
                 config.locale = locale;
                 getBaseContext().getResources().updateConfiguration(config,
                         getBaseContext().getResources().getDisplayMetrics());
-                this.setContentView(R.layout.activity_home);
-                break;
+                this.setContentView(R.layout.activity_home);*/
+
+
+                editor.putString("languagePref", "hi");
+                editor.commit(); // Very important to save the preference
+                finish();
+                startActivity(intent);
+                return true;
+
+            case R.id.get_english:
+                /*languageToLoad = "en"; // your language
+                locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+                this.setContentView(R.layout.activity_home);*/
+
+
+
+                editor.putString("languagePref", "en");
+                editor.commit(); // Very important to save the preference
+                finish();
+
+                startActivity(intent);
+
+                return true;
             default:
-                break;
             // If we got here, the user's action was not recognized.
             // Invoke the superclass to handle it.
 
         }
+
+
+
         return super.onOptionsItemSelected(item);
 
 
@@ -173,13 +199,14 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        Locale locale = null;
-        if (locale != null)
-        {
-            newConfig.locale = locale;
-            Locale.setDefault(locale);
-            getBaseContext().getResources().updateConfiguration(newConfig, getBaseContext().getResources().getDisplayMetrics());
-        }
+        mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this);
+        String languageToLoad = mPrefs1.getString("languagePref", Locale.getDefault().getLanguage());
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+        setContentView(R.layout.activity_home);
     }
 
 }
