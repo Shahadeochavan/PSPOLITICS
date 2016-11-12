@@ -106,10 +106,24 @@
     <string name="wadegon">वाडेगाव</string>
     <string name="shivaji_vidyalya">शिवाजी विदयालय</string>
     <string name="zp_school">जि.प.शाळा</string>
-    <string name="shubhangi_dhole">
-शुभांगी ढोले</string>
-    <string name="priyanka_patil">
-प्रियांक पाटील</string>
+    <string name="shubhangi_dhole">शुभांगी ढोले</string>
+    <string name="priyanka_patil">प्रियांक पाटील</string>
+    <string name="Meeting">सभा</string>
+    <string name="meeting_date">१२/१२/२०१६</string>
+    <string name="meeting_day">रविवारी</string>
+    <string name="meeting_start_time">११:00 सकाळी</string>
+    <string name="meeting_end_time">०१:०० दुपारी</string>
+    <string name="meeting_location">वाडेगाव</string>
+    <string name="meeting_person_name">व्यक्ती नाव:</string>
+    <string name="text_meeting_date">सभा  तारीख:</string>
+    <string name="text_meeting_day">सभा दिवस :</string>
+    <string name="text_meeting_start">सभा प्रारंभ:</string>
+    <string name="text_meeting_end">सभा अंत :</string>
+    <string name="text_meeting_location">सभा स्थान:</string>
+    <string name="text_nitin_shelke">नाव:नितीन शेळके</string>
+    <string name="text_education">शिक्षण:बी.ए.</string>
+    <string name="text_working">व्यवसाय :शेतकरी</string>
+    <string name="text_address">पत्ता :वाडेगाव</string>
     <!-- Language select dialog -->
     <string-array name="lang_select">
         <item>English</item>

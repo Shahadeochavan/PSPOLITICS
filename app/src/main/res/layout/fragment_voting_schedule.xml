@@ -42,14 +42,14 @@
                 android:layout_below="@+id/text_voting_day"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
-                android:textColor="@color/colourBlue"
+                android:textColor="@color/dark_blue"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_date"
-                android:textColor="@color/colourBlue"
+                android:textColor="@color/dark_blue"
                 android:layout_marginTop="10sp"
                 android:layout_below="@id/voting_day"
                 android:layout_toRightOf="@+id/text_voting_date"
@@ -64,7 +64,7 @@
                 android:layout_toRightOf="@+id/text_start_time"
                 android:layout_below="@+id/voting_date"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/red"
+                android:textColor="@color/dark_blue"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_marginLeft="10dp"/>
@@ -74,7 +74,7 @@
                 android:id="@+id/voting_start"
                 android:layout_marginTop="10sp"
                 android:layout_marginLeft="5dp"
-                android:textColor="@color/red"
+                android:textColor="@color/dark_blue"
                 android:layout_toRightOf="@+id/text_voting_start_time"
                 android:layout_below="@+id/voting_date"
                 android:textSize="20sp"
@@ -87,7 +87,7 @@
                 android:layout_toRightOf="@+id/text_start_time"
                 android:layout_below="@+id/text_voting_start_time"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/dark_grreen"
+                android:textColor="@color/dark_blue"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_marginLeft="10dp"/>
@@ -98,7 +98,7 @@
                 android:layout_marginTop="10sp"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/text_voting_end_time"
-                android:textColor="@color/dark_grreen"
+                android:textColor="@color/dark_blue"
                 android:layout_below="@+id/voting_start"
                 android:textSize="20sp"
                 android:textStyle="bold" />

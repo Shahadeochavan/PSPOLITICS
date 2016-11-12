@@ -15,6 +15,7 @@ public class Util {
 
     public static boolean isInternetAvailable(Context context)
     {
+
         NetworkInfo info = (NetworkInfo) ((ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 

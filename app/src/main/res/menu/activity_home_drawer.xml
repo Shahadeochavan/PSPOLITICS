@@ -15,7 +15,7 @@
             android:title="@string/Gallery" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_action_accessibility"
             android:title="@string/AboutNitinShelke" />
         <item
             android:id="@+id/nav_social_work"
@@ -30,8 +30,12 @@
                 android:icon="@drawable/ic_maps_directions_bike"
                 android:title="@string/Rally" />
             <item
+                android:id="@+id/nav_meeting"
+                android:icon="@drawable/ic_action_account_child"
+                android:title="@string/Meeting" />
+            <item
                 android:id="@+id/nav_news"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_action_account_circle"
                 android:title="@string/News" />
             <item
                 android:id="@+id/nav_party"
@@ -39,20 +43,20 @@
                 android:title="@string/Party" />
             <item
                 android:id="@+id/nav_voting_schedule"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_av_new_releases"
                 android:title="@string/VotingSchedule" />
             <item
                 android:id="@+id/nav_voting_centers"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_social_school"
                 android:title="@string/VotingCenters" />
             <item
                 android:id="@+id/nav_voting_list"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_av_my_library_music"
                 android:title="@string/VotingList"/>
         </menu>
     </item>
 
-
+<!--
     <item android:title="@string/Communicate">
         <menu>
             <item
@@ -64,7 +68,7 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/Send" />
         </menu>
-    </item>
+    </item>-->
 
 
 </menu>

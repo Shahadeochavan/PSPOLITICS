@@ -16,6 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.Toast;
+
+import com.nextech.util.Util;
 
 import java.util.Locale;
 public class HomeActivity extends AppCompatActivity
@@ -37,6 +40,15 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if(Util.isInternetAvailable(HomeActivity.this)) //returns true if internet available
+        {
+
+            //do something. loadwebview.
+        }
+        else
+        {
+            Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_LONG).show();
+        }
  /*       ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cm.getActiveNetworkInfo();
         if (info != null) {
@@ -60,6 +72,7 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -156,8 +169,8 @@ public class HomeActivity extends AppCompatActivity
        FragmentManager fragmentManager= getSupportFragmentManager();
      FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
         if (id == R.id.nav_home) {
-            HomeFragment homeFragment= new HomeFragment();
-            fragmentTransaction.replace(R.id.fragment_container,homeFragment).commit();
+            PersonalInfoFragment personalInfoFragment= new PersonalInfoFragment();
+            fragmentTransaction.replace(R.id.fragment_container,personalInfoFragment).commit();
         } else if (id == R.id.nav_about) {
             AboutFragment aboutFragment= new AboutFragment();
             fragmentTransaction.replace(R.id.fragment_container,aboutFragment).commit();
@@ -167,13 +180,8 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_social_work) {
             SocialWorkFragment socialWorkFragment = new SocialWorkFragment();
             fragmentTransaction.replace(R.id.fragment_container,socialWorkFragment).commit();
-        } else if (id == R.id.nav_share) {
-            HomeFragment homeFragment= new HomeFragment();
-            fragmentTransaction.replace(R.id.fragment_container,homeFragment).commit();
-        } else if (id == R.id.nav_send) {
-            HomeFragment homeFragment= new HomeFragment();
-            fragmentTransaction.replace(R.id.fragment_container,homeFragment).commit();
-        }else  if(id==R.id.nav_voting_schedule){
+        }
+        else  if(id==R.id.nav_voting_schedule){
             VotingScheduleFragment votingScheduleFragment= new VotingScheduleFragment();
             fragmentTransaction.replace(R.id.fragment_container,votingScheduleFragment).commit();
         }else if(id== R.id.nav_voting_centers){
@@ -189,6 +197,14 @@ public class HomeActivity extends AppCompatActivity
         else if(id==R.id.nav_party){
             PartyFragment partyFragment =new PartyFragment();
             fragmentTransaction.replace(R.id.fragment_container,partyFragment).commit();
+        }
+        else if(id==R.id.nav_meeting){
+            MeetingFragment meetingFragment =new MeetingFragment();
+            fragmentTransaction.replace(R.id.fragment_container,meetingFragment).commit();
+        }
+        else if(id==R.id.nav_gallery){
+            GalleryFragment galleryFragment =new GalleryFragment();
+            fragmentTransaction.replace(R.id.fragment_container,galleryFragment).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
