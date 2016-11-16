@@ -1,5 +1,8 @@
 package nextech.com.pspolitics;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -16,7 +19,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import com.nextech.util.Util;
 
@@ -24,7 +26,6 @@ import java.util.Locale;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private WebView webView;
-
     SharedPreferences mPrefs1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,25 +41,12 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(Util.isInternetAvailable(HomeActivity.this)) //returns true if internet available
-        {
+        Util.isConnectingToInternet(getApplicationContext());
+        if(!Util.isConnectingToInternet(getApplicationContext())){
+           showAlertDialog(HomeActivity.this, "No Internet Connection",
+                    "You don't have internet connection.", false);
+        }
 
-            //do something. loadwebview.
-        }
-        else
-        {
-            Toast.makeText(HomeActivity.this,"No Internet Connection",Toast.LENGTH_LONG).show();
-        }
- /*       ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo info = cm.getActiveNetworkInfo();
-        if (info != null) {
-            if (!info.isConnected()) {
-                Toast.makeText(this, "Please check your wireless connection and try again.", Toast.LENGTH_SHORT).show();
-            }
-        }
-        else {
-            Toast.makeText(this, "Please check your wireless connection and try again.", Toast.LENGTH_SHORT).show();
-        }*/
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
         }
@@ -72,7 +60,33 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    public void showAlertDialog(Context context, String title, String message, Boolean status) {
+        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
 
+        // Setting Dialog Title
+        alertDialog.setTitle(title);
+
+        // Setting Dialog Message
+        alertDialog.setMessage(message);
+
+        // Setting alert dialog icon
+        alertDialog.setIcon((status) ? R.drawable.ic_action_done : R.drawable.ic_av_not_interested);
+
+
+        // Setting OK Button
+        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                    //code for exit here it send to home screen
+                    Intent startMain = new Intent(Intent.ACTION_MAIN);
+                    startMain.addCategory(Intent.CATEGORY_HOME);
+                    startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(startMain);
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
+    }
 
     @Override
     public void onBackPressed() {

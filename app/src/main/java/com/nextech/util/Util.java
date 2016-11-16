@@ -3,40 +3,22 @@ package com.nextech.util;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 
-/**
- * Created by welcome on 11/7/2016.
- */
 public class Util {
-    private static final String TAG = Util.class.getSimpleName();
 
-
-
-    public static boolean isInternetAvailable(Context context)
-    {
-
-        NetworkInfo info = (NetworkInfo) ((ConnectivityManager)
-                context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-
-        if (info == null)
+    public static boolean isConnectingToInternet(Context context){
+        ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null)
         {
-            Log.d(TAG,"no internet connection");
-            return false;
-        }
-        else
-        {
-            if(info.isConnected())
-            {
-                Log.d(TAG," internet connection available...");
-                return true;
-            }
-            else
-            {
-                Log.d(TAG," internet connection");
-                return true;
-            }
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null)
+                for (int i = 0; i < info.length; i++)
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED)
+                    {
+                        return true;
+                    }
 
         }
+        return false;
     }
 }
