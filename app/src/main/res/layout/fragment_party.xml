@@ -17,7 +17,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/nitin"
+            android:src="@drawable/nitin1"
             android:id="@+id/person_photo_party"
             android:layout_marginRight="16dp"
             />

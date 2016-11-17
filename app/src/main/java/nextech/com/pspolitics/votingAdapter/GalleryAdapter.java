@@ -15,76 +15,67 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-
 import nextech.com.pspolitics.R;
-import nextech.com.pspolitics.votinglistpojo.GalleryPojo;
 
 /**
  * Created by welcome on 11/12/2016.
  */
   public class GalleryAdapter extends BaseAdapter {
-    private static ArrayList<GalleryPojo> listPhoto;
-
-    private LayoutInflater mInflater;
     private Animator mCurrentAnimator;
 
     private int mShortAnimationDuration;
 
     private Context mContext;
+    LayoutInflater inflater;
 
-    public GalleryAdapter(Context context, ArrayList<GalleryPojo> results) {
-        listPhoto = results;
-        mInflater = LayoutInflater.from(context);
+    public GalleryAdapter(Context c) {
+        mContext = c;
     }
 
-    @Override
     public int getCount() {
-        // TODO Auto-generated method stub
-        return listPhoto.size();
+        return mThumbIds.length;
     }
 
-    @Override
-    public Object getItem(int arg0) {
-        // TODO Auto-generated method stub
-        return listPhoto.get(arg0);
+    public Object getItem(int position) {
+        return mThumbIds[position];
     }
 
-    @Override
-    public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
-        return arg0;
+    public long getItemId(int position) {
+        return 0;
     }
 
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        final ViewHolder holder;
+        final ImageView imageView;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.gallery_list, null);
-            holder = new ViewHolder();
-            holder.viewImage = (ImageView) convertView.findViewById(R.id.imageView1);
-            holder.viewImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-            convertView.setTag(holder);
+            imageView = new ImageView(mContext);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            imageView = (ImageView) convertView;
         }
-        holder.viewImage.setOnClickListener(new View.OnClickListener() {
+
+        imageView.setImageResource(mThumbIds[position]);
+        imageView.setTag(mThumbIds[position]);
+        imageView.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-                int id=(Integer)view.getTag();
-                zoomImageFromThumb(view,id);
+            public void onClick(View arg0) {
+                int id = (Integer) arg0.getTag();
+                zoomImageFromThumb(arg0, id);
             }
         });
 
-        holder.viewImage.setImageResource(listPhoto.get(position).getImages());
-        return convertView;
+        return imageView;
     }
 
-    static class ViewHolder {
-        ImageView viewImage;
-    }
+    // References to our images in res > drawable
+    public Integer[] mThumbIds = {R.drawable.raje1, R.drawable.nn,
+            R.drawable.nitin1, R.drawable.nn,
+            R.drawable.nitin13, R.drawable.nn,
+            R.drawable.nitin3, R.drawable.nn,
+            R.drawable.nitin2, R.drawable.nn,
+            R.drawable.nitin4, R.drawable.nn};
+
 
     private void zoomImageFromThumb(final View thumbView, int imageResId) {
         // If there's an animation in progress, cancel it immediately and
@@ -95,35 +86,18 @@ import nextech.com.pspolitics.votinglistpojo.GalleryPojo;
 
         // Load the high-resolution "zoomed-in" image.
         final ImageView expandedImageView = (ImageView) ((Activity) mContext)
-                .findViewById(R.id.imageView1);
+                .findViewById(R.id.expanded_image);
         expandedImageView.setImageResource(imageResId);
 
-        // Calculate the starting and ending bounds for the zoomed-in image.
-        // This step
-        // involves lots of math. Yay, math.
         final Rect startBounds = new Rect();
         final Rect finalBounds = new Rect();
         final Point globalOffset = new Point();
 
-        // The start bounds are the global visible rectangle of the thumbnail,
-        // and the
-        // final bounds are the global visible rectangle of the container view.
-        // Also
-        // set the container view's offset as the origin for the bounds, since
-        // that's
-        // the origin for the positioning animation properties (X, Y).
         thumbView.getGlobalVisibleRect(startBounds);
         ((Activity) mContext).findViewById(R.id.container)
                 .getGlobalVisibleRect(finalBounds, globalOffset);
         startBounds.offset(-globalOffset.x, -globalOffset.y);
         finalBounds.offset(-globalOffset.x, -globalOffset.y);
-
-        // Adjust the start bounds to be the same aspect ratio as the final
-        // bounds using the
-        // "center crop" technique. This prevents undesirable stretching during
-        // the animation.
-        // Also calculate the start scaling factor (the end scaling factor is
-        // always 1.0).
         float startScale;
         if ((float) finalBounds.width() / finalBounds.height() > (float) startBounds
                 .width() / startBounds.height()) {
@@ -142,21 +116,12 @@ import nextech.com.pspolitics.votinglistpojo.GalleryPojo;
             startBounds.bottom += deltaHeight;
         }
 
-        // Hide the thumbnail and show the zoomed-in view. When the animation
-        // begins,
-        // it will position the zoomed-in view in the place of the thumbnail.
         thumbView.setAlpha(0f);
         expandedImageView.setVisibility(View.VISIBLE);
 
-        // Set the pivot point for SCALE_X and SCALE_Y transformations to the
-        // top-left corner of
-        // the zoomed-in view (the default is the center of the view).
         expandedImageView.setPivotX(0f);
         expandedImageView.setPivotY(0f);
 
-        // Construct and run the parallel animation of the four translation and
-        // scale properties
-        // (X, Y, SCALE_X, and SCALE_Y).
         AnimatorSet set = new AnimatorSet();
         set.play(
                 ObjectAnimator.ofFloat(expandedImageView, View.X,
@@ -182,10 +147,6 @@ import nextech.com.pspolitics.votinglistpojo.GalleryPojo;
         });
         set.start();
         mCurrentAnimator = set;
-
-        // Upon clicking the zoomed-in image, it should zoom back down to the
-        // original bounds
-        // and show the thumbnail instead of the expanded image.
         final float startScaleFinal = startScale;
         expandedImageView.setOnClickListener(new View.OnClickListener() {
             @Override

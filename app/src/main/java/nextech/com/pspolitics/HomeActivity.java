@@ -91,10 +91,27 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        FragmentManager manager = getSupportFragmentManager();
+
+        if (manager.getBackStackEntryCount() > 1) {
+            // If there are back-stack entries, leave the FragmentActivity
+            // implementation take care of them.
+            manager.popBackStack();
+
         } else {
-            super.onBackPressed();
+            // Otherwise, ask user if he wants to leave :)
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.really_exit)
+                    .setMessage(R.string.sure_exit)
+                    .setNegativeButton(R.string.no_no, null)
+                    .setPositiveButton(R.string.yes_yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            // MainActivity.super.onBackPressed();
+                            finish();
+                            moveTaskToBack(true);
+                        }
+                    }).create().show();
         }
     }
 
@@ -107,36 +124,18 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        item.setChecked(true);
         mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = mPrefs1.edit();
         Intent intent=new Intent(this,HomeActivity.class);
         switch (item.getItemId()) {
             case R.id.get_marathi:
-                /*String languageToLoad = "mr"; // your language
-                Locale locale = new Locale(languageToLoad);
-                Locale.setDefault(locale);
-                Configuration config = new Configuration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config,
-                        getBaseContext().getResources().getDisplayMetrics());
-                this.setContentView(R.layout.activity_home);*/
-
                 editor.putString("languagePref", "mr");
                 editor.commit(); // Very important to save the preference
                 finish();
                 startActivity(intent);
                 return true;
             case R.id.get_hindi:
-                /*languageToLoad = "hi"; // your language
-                locale = new Locale(languageToLoad);
-                Locale.setDefault(locale);
-                config = new Configuration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config,
-                        getBaseContext().getResources().getDisplayMetrics());
-                this.setContentView(R.layout.activity_home);*/
-
-
                 editor.putString("languagePref", "hi");
                 editor.commit(); // Very important to save the preference
                 finish();
@@ -144,31 +143,15 @@ public class HomeActivity extends AppCompatActivity
                 return true;
 
             case R.id.get_english:
-                /*languageToLoad = "en"; // your language
-                locale = new Locale(languageToLoad);
-                Locale.setDefault(locale);
-                config = new Configuration();
-                config.locale = locale;
-                getBaseContext().getResources().updateConfiguration(config,
-                        getBaseContext().getResources().getDisplayMetrics());
-                this.setContentView(R.layout.activity_home);*/
-
-
-
                 editor.putString("languagePref", "en");
                 editor.commit(); // Very important to save the preference
                 finish();
-
                 startActivity(intent);
 
                 return true;
             default:
-            // If we got here, the user's action was not recognized.
-            // Invoke the superclass to handle it.
 
         }
-
-
 
         return super.onOptionsItemSelected(item);
 
@@ -220,7 +203,6 @@ public class HomeActivity extends AppCompatActivity
             GalleryFragment galleryFragment =new GalleryFragment();
             fragmentTransaction.replace(R.id.fragment_container,galleryFragment).commit();
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

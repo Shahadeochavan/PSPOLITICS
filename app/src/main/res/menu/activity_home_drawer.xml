@@ -25,6 +25,7 @@
 
     <item android:title="@string/Election">
         <menu>
+            <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_rally"
                 android:icon="@drawable/ic_maps_directions_bike"
@@ -53,22 +54,10 @@
                 android:id="@+id/nav_voting_list"
                 android:icon="@drawable/ic_av_my_library_music"
                 android:title="@string/VotingList"/>
+            </group>
         </menu>
     </item>
 
-<!--
-    <item android:title="@string/Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/Send" />
-        </menu>
-    </item>-->
 
 
 </menu>

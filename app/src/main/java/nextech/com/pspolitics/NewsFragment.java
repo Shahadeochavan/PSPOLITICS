@@ -36,7 +36,7 @@ public  class NewsFragment extends Fragment {
 
     private void initializeData(){
         persons = new ArrayList<>();
-        persons.add(new NewsListPojo(getContext().getString(nextech.com.pspolitics.R.string.shahadeo_chavan), getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.nitin, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
+        persons.add(new NewsListPojo(getContext().getString(nextech.com.pspolitics.R.string.shahadeo_chavan), getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.nitin7, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
         persons.add(new NewsListPojo(getContext().getString(R.string.shubhangi_dhole),  getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.cat, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
         persons.add(new NewsListPojo(getContext().getString(R.string.priyanka_patil),  getContext().getString(nextech.com.pspolitics.R.string.date_of_news),getContext().getString(nextech.com.pspolitics.R.string.time_news),R.drawable.raje1,R.drawable.nature, getContext().getString(nextech.com.pspolitics.R.string.nitin_shelke_phots),R.drawable.ic_menu_share));
     }

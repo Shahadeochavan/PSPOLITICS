@@ -124,6 +124,15 @@
     <string name="text_education">शिक्षण:बी.ए.</string>
     <string name="text_working">व्यवसाय :शेतकरी</string>
     <string name="text_address">पत्ता :वाडेगाव</string>
+    <string name="ok">ठीक आहे</string>
+    <!-- Preference framework strings. -->
+    <string name="cancel">रद्द</string>
+    <!-- Preference framework strings. -->
+    <string name="yes_yes">होय</string>
+    <!-- Preference framework strings. -->
+    <string name="no_no">नाही</string>
+    <string name="really_exit">खरोखर बाहेर पडा?</string>
+    <string name="sure_exit">आपण मधून निर्गमन करू इच्छिता खात्री आहे?</string>
     <!-- Language select dialog -->
     <string-array name="lang_select">
         <item>English</item>
