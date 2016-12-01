@@ -53,9 +53,9 @@ public class SocialWorkAdapter extends RecyclerView.Adapter<SocialWorkAdapter.So
 
     @Override
     public void onBindViewHolder(SocialViewHolder socialViewHolder, int i) {
-        socialViewHolder.textsocialPhots.setImageResource(socialWorkPojos.get(i).socialPhotos);
-        socialViewHolder.textsocialinformation.setText(socialWorkPojos.get(i).socialInformation);
-        socialViewHolder.textsocialDate.setText(socialWorkPojos.get(i).socialDate);
+        socialViewHolder.textsocialPhots.setImageResource(socialWorkPojos.get(i).getSocialPhotos());
+        socialViewHolder.textsocialinformation.setText(socialWorkPojos.get(i).getSocialInformation());
+        socialViewHolder.textsocialDate.setText(socialWorkPojos.get(i).getSocialDate());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package nextech.com.pspolitics.votingAdapter;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +17,17 @@ import nextech.com.pspolitics.votinglistpojo.RallyPojo;
  * Created by welcome on 10/21/2016.
  */
 public class RallyAdapter extends RecyclerView.Adapter<RallyAdapter.RallyViewHolder> {
+    public RallyAdapter(Context context) {
+    }
+    private Context context;
+    private LayoutInflater inflater;
+
+
+    public RallyAdapter(Context context, List<RallyPojo> data){
+        this.context=context;
+        inflater= LayoutInflater.from(context);
+        this.rallyPojos=data;
+    }
     public static class RallyViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;
@@ -58,17 +70,21 @@ public class RallyAdapter extends RecyclerView.Adapter<RallyAdapter.RallyViewHol
 
     @Override
     public void onBindViewHolder(RallyViewHolder rallyViewHolder, int i) {
-        rallyViewHolder.rallyStartPlace.setText(rallyPojos.get(i).startPlaceName);
-        rallyViewHolder.textDay.setText(rallyPojos.get(i).dayRally);
-        rallyViewHolder.rallyEndPlace.setText(rallyPojos.get(i).endPlaceName);
-        rallyViewHolder.rallytextDate.setText(rallyPojos.get(i).rallyDate);
-        rallyViewHolder.rallyStartTime.setText(rallyPojos.get(i).startTime);
-        rallyViewHolder.rallyEndTime.setText(rallyPojos.get(i).endTime);
+        rallyViewHolder.rallyStartPlace.setText(rallyPojos.get(i).getStartPlaceName());
+        rallyViewHolder.textDay.setText(rallyPojos.get(i).getDayRally());
+        rallyViewHolder.rallyEndPlace.setText(rallyPojos.get(i).getEndPlaceName());
+        rallyViewHolder.rallytextDate.setText(rallyPojos.get(i).getRallyDate());
+        rallyViewHolder.rallyStartTime.setText(rallyPojos.get(i).getStartTime());
+        rallyViewHolder.rallyEndTime.setText(rallyPojos.get(i).getEndTime());
+
     }
 
     @Override
     public int getItemCount() {
         return rallyPojos.size();
     }
+
+
 }
+
 

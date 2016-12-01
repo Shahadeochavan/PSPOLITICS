@@ -58,11 +58,11 @@ public class VotingCenterAdapter extends RecyclerView.Adapter<VotingCenterAdapte
 
     @Override
     public void onBindViewHolder(VotingCenterViewHolder votingCenterViewHolder, int i) {
-        votingCenterViewHolder.textPlacename.setText(votingCenterPojos.get(i).placeName);
-        votingCenterViewHolder.textAddress.setText(votingCenterPojos.get(i).address);
-        votingCenterViewHolder.textDate.setText(votingCenterPojos.get(i).date);
-        votingCenterViewHolder.textStartTime.setText(votingCenterPojos.get(i).startTime);
-        votingCenterViewHolder.textEndTime.setText(votingCenterPojos.get(i).endTime);
+        votingCenterViewHolder.textPlacename.setText(votingCenterPojos.get(i).getPlaceName());
+        votingCenterViewHolder.textAddress.setText(votingCenterPojos.get(i).getAddress());
+        votingCenterViewHolder.textDate.setText(votingCenterPojos.get(i).getDate());
+        votingCenterViewHolder.textStartTime.setText(votingCenterPojos.get(i).getStartTime());
+        votingCenterViewHolder.textEndTime.setText(votingCenterPojos.get(i).getEndTime());
     }
 
     @Override

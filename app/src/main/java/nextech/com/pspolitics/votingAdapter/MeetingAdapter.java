@@ -59,12 +59,12 @@ public class MeetingAdapter  extends  RecyclerView.Adapter<MeetingAdapter.Meetin
 
     @Override
     public void onBindViewHolder(MeetingViewHolder meetingViewHolder, int i) {
-        meetingViewHolder.textMeetingPersonName.setText(meetingPojos.get(i).meetingPersonName);
-        meetingViewHolder.textMeetingDate.setText(meetingPojos.get(i).meetingDate);
-        meetingViewHolder.textMeetingDay.setText(meetingPojos.get(i).meetingDay);
-        meetingViewHolder.textMeetingStart.setText(meetingPojos.get(i).meetingStartTime);
-        meetingViewHolder.textMeetinEnd.setText(meetingPojos.get(i).meetingEndTime);
-        meetingViewHolder.textMeetingLocation.setText(meetingPojos.get(i).meetingLocation);
+        meetingViewHolder.textMeetingPersonName.setText(meetingPojos.get(i).getMeetingPersonName());
+        meetingViewHolder.textMeetingDate.setText(meetingPojos.get(i).getMeetingDate());
+        meetingViewHolder.textMeetingDay.setText(meetingPojos.get(i).getMeetingDay());
+        meetingViewHolder.textMeetingStart.setText(meetingPojos.get(i).getMeetingStartTime());
+        meetingViewHolder.textMeetinEnd.setText(meetingPojos.get(i).getMeetingEndTime());
+        meetingViewHolder.textMeetingLocation.setText(meetingPojos.get(i).getMeetingLocation());
     }
 
     @Override

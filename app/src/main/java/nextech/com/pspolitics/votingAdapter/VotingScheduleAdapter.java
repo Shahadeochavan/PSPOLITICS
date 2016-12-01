@@ -55,10 +55,10 @@ public class VotingScheduleAdapter extends  RecyclerView.Adapter<VotingScheduleA
 
     @Override
     public void onBindViewHolder(VotingScheduleViewHolder votingScheduleViewHolder, int i) {
-        votingScheduleViewHolder.textvotingDay.setText(votingSchedulePojos.get(i).votingDay);
-        votingScheduleViewHolder.textvotingDate.setText(votingSchedulePojos.get(i).votingDate);
-        votingScheduleViewHolder.textvotingStartTime.setText(votingSchedulePojos.get(i).votingStartTime);
-        votingScheduleViewHolder.textvotingEndtime.setText(votingSchedulePojos.get(i).votingEndTime);
+        votingScheduleViewHolder.textvotingDay.setText(votingSchedulePojos.get(i).getVotingDay());
+        votingScheduleViewHolder.textvotingDate.setText(votingSchedulePojos.get(i).getVotingDate());
+        votingScheduleViewHolder.textvotingStartTime.setText(votingSchedulePojos.get(i).getVotingStartTime());
+        votingScheduleViewHolder.textvotingEndtime.setText(votingSchedulePojos.get(i).getVotingEndTime());
     }
 
     @Override

@@ -1,5 +1,7 @@
 package nextech.com.pspolitics.votinglistpojo;
 
+import org.json.JSONObject;
+
 /**
  * Created by welcome on 10/17/2016.
  */
@@ -22,6 +24,9 @@ public class VotingListPojo {
 
     public VotingListPojo() {
 
+    }
+
+    public VotingListPojo(JSONObject jsonObject) {
     }
 
     public int getId() {

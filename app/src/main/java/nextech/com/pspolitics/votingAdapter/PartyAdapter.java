@@ -56,11 +56,11 @@ public class PartyAdapter extends  RecyclerView.Adapter<PartyAdapter.PartyViewHo
 
     @Override
     public void onBindViewHolder(PartyViewHolder partyViewHolder, int i) {
-        partyViewHolder.textPersonName.setText(partyPojos.get(i).personName);
-        partyViewHolder.textdesgination.setText(partyPojos.get(i).desgination);
-        partyViewHolder.imagePerson.setImageResource(partyPojos.get(i).personImage);
-        partyViewHolder.textPartyName.setText(partyPojos.get(i).partyName);
-        partyViewHolder.imagePartyImages.setImageResource(partyPojos.get(i).partyImage);
+        partyViewHolder.textPersonName.setText(partyPojos.get(i).getPersonName());
+        partyViewHolder.textdesgination.setText(partyPojos.get(i).getDesgination());
+        partyViewHolder.imagePerson.setImageResource(partyPojos.get(i).getPersonImage());
+        partyViewHolder.textPartyName.setText(partyPojos.get(i).getPartyName());
+        partyViewHolder.imagePartyImages.setImageResource(partyPojos.get(i).getPartyImage());
     }
 
     @Override

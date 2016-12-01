@@ -15,7 +15,7 @@ import nextech.com.pspolitics.votinglistpojo.VotingListPojo;
 /**
  * Created by welcome on 10/17/2016.
  */
-public class VotingListAdapter extends BaseAdapter {
+public class    VotingListAdapter extends BaseAdapter {
     private static ArrayList<VotingListPojo> listContact;
 
     private LayoutInflater mInflater;

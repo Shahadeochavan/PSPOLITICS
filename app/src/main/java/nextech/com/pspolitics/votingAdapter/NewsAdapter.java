@@ -23,7 +23,6 @@ import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
  * Created by welcome on 10/18/2016.
  */
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
-
     private final Context context;
 
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
@@ -71,19 +70,19 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
 
     @Override
     public void onBindViewHolder(final NewsViewHolder newsViewHolder, int i) {
-        newsViewHolder.personName.setText(newsListPojos.get(i).name);
-        newsViewHolder.persondate.setText(newsListPojos.get(i).date);
-        newsViewHolder.persontime.setText(newsListPojos.get(i).time);
-        newsViewHolder.photsInformatin.setText(newsListPojos.get(i).informationofphots);
-        newsViewHolder.personPhoto.setImageResource(newsListPojos.get(i).photoId);
-        newsViewHolder.newsPhoto.setImageResource(newsListPojos.get(i).photsNews);
+        newsViewHolder.personName.setText(newsListPojos.get(i).getName());
+        newsViewHolder.persondate.setText(newsListPojos.get(i).getDate());
+        newsViewHolder.persontime.setText(newsListPojos.get(i).getTime());
+        newsViewHolder.photsInformatin.setText(newsListPojos.get(i).getInformationofphots());
+        newsViewHolder.personPhoto.setImageResource(newsListPojos.get(i).getPhotoId());
+        newsViewHolder.newsPhoto.setImageResource(newsListPojos.get(i).getPhotsNews());
 //        newsViewHolder.textShare.setImageResource(newsListPojos.get(i).share);
 
         View.OnClickListener onClickListener=new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Integer position = (Integer)view.getTag();
-                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), newsListPojos.get(position).photsNews);
+                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), newsListPojos.get(position).getPhotsNews());
 
                 String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), mBitmap, "PSPImage", null);
                 Uri uri = Uri.parse(path);

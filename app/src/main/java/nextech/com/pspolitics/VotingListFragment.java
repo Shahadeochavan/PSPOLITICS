@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 import nextech.com.pspolitics.votingAdapter.VotingListAdapter;
 import nextech.com.pspolitics.votinglistpojo.VotingListPojo;
-
-
 public class VotingListFragment extends Fragment {
+    private ListView noteList;
+
 
     public VotingListFragment(){}
     EditText inputSearch;
@@ -25,7 +25,8 @@ public class VotingListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_voting_list, container, false);
 
         ArrayList<VotingListPojo> listContact = getContactList();
-        ListView lv = (ListView)rootView.findViewById(R.id.list_item);
+
+       ListView lv = (ListView)rootView.findViewById(R.id.list_item);
         lv.setAdapter(new VotingListAdapter(getActivity(), listContact));
         return rootView;
     }
@@ -85,5 +86,4 @@ public class VotingListFragment extends Fragment {
 
         return contactlist;
     }
-
 }

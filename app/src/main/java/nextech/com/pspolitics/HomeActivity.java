@@ -38,6 +38,7 @@ public class HomeActivity extends AppCompatActivity
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
 
+
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,6 +47,8 @@ public class HomeActivity extends AppCompatActivity
            showAlertDialog(HomeActivity.this, "No Internet Connection",
                     "You don't have internet connection.", false);
         }
+
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
@@ -61,7 +64,7 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
     public void showAlertDialog(Context context, String title, String message, Boolean status) {
-        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 
         // Setting Dialog Title
         alertDialog.setTitle(title);
@@ -220,6 +223,8 @@ public class HomeActivity extends AppCompatActivity
         getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
         setContentView(R.layout.activity_home);
     }
+
+
 
 }
 
