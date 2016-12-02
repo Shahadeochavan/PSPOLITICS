@@ -9,13 +9,6 @@ public class PartyPojo {
     private String partyName;
     private int partyImage;
     private String desgination;
-    public PartyPojo(String personName,int personImage, String partyName,int partyImage,String desgination){
-        this.personName=personName;
-        this.personImage=personImage;
-        this.partyName=partyName;
-        this.partyImage=partyImage;
-        this.desgination=desgination;
-    }
     public String getDesgination() {
         return desgination;
     }

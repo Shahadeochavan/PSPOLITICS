@@ -1,5 +1,6 @@
 package nextech.com.pspolitics.votingAdapter;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +17,17 @@ import nextech.com.pspolitics.votinglistpojo.MeetingPojo;
  * Created by welcome on 11/12/2016.
  */
 public class MeetingAdapter  extends  RecyclerView.Adapter<MeetingAdapter.MeetingViewHolder>{
+    public MeetingAdapter(Context context) {
+    }
+    private Context context;
+    private LayoutInflater inflater;
+
+
+    public MeetingAdapter(Context context, List<MeetingPojo> data){
+        this.context=context;
+        inflater= LayoutInflater.from(context);
+        this.meetingPojos=data;
+    }
     public static class MeetingViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;

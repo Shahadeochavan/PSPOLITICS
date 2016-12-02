@@ -32,7 +32,7 @@ public class RallyFragment extends Fragment {
     private RecyclerView rv;
     RallyAdapter adapter;
     View rootView;
-    private static String url = "http://192.168.0.107:8080/RESTfulExample/json/rally/get";
+    private static String url = "http://192.168.0.100:8080/RESTfulExample/json/rally/get";
     private List<RallyPojo> rallyPojoList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

@@ -1,5 +1,6 @@
 package nextech.com.pspolitics.votingAdapter;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +17,17 @@ import nextech.com.pspolitics.votinglistpojo.VotingCenterPojo;
  * Created by welcome on 10/19/2016.
  */
 public class VotingCenterAdapter extends RecyclerView.Adapter<VotingCenterAdapter.VotingCenterViewHolder>  {
+    public VotingCenterAdapter(Context context) {
+    }
+    private Context context;
+    private LayoutInflater inflater;
+
+
+    public VotingCenterAdapter(Context context, List<VotingCenterPojo> data){
+        this.context=context;
+        inflater= LayoutInflater.from(context);
+        this.votingCenterPojos=data;
+    }
 
     public static class VotingCenterViewHolder extends RecyclerView.ViewHolder {
 

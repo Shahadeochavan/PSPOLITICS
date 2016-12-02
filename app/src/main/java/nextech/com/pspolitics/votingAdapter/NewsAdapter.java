@@ -23,8 +23,17 @@ import nextech.com.pspolitics.votinglistpojo.NewsListPojo;
  * Created by welcome on 10/18/2016.
  */
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
-    private final Context context;
+    public NewsAdapter(Context context) {
+    }
+    private Context context;
+    private LayoutInflater inflater;
 
+
+    public NewsAdapter(Context context, List<NewsListPojo> data){
+        this.context=context;
+        inflater= LayoutInflater.from(context);
+        this.newsListPojos=data;
+    }
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;

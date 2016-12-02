@@ -11,14 +11,14 @@ public class MeetingPojo {
     private String meetingStartTime;
     private  String meetingEndTime;
 
-    public MeetingPojo(String meetingPersonName,String meetingDate,String meetingDay,String meetingLocation,String meetingStartTime,String meetingEndTime){
+/*    public MeetingPojo(String meetingPersonName,String meetingDate,String meetingDay,String meetingLocation,String meetingStartTime,String meetingEndTime){
         this.meetingPersonName=meetingPersonName;
         this.meetingDate=meetingDate;
         this.meetingDay=meetingDay;
         this.meetingLocation=meetingLocation;
         this.meetingStartTime=meetingStartTime;
         this.meetingEndTime=meetingEndTime;
-    }
+    }*/
     public String getMeetingDate() {
         return meetingDate;
     }

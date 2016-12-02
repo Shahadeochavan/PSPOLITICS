@@ -50,12 +50,4 @@ public class VotingCenterPojo {
         this.startTime = startTime;
     }
 
-    public VotingCenterPojo(String placeName, String address, String date, String startTime, String endTime) {
-        this.placeName = placeName;
-        this.address = address;
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
-
-    }
 }

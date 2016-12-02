@@ -1,5 +1,6 @@
 package nextech.com.pspolitics.votingAdapter;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
 import nextech.com.pspolitics.R;
 import nextech.com.pspolitics.votinglistpojo.SocialWorkPojo;
 
@@ -16,6 +18,17 @@ import nextech.com.pspolitics.votinglistpojo.SocialWorkPojo;
  * Created by welcome on 10/25/2016.
  */
 public class SocialWorkAdapter extends RecyclerView.Adapter<SocialWorkAdapter.SocialViewHolder>  {
+    public SocialWorkAdapter(Context context) {
+    }
+    private Context context;
+    private LayoutInflater inflater;
+
+
+    public SocialWorkAdapter(Context context, List<SocialWorkPojo> data){
+        this.context=context;
+        inflater= LayoutInflater.from(context);
+        this.socialWorkPojos=data;
+    }
     public static class SocialViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;

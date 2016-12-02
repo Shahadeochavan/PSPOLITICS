@@ -41,10 +41,4 @@ public class VotingSchedulePojo {
         this.votingStartTime = votingStartTime;
     }
 
-    public VotingSchedulePojo(String votingDay, String votingDate, String votingStartTime, String votingEndTime){
-        this.votingDay=votingDay;
-        this.votingDate=votingDate;
-        this.votingStartTime=votingStartTime;
-        this.votingEndTime=votingEndTime;
-    }
 }

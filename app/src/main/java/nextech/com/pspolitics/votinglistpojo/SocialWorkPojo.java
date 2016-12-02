@@ -32,9 +32,4 @@ public class SocialWorkPojo {
         this.socialPhotos = socialPhotos;
     }
 
-    public SocialWorkPojo(int socialPhotos, String socialInformation, String socialDate){
-        this.socialPhotos=socialPhotos;
-        this.socialInformation=socialInformation;
-        this.socialDate=socialDate;
-    }
 }
