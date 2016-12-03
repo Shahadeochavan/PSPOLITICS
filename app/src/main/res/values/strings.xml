@@ -130,10 +130,10 @@ Español</string>
     <string name="text_meeting_start">Meeting Start:</string>
     <string name="text_meeting_end">Meeting End :</string>
     <string name="text_meeting_location">Meeting Location:</string>
-    <string name="text_nitin_shelke">Name:Nitin Shelke</string>
-    <string name="text_education">Education:B.A.</string>
-    <string name="text_working">Working :Buisnes</string>
-    <string name="text_address">Address :Wadegon</string>
+    <string name="text_nitin_shelke">Name:</string>
+    <string name="text_education">Education:</string>
+    <string name="text_working">Working :</string>
+    <string name="text_address">Address :</string>
     <string name="really_exit">Really Exit?</string>
     <string name="sure_exit">Are you sure you want to exit?</string>
     <string name="no_no">No</string>

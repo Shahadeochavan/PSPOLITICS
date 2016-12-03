@@ -15,7 +15,10 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import java.util.List;
+
 import nextech.com.pspolitics.R;
+import nextech.com.pspolitics.votinglistpojo.MeetingPojo;
 
 /**
  * Created by welcome on 11/12/2016.
@@ -26,7 +29,6 @@ import nextech.com.pspolitics.R;
     private int mShortAnimationDuration;
 
     private Context mContext;
-    LayoutInflater inflater;
 
     public GalleryAdapter(Context c) {
         mContext = c;
@@ -42,6 +44,14 @@ import nextech.com.pspolitics.R;
 
     public long getItemId(int position) {
         return 0;
+    }
+    private Context context;
+    private LayoutInflater inflater;
+
+
+    public GalleryAdapter(Context context, List<MeetingPojo> data){
+        this.context=context;
+        inflater= LayoutInflater.from(context);
     }
 
     public View getView(final int position, View convertView, ViewGroup parent) {

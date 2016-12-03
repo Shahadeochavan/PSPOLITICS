@@ -35,7 +35,7 @@ public class VotingScheduleFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     VotingScheduleAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/RESTfulExample/json/votingschedule/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/votingschedule/get";
     private List<VotingSchedulePojo> votingScheduleList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

@@ -30,32 +30,6 @@ public class HomeFragment extends Fragment {
         view.setVerticalScrollBarEnabled(false);
 
         view.loadData(getString(R.string.about_nitin), "text/html; charset=utf-8", "utf-8");
-  /*      viewFlipper = (ViewFlipper) v.findViewById(R.id.bckgrndViewFlipper1);
-        viewFlipper.setInAnimation(Fade_in);
-        viewFlipper.setOutAnimation(Fade_out);
-        viewFlipper.setAutoStart(true);
-        viewFlipper.setFlipInterval(5000);
-        viewFlipper.startFlipping();
-        viewFlipper.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-
-                return false;
-            }
-        });
-        viewFlipper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                viewFlipper.showNext();
-
-            }
-        });
-        viewFlipper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                viewFlipper.showPrevious();
-            }
-        });*/
         return v;
     }
 }

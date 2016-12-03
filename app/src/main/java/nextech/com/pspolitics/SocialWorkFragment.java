@@ -35,7 +35,7 @@ public class SocialWorkFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     SocialWorkAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/RESTfulExample/json/socialwork/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/socialwork/get";
     private List<SocialWorkPojo> socialWrokList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

@@ -31,7 +31,7 @@ public class PartyFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PartyAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/RESTfulExample/json/party/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/party/get";
     private List<VotingSchedulePojo> votingScheduleList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

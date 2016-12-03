@@ -16,6 +16,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:src="@drawable/nitin3"
             android:id="@+id/person_photo"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"

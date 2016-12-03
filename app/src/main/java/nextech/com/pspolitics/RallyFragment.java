@@ -32,7 +32,7 @@ public class RallyFragment extends Fragment {
     private RecyclerView rv;
     RallyAdapter adapter;
     View rootView;
-    private static String url = "http://192.168.0.100:8080/RESTfulExample/json/rally/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/rally/get";
     private List<RallyPojo> rallyPojoList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -45,19 +45,6 @@ public class RallyFragment extends Fragment {
         AsynkRally asynkRally=new AsynkRally(rv);
         asynkRally.execute();
         return rootView;
-    }
-
- /*   private void initializeData() {
-        rallyPojos = new ArrayList<>();
-        rallyPojos.add(new RallyPojo(getContext().getString(R.string.wadegonchowk), getContext().getString(R.string.shirurphata), getContext().getString(R.string.date_of_rally), getContext().getString(R.string.rally_start1), getContext().getString(R.string.rally_end1), getContext().getString(R.string.rally_day1)));
-        rallyPojos.add(new RallyPojo(getContext().getString(R.string.baner), getContext().getString(R.string.pune_station), getContext().getString(R.string.date_of_rally1), getContext().getString(R.string.rally_start2), getContext().getString(R.string.rally_end2), getContext().getString(R.string.rally_day2)));
-        rallyPojos.add(new RallyPojo(getContext().getString(R.string.karave_nagar), getContext().getString(R.string.hadpasr), getContext().getString(R.string.date_of_rally3), getContext().getString(R.string.rally_start3), getContext().getString(R.string.rally_end3), getContext().getString(R.string.rally_day3)));
-
-    }*/
-
-    private void initializeAdapter() {
-        RallyAdapter adapter = new RallyAdapter(rallyPojos);
-        rv.setAdapter(adapter);
     }
 
     public class AsynkRally extends AsyncTask<String, String, String> {
@@ -108,6 +95,7 @@ public class RallyFragment extends Fragment {
                     rallyPojo.setStartTime(json_data.getString("startTime"));
                     rallyPojo.setEndTime(json_data.getString("endTime"));
                     rallyPojo.setRallyDate(json_data.getString("date"));
+                    rallyPojo.setDayRally(json_data.getString("rallyDay"));
                     rallyPojo.setStartPlaceName(json_data.getString("startPoint"));
                     rallyPojo.setEndPlaceName(json_data.getString("endPoint"));
                     data.add(rallyPojo);
