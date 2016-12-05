@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:maxHeight="70dp"
+        android:maxWidth="70dp" />
+
+</LinearLayout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -26,4 +41,5 @@
             android:visibility="invisible" />
     </RelativeLayout>
 
-</FrameLayout>
+</FrameLayout>-->
+

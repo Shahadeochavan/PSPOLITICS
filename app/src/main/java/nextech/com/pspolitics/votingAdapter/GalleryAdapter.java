@@ -1,3 +1,4 @@
+/*
 package nextech.com.pspolitics.votingAdapter;
 
 import android.animation.Animator;
@@ -20,9 +21,11 @@ import java.util.List;
 import nextech.com.pspolitics.R;
 import nextech.com.pspolitics.votinglistpojo.MeetingPojo;
 
+*/
 /**
  * Created by welcome on 11/12/2016.
- */
+ *//*
+
   public class GalleryAdapter extends BaseAdapter {
     private Animator mCurrentAnimator;
 
@@ -200,4 +203,4 @@ import nextech.com.pspolitics.votinglistpojo.MeetingPojo;
             }
         });
     }
-}
+}*/
