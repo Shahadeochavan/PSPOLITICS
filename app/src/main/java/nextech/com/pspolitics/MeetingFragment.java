@@ -31,7 +31,7 @@ public class MeetingFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     MeetingAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/PSPolitics/json/meeting/get";
+    private static String url = "http://192.168.0.105:8080/PSPolitics/json/meeting/get";
     private List<MeetingPojo> meetingPojoList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

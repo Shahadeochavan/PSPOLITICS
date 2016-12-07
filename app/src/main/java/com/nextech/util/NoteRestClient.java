@@ -1,54 +1,72 @@
 package com.nextech.util;
 
-import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Created by welcome on 11/21/2016.
  */
-public class NoteRestClient extends AsyncTask<String, String, String> {
-    private Button button;
-    private EditText time;
-    private TextView finalResult;
-    ProgressDialog progressDialog;
-
-    private String resp;
-
+public class NoteRestClient extends AsyncTask<String, String, Bitmap> {
+    ImageView imageView;
     @Override
-    protected String doInBackground(String... params) {
-       // NetClientGet netClientGet=new NetClientGet();
-//       // resp=netClientGetRally.netClientGetRaly();
-      //  resp = netClientGet.netClientGet();
-        System.out.println("Respsone is : " + resp);
-        return resp;
+    protected Bitmap doInBackground(String... urls) {
+        Bitmap map = null;
+        for (String url : urls) {
+            map = downloadImage(url);
+        }
+        return map;
     }
 
+    // Sets the Bitmap returned by doInBackground
     @Override
-    protected void onPostExecute(String result) {
-        // execution of result of Long time consuming operation
-//        finalResult.setText(result);
+    protected void onPostExecute(Bitmap result) {
+        imageView.setImageBitmap(result);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see android.os.AsyncTask#onPreExecute()
-     */
-    @Override
-    protected void onPreExecute() {
-        // Things to be done before execution of long running operation. For
-        // example showing ProgessDialog
+    // Creates Bitmap from InputStream and returns it
+    private Bitmap downloadImage(String url) {
+        Bitmap bitmap = null;
+        InputStream stream = null;
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        bmOptions.inSampleSize = 1;
+
+        try {
+            stream = getHttpConnection(url);
+            bitmap = BitmapFactory.
+                    decodeStream(stream, null, bmOptions);
+            stream.close();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        return bitmap;
     }
 
-    @Override
-    protected void onProgressUpdate(String... text) {
-        //finalResult.setText(text[0]);
-        // Things to be done while execution of long running operation is in
-        // progress. For example updating ProgessDialog
+    // Makes HttpURLConnection and returns InputStream
+    private InputStream getHttpConnection(String urlString)
+            throws IOException {
+        InputStream stream = null;
+        URL url = new URL(urlString);
+        URLConnection connection = url.openConnection();
+
+        try {
+            HttpURLConnection httpConnection = (HttpURLConnection) connection;
+            httpConnection.setRequestMethod("GET");
+            httpConnection.connect();
+
+            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                stream = httpConnection.getInputStream();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return stream;
     }
-
-
 }

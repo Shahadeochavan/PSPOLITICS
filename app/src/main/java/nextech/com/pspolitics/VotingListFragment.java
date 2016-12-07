@@ -31,7 +31,7 @@ public class VotingListFragment extends Fragment {
     private String resp;
     private ListView rv;
     VotingListAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/PSPolitics/json/votinglist/get";
+    private static String url = "http://192.168.0.105:8080/PSPolitics/json/votinglist/get";
     private List<VotingListPojo> votingList = new ArrayList<>();
     public VotingListFragment(){}
     EditText inputSearch;

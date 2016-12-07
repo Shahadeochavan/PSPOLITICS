@@ -31,7 +31,7 @@ public class GalleryFragment extends Fragment {
     private GridView rv;
    // GalleryAdapter adapter;
     public static final String URL =
-            "http://192.168.0.100:8080/PSPolitics/img/nitin.jpg";
+            "http://192.168.0.105:8080/PSPolitics/img/nitin.jpg";
     ImageView imageView;
     private List<GalleryPojo> galleryList = new ArrayList<>();
     @Override
@@ -100,7 +100,7 @@ public class GalleryFragment extends Fragment {
         }
 
     }*/
-   private class GetXMLTask extends AsyncTask<String, Void, Bitmap> {
+   private class GetXMLTask extends AsyncTask<String, String, Bitmap> {
        @Override
        protected Bitmap doInBackground(String... urls) {
            Bitmap map = null;
