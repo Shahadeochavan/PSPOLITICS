@@ -28,7 +28,7 @@ public  class NewsFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     NewsAdapter adapter;
-    private static String url = "http://192.168.0.105:8080/PSPolitics/json/news/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/news/get";
     private List<NewsListPojo> newsList = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,6 +90,8 @@ public  class NewsFragment extends Fragment {
                     newsListPojo.setDate(json_data.getString("date"));
                     newsListPojo.setTime(json_data.getString("time"));
                     newsListPojo.setInformationofphots(json_data.getString("informationofphots"));
+                    newsListPojo.setPhotoId(json_data.getString("photoId"));
+                    newsListPojo.setPhotsNews(json_data.getString("photsNews"));
                     data.add(newsListPojo);
                 }
                 adapter = new NewsAdapter(NewsFragment.this.getContext(), data);

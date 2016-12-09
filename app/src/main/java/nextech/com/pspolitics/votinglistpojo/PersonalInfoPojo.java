@@ -4,17 +4,17 @@ package nextech.com.pspolitics.votinglistpojo;
  * Created by welcome on 12/3/2016.
  */
 public class PersonalInfoPojo {
-    private int imageNitin;
+    private String imageNitin;
     private String name;
     private String education;
     private String working;
     private String address;
 
-    public int getImageNitin() {
+    public String getImageNitin() {
         return imageNitin;
     }
 
-    public void setImageNitin(int imageNitin) {
+    public void setImageNitin(String imageNitin) {
         this.imageNitin = imageNitin;
     }
     public String getName() {

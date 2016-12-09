@@ -5,10 +5,17 @@ package nextech.com.pspolitics.votinglistpojo;
  */
 public class PartyPojo {
     private String personName;
-    private int personImage;
+    private String personImage;
     private String partyName;
-    private int partyImage;
+    private String partyImage;
     private String desgination;
+    public String getPersonImage() {
+        return personImage;
+    }
+
+    public void setPersonImage(String personImage) {
+        this.personImage = personImage;
+    }
     public String getDesgination() {
         return desgination;
     }
@@ -17,11 +24,11 @@ public class PartyPojo {
         this.desgination = desgination;
     }
 
-    public int getPartyImage() {
+    public String getPartyImage() {
         return partyImage;
     }
 
-    public void setPartyImage(int partyImage) {
+    public void setPartyImage(String partyImage) {
         this.partyImage = partyImage;
     }
 
@@ -33,13 +40,6 @@ public class PartyPojo {
         this.partyName = partyName;
     }
 
-    public int getPersonImage() {
-        return personImage;
-    }
-
-    public void setPersonImage(int personImage) {
-        this.personImage = personImage;
-    }
 
     public String getPersonName() {
         return personName;

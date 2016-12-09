@@ -9,7 +9,7 @@ public class NewsListPojo {
     private String time;
     private String informationofphots;
     private  int share;
-    private int photoId,photsNews;
+    private String photoId,photsNews;
     public String getDate() {
         return date;
     }
@@ -34,19 +34,19 @@ public class NewsListPojo {
         this.name = name;
     }
 
-    public int getPhotoId() {
+    public String getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(int photoId) {
+    public void setPhotoId(String photoId) {
         this.photoId = photoId;
     }
 
-    public int getPhotsNews() {
+    public String getPhotsNews() {
         return photsNews;
     }
 
-    public void setPhotsNews(int photsNews) {
+    public void setPhotsNews(String photsNews) {
         this.photsNews = photsNews;
     }
 

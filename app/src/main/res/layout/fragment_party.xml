@@ -17,7 +17,6 @@
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/nitin1"
             android:id="@+id/person_photo_party"
             android:layout_marginRight="16dp"
             />
@@ -27,7 +26,6 @@
             android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/bjp2"
             android:layout_toRightOf="@+id/person_photo_party"
             />
         <TextView

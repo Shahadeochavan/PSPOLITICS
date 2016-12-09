@@ -1,18 +1,14 @@
 package nextech.com.pspolitics;
 
 import android.app.ProgressDialog;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.nextech.util.NetClientGet;
@@ -21,11 +17,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,9 +28,7 @@ public class PartyFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PartyAdapter adapter;
-    private static String url = "http://192.168.0.105:8080/PSPolitics/json/party/get";
-    ImageView imageView;
-    Bitmap bitmap;
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/party/get";
     private List<PartyPojo> partyList = new ArrayList<>();
 
     @Override
@@ -70,9 +59,11 @@ public class PartyFragment extends Fragment {
             super.onPreExecute();
 
             //this method will be running on UI thread
-            pdLoading.setMessage("\tLoading...");
-            pdLoading.setCancelable(false);
+            pdLoading = new ProgressDialog(PartyFragment.this.getContext());
+            pdLoading.setMessage("Loading, please wait");
+            pdLoading.setTitle("Connecting server");
             pdLoading.show();
+            pdLoading.setCancelable(false);
 
         }
 
@@ -81,7 +72,7 @@ public class PartyFragment extends Fragment {
             NetClientGet netClientGet = new NetClientGet();
             resp = netClientGet.netClientGet(url);
             System.out.println("Respsone is : " + resp);
-            return  resp;
+            return resp;
 
         }
 
@@ -96,11 +87,11 @@ public class PartyFragment extends Fragment {
                 for (int i = 0; i < jArray.length(); i++) {
                     JSONObject json_data = jArray.getJSONObject(i);
                     PartyPojo partyListPojo = new PartyPojo();
-                    Log.d("RallyAsync","person name : " + json_data.getString("personName"));
                     partyListPojo.setPersonName(json_data.getString("personName"));
                     partyListPojo.setPartyName(json_data.getString("partyName"));
                     partyListPojo.setDesgination(json_data.getString("desgination"));
-                    imageView.setImageBitmap(downloadImage("http://192.168.0.105:8080/PSPolitics/img/nitin.jpg"));
+                    partyListPojo.setPersonImage(json_data.getString("personImage"));
+                    partyListPojo.setPartyImage(json_data.getString("partyImage"));
                     data.add(partyListPojo);
                 }
                 adapter = new PartyAdapter(PartyFragment.this.getContext(), data);
@@ -112,42 +103,5 @@ public class PartyFragment extends Fragment {
 
         }
 
-    }
-    private Bitmap downloadImage(String url) {
-        Bitmap bitmap = null;
-        InputStream stream = null;
-        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-        bmOptions.inSampleSize = 1;
-
-        try {
-            stream = getHttpConnection(url);
-            bitmap = BitmapFactory.
-                    decodeStream(stream, null, bmOptions);
-            stream.close();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        return bitmap;
-    }
-
-    // Makes HttpURLConnection and returns InputStream
-    private InputStream getHttpConnection(String urlString)
-            throws IOException {
-        InputStream stream = null;
-        URL url = new URL(urlString);
-        URLConnection connection = url.openConnection();
-
-        try {
-            HttpURLConnection httpConnection = (HttpURLConnection) connection;
-            httpConnection.setRequestMethod("GET");
-            httpConnection.connect();
-
-            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                stream = httpConnection.getInputStream();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return stream;
     }
 }

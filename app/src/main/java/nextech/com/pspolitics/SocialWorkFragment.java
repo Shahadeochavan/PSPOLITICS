@@ -35,7 +35,7 @@ public class SocialWorkFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     SocialWorkAdapter adapter;
-    private static String url = "http://192.168.0.105:8080/PSPolitics/json/socialwork/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/socialwork/get";
     private List<SocialWorkPojo> socialWrokList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -101,6 +101,7 @@ public class SocialWorkFragment extends Fragment {
                     SocialWorkPojo socialWorkPojo = new SocialWorkPojo();
                     socialWorkPojo.setSocialDate(json_data.getString("socialDate"));
                     socialWorkPojo.setSocialInformation(json_data.getString("socialInformation"));
+                    socialWorkPojo.setSocialPhotos(json_data.getString("socialPhotos"));
                     data.add(socialWorkPojo);
                 }
                 adapter = new SocialWorkAdapter(SocialWorkFragment.this.getContext(), data);

@@ -36,7 +36,7 @@ public class AboutFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     AboutAdapter adapter;
-    private static String url = "http://192.168.0.105:8080/PSPolitics/json/aboutnitin/get";
+    private static String url = "http://192.168.0.100:8080/PSPolitics/json/aboutnitin/get";
     private List<AboutPojo> votingScheduleList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -96,6 +96,7 @@ public class AboutFragment extends Fragment {
                     JSONObject json_data = jArray.getJSONObject(i);
                     AboutPojo aboutPojo = new AboutPojo();
                     aboutPojo.setAboutNitin(json_data.getString("aboutNitin"));
+                    aboutPojo.setNitinImage(json_data.getString("nitinImage"));
                     data.add(aboutPojo);
                 }
                 adapter = new AboutAdapter(AboutFragment.this.getContext(), data);

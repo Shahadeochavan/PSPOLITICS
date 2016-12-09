@@ -4,7 +4,7 @@ package nextech.com.pspolitics.votinglistpojo;
  * Created by welcome on 10/25/2016.
  */
 public class SocialWorkPojo {
-    private int socialPhotos;
+    private String socialPhotos;
     private String socialInformation;
     private String socialDate;
 
@@ -24,11 +24,11 @@ public class SocialWorkPojo {
         this.socialInformation = socialInformation;
     }
 
-    public int getSocialPhotos() {
+    public String getSocialPhotos() {
         return socialPhotos;
     }
 
-    public void setSocialPhotos(int socialPhotos) {
+    public void setSocialPhotos(String socialPhotos) {
         this.socialPhotos = socialPhotos;
     }
 

@@ -5,15 +5,18 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.List;
 
 import nextech.com.pspolitics.R;
@@ -83,15 +86,15 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
         newsViewHolder.persondate.setText(newsListPojos.get(i).getDate());
         newsViewHolder.persontime.setText(newsListPojos.get(i).getTime());
         newsViewHolder.photsInformatin.setText(newsListPojos.get(i).getInformationofphots());
-        newsViewHolder.personPhoto.setImageResource(newsListPojos.get(i).getPhotoId());
-        newsViewHolder.newsPhoto.setImageResource(newsListPojos.get(i).getPhotsNews());
 //        newsViewHolder.textShare.setImageResource(newsListPojos.get(i).share);
+        new DownloadImageTask(newsViewHolder.personPhoto).execute(newsListPojos.get(i).getPhotoId());
+        new DownloadImageTask(newsViewHolder.newsPhoto).execute(newsListPojos.get(i).getPhotsNews());
 
         View.OnClickListener onClickListener=new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Integer position = (Integer)view.getTag();
-                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), newsListPojos.get(position).getPhotsNews());
+                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), Integer.parseInt(newsListPojos.get(position).getPhotsNews()));
 
                 String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), mBitmap, "PSPImage", null);
                 Uri uri = Uri.parse(path);
@@ -111,5 +114,28 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
     @Override
     public int getItemCount() {
         return newsListPojos.size();
+    }
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
     }
 }
