@@ -31,7 +31,7 @@ public class MeetingFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     MeetingAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/PSPolitics/json/meeting/get";
+    private static String url = "http://192.168.2.102:8080/PSPolitics/json/meeting/get";
     private List<MeetingPojo> meetingPojoList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -98,7 +98,7 @@ public class MeetingFragment extends Fragment {
             try {
 
                 JSONObject rallyResponse = new JSONObject(result);
-                JSONArray jArray = rallyResponse.getJSONArray("meeting");
+                JSONArray jArray = rallyResponse.getJSONArray("meetings");
                 for(int i=0;i<jArray.length();i++){
                     JSONObject json_data = jArray.getJSONObject(i);
                     MeetingPojo meetingPojo = new MeetingPojo();

@@ -14,7 +14,7 @@ public class MeetingPojo {
 /*    public MeetingPojo(String meetingPersonName,String meetingDate,String meetingDay,String meetingLocation,String meetingStartTime,String meetingEndTime){
         this.meetingPersonName=meetingPersonName;
         this.meetingDate=meetingDate;
-        this.meetingDay=meetingDay;
+        this.meetingDay=meetingDay;Lo
         this.meetingLocation=meetingLocation;
         this.meetingStartTime=meetingStartTime;
         this.meetingEndTime=meetingEndTime;

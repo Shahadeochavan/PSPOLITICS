@@ -43,16 +43,24 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Util.isConnectingToInternet(getApplicationContext());
-        if(!Util.isConnectingToInternet(getApplicationContext())){
+      /*  if(!Util.isConnectingToInternet(getApplicationContext())){
            showAlertDialog(HomeActivity.this, "No Internet Connection",
                     "You don't have internet connection.", false);
+        }*/
+        if(Util.isConnectingToInternet(getApplicationContext())){
+
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
+            }
+        }
+        else{
+            showAlertDialog(HomeActivity.this, "No Internet Connection",
+                    "You don't have internet connection.", false);
+
         }
 
 
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
-        }
 
         DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,15 +83,15 @@ public class HomeActivity extends AppCompatActivity
         // Setting alert dialog icon
         alertDialog.setIcon((status) ? R.drawable.ic_action_done : R.drawable.ic_av_not_interested);
 
-
         // Setting OK Button
         alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                     //code for exit here it send to home screen
-                    Intent startMain = new Intent(Intent.ACTION_MAIN);
+                   /* Intent startMain = new Intent(Intent.ACTION_MAIN);
                     startMain.addCategory(Intent.CATEGORY_HOME);
                     startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(startMain);
+                    startActivity(startMain);*/
+                finish();
             }
         });
 

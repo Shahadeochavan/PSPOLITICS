@@ -36,7 +36,7 @@ public class AboutFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     AboutAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/PSPolitics/json/aboutnitin/get";
+    private static String url = "http://192.168.2.102:8080/PSPolitics/json/aboutnitin/get";
     private List<AboutPojo> votingScheduleList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -90,8 +90,8 @@ public class AboutFragment extends Fragment {
             pdLoading.dismiss();
             try {
 
-                JSONObject rallyResponse = new JSONObject(result);
-                JSONArray jArray = rallyResponse.getJSONArray("aboutNitins");
+                JSONObject aboutResponse = new JSONObject(result);
+                JSONArray jArray = aboutResponse.getJSONArray("aboutNitins");
                 for(int i=0;i<jArray.length();i++){
                     JSONObject json_data = jArray.getJSONObject(i);
                     AboutPojo aboutPojo = new AboutPojo();

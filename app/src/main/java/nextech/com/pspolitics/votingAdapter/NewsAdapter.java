@@ -86,7 +86,6 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
         newsViewHolder.persondate.setText(newsListPojos.get(i).getDate());
         newsViewHolder.persontime.setText(newsListPojos.get(i).getTime());
         newsViewHolder.photsInformatin.setText(newsListPojos.get(i).getInformationofphots());
-//        newsViewHolder.textShare.setImageResource(newsListPojos.get(i).share);
         new DownloadImageTask(newsViewHolder.personPhoto).execute(newsListPojos.get(i).getPhotoId());
         new DownloadImageTask(newsViewHolder.newsPhoto).execute(newsListPojos.get(i).getPhotsNews());
 

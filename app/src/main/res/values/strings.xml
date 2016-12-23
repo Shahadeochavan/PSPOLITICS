@@ -29,6 +29,9 @@ About six lakh employees would be benefited by the decision taken by Chief Minis
         In his early teens, he joined Akhil Bharatiya Vidyarthi Parishad,
         the student wing of Rashtriya Swayamsevak Sangh (RSS),
         a Hindu nationalist political party. </string>
+    <string name="about_party">The Bharatiya Janata Party is today the most prominent member of the family of organisations known as the "Sangh Parivar" and nurtured by the Rashtria Swyamsevak Sangh (RSS). Like the RSS, the BJP is wedded to India’s unity and integrity, its intrinsic identity and the social strength, individual character and cultural uniqueness that have been the hallmark of this great country and its people for millennia.
+
+History is the philosophy of nations. And the Sangh Parivar has a very clear and clear conception of Indian history. Here was a great civilization whose influence and imprint spread from Sri Lanka to Tibet, from Southeast Asia to Central Asia, from one end of the Indian Ocean to the other. It weathered the storms of invaders, from the Greeks to the Huns, from the Shakas to the Islamic armies of Turks and Afghans. It fought and resisted external oppression and its essential civilization and culture survived great challenges and attempts at effacement. The glory of Vijayanagara and the heroism of Maharana Pratap, of a Shivaji and of a Guru Govind Singh are testimony to the Indian spirit.</string>
     <string name="title_loading">Please Wait</string>
     <string name="msg_loading">Loading movies list…</string>
     <string name="titel">Voting Center</string>
@@ -106,7 +109,6 @@ Español</string>
     <string name="person_name">Person Name:</string>
     <string name="party_name">Party Name:</string>
     <string name="desgination">Desgination:</string>
-    <string name="about_party">About Party:</string>
     <string name="b_j_p">Bharatiya Janata Party</string>
     <string name="nagar_sevek">Nagar Sevak</string>
     <string name="shahadeo_chavan">Shahadeo Chavan</string>

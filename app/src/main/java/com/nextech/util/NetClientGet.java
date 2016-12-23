@@ -12,8 +12,6 @@ import java.net.URL;
  */
 public class NetClientGet {
     // http://localhost:8080/RESTfulExample/json/product/get
-    public static final int CONNECTION_TIMEOUT = 10000;
-    public static final int READ_TIMEOUT = 15000;
     public String netClientGet(String requerdUrl){
 
         try {
@@ -21,9 +19,7 @@ public class NetClientGet {
             URL url = new URL(requerdUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-            conn.setRequestProperty("Accept", "application/json");
-            conn.setReadTimeout(READ_TIMEOUT);
-            conn.setConnectTimeout(CONNECTION_TIMEOUT);
+            conn.setRequestProperty("Accept", "application/json; charset=utf-8");
 
             if (conn.getResponseCode() != 200) {
                 throw new RuntimeException("Failed : HTTP error code : "

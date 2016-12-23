@@ -1,201 +1,85 @@
 
 package nextech.com.pspolitics.votingAdapter;
-
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import java.util.List;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 import nextech.com.pspolitics.R;
-import nextech.com.pspolitics.votinglistpojo.MeetingPojo;
+import nextech.com.pspolitics.votinglistpojo.GalleryPojo;
 
-public class GalleryAdapter extends BaseAdapter {
-    private Animator mCurrentAnimator;
-
-    private int mShortAnimationDuration;
-
+public class GalleryAdapter extends ArrayAdapter<GalleryPojo> {
+    ArrayList<GalleryPojo> galleryPojos;
+    //private final ColorMatrixColorFilter grayscaleFilter;
     private Context mContext;
+    private int layoutResourceId;
+    private ArrayList<GalleryPojo> mGridData = new ArrayList<GalleryPojo>();
 
-    public GalleryAdapter(Context c) {
-        mContext = c;
+    public GalleryAdapter(Context mContext, int layoutResourceId, ArrayList<GalleryPojo> galleryPojos) {
+        super(mContext, layoutResourceId, galleryPojos);
+        this.layoutResourceId = layoutResourceId;
+        this.mContext = mContext;
+        this.galleryPojos = galleryPojos;
+    }
+    public void setGridData(ArrayList<GalleryPojo> galleryPojos) {
+        this.galleryPojos = galleryPojos;
+        notifyDataSetChanged();
     }
 
-    public int getCount() {
-        return mThumbIds.length;
-    }
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View row = convertView;
+        ViewHolder holder;
 
-    public Object getItem(int position) {
-        return mThumbIds[position];
-    }
-
-    public long getItemId(int position) {
-        return 0;
-    }
-    private Context context;
-    private LayoutInflater inflater;
-
-
-    public GalleryAdapter(Context context, List<MeetingPojo> data){
-        this.context=context;
-        inflater= LayoutInflater.from(context);
-    }
-
-    public View getView(final int position, View convertView, ViewGroup parent) {
-
-        final ImageView imageView;
-        if (convertView == null) {
-            imageView = new ImageView(mContext);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        if (row == null) {
+            LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
+            row = inflater.inflate(layoutResourceId, parent, false);
+            holder = new ViewHolder();
+            holder.imageView = (ImageView) row.findViewById(R.id.grid_item_image);
+            row.setTag(holder);
         } else {
-            imageView = (ImageView) convertView;
+            holder = (ViewHolder) row.getTag();
         }
 
-        imageView.setImageResource(mThumbIds[position]);
-        imageView.setTag(mThumbIds[position]);
-        imageView.setOnClickListener(new View.OnClickListener() {
+        new DownloadImageTask(holder.imageView).execute(galleryPojos.get(position).getImages());
 
-            @Override
-            public void onClick(View arg0) {
-                int id = (Integer) arg0.getTag();
-                zoomImageFromThumb(arg0, id);
-            }
-        });
-
-        return imageView;
+        return row;
     }
 
-    // References to our images in res > drawable
-    public Integer[] mThumbIds = {R.drawable.raje1, R.drawable.nn,
-            R.drawable.nitin1, R.drawable.nn,
-            R.drawable.nitin13, R.drawable.nn,
-            R.drawable.nitin3, R.drawable.nn,
-            R.drawable.nitin2, R.drawable.nn,
-            R.drawable.nitin4, R.drawable.nn};
+    static class ViewHolder {
+        ImageView imageView;
+    }
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
 
-
-    private void zoomImageFromThumb(final View thumbView, int imageResId) {
-        // If there's an animation in progress, cancel it immediately and
-        // proceed with this one.
-        if (mCurrentAnimator != null) {
-            mCurrentAnimator.cancel();
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon;
         }
 
-        // Load the high-resolution "zoomed-in" image.
-        final ImageView expandedImageView = (ImageView) ((Activity) mContext)
-                .findViewById(R.id.expanded_image);
-        expandedImageView.setImageResource(imageResId);
-
-        final Rect startBounds = new Rect();
-        final Rect finalBounds = new Rect();
-        final Point globalOffset = new Point();
-
-        thumbView.getGlobalVisibleRect(startBounds);
-        ((Activity) mContext).findViewById(R.id.container)
-                .getGlobalVisibleRect(finalBounds, globalOffset);
-        startBounds.offset(-globalOffset.x, -globalOffset.y);
-        finalBounds.offset(-globalOffset.x, -globalOffset.y);
-        float startScale;
-        if ((float) finalBounds.width() / finalBounds.height() > (float) startBounds
-                .width() / startBounds.height()) {
-            // Extend start bounds horizontally
-            startScale = (float) startBounds.height() / finalBounds.height();
-            float startWidth = startScale * finalBounds.width();
-            float deltaWidth = (startWidth - startBounds.width()) / 2;
-            startBounds.left -= deltaWidth;
-            startBounds.right += deltaWidth;
-        } else {
-            // Extend start bounds vertically
-            startScale = (float) startBounds.width() / finalBounds.width();
-            float startHeight = startScale * finalBounds.height();
-            float deltaHeight = (startHeight - startBounds.height()) / 2;
-            startBounds.top -= deltaHeight;
-            startBounds.bottom += deltaHeight;
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
         }
-
-        thumbView.setAlpha(0f);
-        expandedImageView.setVisibility(View.VISIBLE);
-
-        expandedImageView.setPivotX(0f);
-        expandedImageView.setPivotY(0f);
-
-        AnimatorSet set = new AnimatorSet();
-        set.play(
-                ObjectAnimator.ofFloat(expandedImageView, View.X,
-                        startBounds.left, finalBounds.left))
-                .with(ObjectAnimator.ofFloat(expandedImageView, View.Y,
-                        startBounds.top, finalBounds.top))
-                .with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_X,
-                        startScale, 1f))
-                .with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_Y,
-                        startScale, 1f));
-        set.setDuration(mShortAnimationDuration);
-        set.setInterpolator(new DecelerateInterpolator());
-        set.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                mCurrentAnimator = null;
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-                mCurrentAnimator = null;
-            }
-        });
-        set.start();
-        mCurrentAnimator = set;
-        final float startScaleFinal = startScale;
-        expandedImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mCurrentAnimator != null) {
-                    mCurrentAnimator.cancel();
-                }
-
-                // Animate the four positioning/sizing properties in parallel,
-                // back to their
-                // original values.
-                AnimatorSet set = new AnimatorSet();
-                set.play(
-                        ObjectAnimator.ofFloat(expandedImageView, View.X,
-                                startBounds.left))
-                        .with(ObjectAnimator.ofFloat(expandedImageView, View.Y,
-                                startBounds.top))
-                        .with(ObjectAnimator.ofFloat(expandedImageView,
-                                View.SCALE_X, startScaleFinal))
-                        .with(ObjectAnimator.ofFloat(expandedImageView,
-                                View.SCALE_Y, startScaleFinal));
-                set.setDuration(mShortAnimationDuration);
-                set.setInterpolator(new DecelerateInterpolator());
-                set.addListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        thumbView.setAlpha(1f);
-                        expandedImageView.setVisibility(View.GONE);
-                        mCurrentAnimator = null;
-                    }
-
-                    @Override
-                    public void onAnimationCancel(Animator animation) {
-                        thumbView.setAlpha(1f);
-                        expandedImageView.setVisibility(View.GONE);
-                        mCurrentAnimator = null;
-                    }
-                });
-                set.start();
-                mCurrentAnimator = set;
-            }
-        });
     }
 }

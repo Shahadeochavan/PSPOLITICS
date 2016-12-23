@@ -28,7 +28,7 @@ public class PartyFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PartyAdapter adapter;
-    private static String url = "http://192.168.0.100:8080/PSPolitics/json/party/get";
+    private static String url = "http://192.168.2.102:8080/PSPolitics/json/party/get";
     private List<PartyPojo> partyList = new ArrayList<>();
 
     @Override
