@@ -106,14 +106,13 @@
             android:layout_below="@+id/text_party_desgination"
             android:layout_marginTop="10dp"
             android:textColor="@color/pink"
-            android:textStyle="italic"
+            android:textStyle="bold"
             android:textSize="20dp"
             android:layout_marginLeft="10dp"/>
         <TextView
             android:id="@+id/about_party"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/about_party"
             android:layout_marginTop="10dp"
             android:textSize="15dp"
             android:layout_below="@+id/text_about_party"

@@ -1,8 +1,10 @@
 package nextech.com.pspolitics;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +21,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import nextech.com.pspolitics.votingAdapter.PartyAdapter;
 import nextech.com.pspolitics.votinglistpojo.PartyPojo;
@@ -28,7 +31,13 @@ public class PartyFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PartyAdapter adapter;
-    private static String url = "http://192.168.2.102:8080/PSPolitics/json/party/get";
+    private static String url = "http://192.168.2.103:8080/PSPolitics/json/party/get";
+    private static String urlmr= "http://192.168.2.103:8080/PSPolitics/json/party/mr/get";
+    private static String urlhn= "http://192.168.2.103:8080/PSPolitics/json/party/hn/get";
+    SharedPreferences mPrefs1;
+    private String lanuagemr="mr";
+    private  String languagehn="hn";
+    private String languageen="en";
     private List<PartyPojo> partyList = new ArrayList<>();
 
     @Override
@@ -37,6 +46,7 @@ public class PartyFragment extends Fragment {
         // Inflate the layout for this fragment
         getActivity().setTitle(R.string.Party);
         View rootView = inflater.inflate(R.layout.fragment_party_recylerview, container, false);
+        mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this.getContext());
         rv = (RecyclerView) rootView.findViewById(R.id.rv);
         AsynkParty asynkparty = new AsynkParty(rv);
         asynkparty.execute();
@@ -70,7 +80,14 @@ public class PartyFragment extends Fragment {
         @Override
         protected String doInBackground(String... params) {
             NetClientGet netClientGet = new NetClientGet();
-            resp = netClientGet.netClientGet(url);
+            String languageToLoad = mPrefs1.getString("languagePref", Locale.getDefault().getLanguage());
+            if(languageToLoad.equals(lanuagemr)){
+                resp=netClientGet.netClientGet(urlmr);
+            }else if(languageToLoad.equals(languagehn)) {
+                resp = netClientGet.netClientGet(urlhn);
+            }else {
+                resp = netClientGet.netClientGet(url);
+            }
             System.out.println("Respsone is : " + resp);
             return resp;
 
@@ -92,6 +109,7 @@ public class PartyFragment extends Fragment {
                     partyListPojo.setDesgination(json_data.getString("desgination"));
                     partyListPojo.setPersonImage(json_data.getString("personImage"));
                     partyListPojo.setPartyImage(json_data.getString("partyImage"));
+                    partyListPojo.setAboutParty(json_data.getString("aboutParty"));
                     data.add(partyListPojo);
                 }
                 adapter = new PartyAdapter(PartyFragment.this.getContext(), data);

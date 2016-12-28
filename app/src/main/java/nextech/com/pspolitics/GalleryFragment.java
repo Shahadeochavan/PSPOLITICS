@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,10 +33,9 @@ public class GalleryFragment extends Fragment {
     private GridView mGridView;
     private ProgressBar mProgressBar;
 
-    private GalleryAdapter mGridAdapter;
-    private ArrayList<GalleryPojo> mGridData;
-    private String url = "http://192.168.2.102:8080/PSPolitics/json/gallery/get";
-    //private static String url = "http://192.168.0.100:8080/PSPolitics/json/gallery/get";
+    private GalleryAdapter galleryAdapter;
+    private ArrayList<GalleryPojo> galleryPojos;
+    private String url = "http://192.168.2.103:8080/PSPolitics/json/gallery/get";
     ImageView imageView;
     private List<GalleryPojo> galleryList = new ArrayList<>();
     String resp;
@@ -47,9 +47,9 @@ public class GalleryFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_gallery, container, false);
         mGridView = (GridView) rootView.findViewById(R.id.gridView);
         //Initialize with empty data
-        mGridData = new ArrayList<>();
-        mGridAdapter = new GalleryAdapter(this.getContext(), R.layout.gallery_list, mGridData);
-        mGridView.setAdapter(mGridAdapter);
+        galleryPojos = new ArrayList<>();
+        galleryAdapter = new GalleryAdapter(this.getContext(), R.layout.gallery_list, galleryPojos);
+        mGridView.setAdapter(galleryAdapter);
 
         //Grid view click event
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -115,7 +115,7 @@ public class GalleryFragment extends Fragment {
         protected void onPostExecute(String result) {
             pdLoading.dismiss();
             List<GalleryPojo> data=new ArrayList<>();
-
+            System.out.println("i am in postexecute");
             pdLoading.dismiss();
             try {
 
@@ -124,11 +124,12 @@ public class GalleryFragment extends Fragment {
                 for(int i=0;i<jArray.length();i++){
                     JSONObject json_data = jArray.getJSONObject(i);
                     GalleryPojo galleryPojo = new GalleryPojo();
+                    Log.d("galleryPojo","Images : " + json_data.getString("images"));
                     galleryPojo.setImages(json_data.getString("images"));
                     data.add(galleryPojo);
                 }
-                mGridAdapter = new GalleryAdapter(GalleryFragment.this.getContext(), R.layout.gallery_list, mGridData);
-                mGridView.setAdapter(mGridAdapter);
+                galleryAdapter = new GalleryAdapter(GalleryFragment.this.getContext(), R.layout.gallery_list,galleryPojos);
+                mGridView.setAdapter(galleryAdapter);
 
             } catch (JSONException e) {
                 Toast.makeText(GalleryFragment.this.getContext(), e.toString(), Toast.LENGTH_LONG).show();

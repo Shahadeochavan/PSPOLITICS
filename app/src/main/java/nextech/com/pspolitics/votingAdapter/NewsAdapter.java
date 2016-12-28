@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
@@ -93,13 +94,13 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsViewHolde
             @Override
             public void onClick(View view) {
                 Integer position = (Integer)view.getTag();
-                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), Integer.parseInt(newsListPojos.get(position).getPhotsNews()));
-
-                String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), mBitmap, "PSPImage", null);
-                Uri uri = Uri.parse(path);
+//                Bitmap mBitmap = BitmapFactory.decodeResource(context.getResources(), Integer.parseInt(newsListPojos.get(position).getPhotsNews()));
+               Bitmap bitmap = ((BitmapDrawable)newsViewHolder.newsPhoto.getDrawable()).getBitmap();
+                String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "PSPImage", null);
+               Uri uri = Uri.parse(path);
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("image/jpeg");
-                intent.putExtra(Intent.EXTRA_STREAM, uri);
+               intent.putExtra(Intent.EXTRA_STREAM, uri);
                context.startActivity(Intent.createChooser(intent, "Share Image"));
 
             }

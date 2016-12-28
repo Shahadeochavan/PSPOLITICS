@@ -23,10 +23,12 @@ import android.webkit.WebView;
 import com.nextech.util.Util;
 
 import java.util.Locale;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private WebView webView;
     SharedPreferences mPrefs1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +38,7 @@ public class HomeActivity extends AppCompatActivity
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
-
-
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,30 +47,28 @@ public class HomeActivity extends AppCompatActivity
            showAlertDialog(HomeActivity.this, "No Internet Connection",
                     "You don't have internet connection.", false);
         }*/
-        if(Util.isConnectingToInternet(getApplicationContext())){
+        if (Util.isConnectingToInternet(getApplicationContext())) {
 
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NewsFragment()).commit();
             }
-        }
-        else{
+        } else {
             showAlertDialog(HomeActivity.this, "No Internet Connection",
                     "You don't have internet connection.", false);
 
         }
 
 
-
-
-        DrawerLayout   mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
     public void showAlertDialog(Context context, String title, String message, Boolean status) {
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 
@@ -86,7 +84,7 @@ public class HomeActivity extends AppCompatActivity
         // Setting OK Button
         alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                    //code for exit here it send to home screen
+                //code for exit here it send to home screen
                    /* Intent startMain = new Intent(Intent.ACTION_MAIN);
                     startMain.addCategory(Intent.CATEGORY_HOME);
                     startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -138,7 +136,7 @@ public class HomeActivity extends AppCompatActivity
         item.setChecked(true);
         mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = mPrefs1.edit();
-        Intent intent=new Intent(this,HomeActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         switch (item.getItemId()) {
             case R.id.get_marathi:
                 editor.putString("languagePref", "mr");
@@ -174,45 +172,41 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-       FragmentManager fragmentManager= getSupportFragmentManager();
-     FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if (id == R.id.nav_home) {
-            PersonalInfoFragment personalInfoFragment= new PersonalInfoFragment();
-            fragmentTransaction.replace(R.id.fragment_container,personalInfoFragment).commit();
+            PersonalInfoFragment personalInfoFragment = new PersonalInfoFragment();
+            fragmentTransaction.replace(R.id.fragment_container, personalInfoFragment).commit();
         } else if (id == R.id.nav_about) {
-            AboutFragment aboutFragment= new AboutFragment();
-            fragmentTransaction.replace(R.id.fragment_container,aboutFragment).commit();
+            AboutFragment aboutFragment = new AboutFragment();
+            fragmentTransaction.replace(R.id.fragment_container, aboutFragment).commit();
         } else if (id == R.id.nav_news) {
             NewsFragment newsFragment = new NewsFragment();
-            fragmentTransaction.replace(R.id.fragment_container,newsFragment).commit();
+            fragmentTransaction.replace(R.id.fragment_container, newsFragment).commit();
         } else if (id == R.id.nav_social_work) {
             SocialWorkFragment socialWorkFragment = new SocialWorkFragment();
-            fragmentTransaction.replace(R.id.fragment_container,socialWorkFragment).commit();
-        }
-        else  if(id==R.id.nav_voting_schedule){
-            VotingScheduleFragment votingScheduleFragment= new VotingScheduleFragment();
-            fragmentTransaction.replace(R.id.fragment_container,votingScheduleFragment).commit();
-        }else if(id== R.id.nav_voting_centers){
-            VotingCentersFragment votingCentersFragment= new VotingCentersFragment();
-            fragmentTransaction.replace(R.id.fragment_container,votingCentersFragment).commit();
-        }else if(id==R.id.nav_voting_list){
-            VotingListFragment votingListFragment= new VotingListFragment();
-            fragmentTransaction.replace(R.id.fragment_container,votingListFragment).commit();
-        }else if(id==R.id.nav_rally){
-            RallyFragment rally =new RallyFragment();
-            fragmentTransaction.replace(R.id.fragment_container,rally).commit();
-        }
-        else if(id==R.id.nav_party){
-            PartyFragment partyFragment =new PartyFragment();
-            fragmentTransaction.replace(R.id.fragment_container,partyFragment).commit();
-        }
-        else if(id==R.id.nav_meeting){
-            MeetingFragment meetingFragment =new MeetingFragment();
-            fragmentTransaction.replace(R.id.fragment_container,meetingFragment).commit();
-        }
-        else if(id==R.id.nav_gallery){
-            GalleryFragment galleryFragment =new GalleryFragment();
-            fragmentTransaction.replace(R.id.fragment_container,galleryFragment).commit();
+            fragmentTransaction.replace(R.id.fragment_container, socialWorkFragment).commit();
+        } else if (id == R.id.nav_voting_schedule) {
+            VotingScheduleFragment votingScheduleFragment = new VotingScheduleFragment();
+            fragmentTransaction.replace(R.id.fragment_container, votingScheduleFragment).commit();
+        } else if (id == R.id.nav_voting_centers) {
+            VotingCentersFragment votingCentersFragment = new VotingCentersFragment();
+            fragmentTransaction.replace(R.id.fragment_container, votingCentersFragment).commit();
+        } else if (id == R.id.nav_voting_list) {
+            VotingListFragment votingListFragment = new VotingListFragment();
+            fragmentTransaction.replace(R.id.fragment_container, votingListFragment).commit();
+        } else if (id == R.id.nav_rally) {
+            RallyFragment rally = new RallyFragment();
+            fragmentTransaction.replace(R.id.fragment_container, rally).commit();
+        } else if (id == R.id.nav_party) {
+            PartyFragment partyFragment = new PartyFragment();
+            fragmentTransaction.replace(R.id.fragment_container, partyFragment).commit();
+        } else if (id == R.id.nav_meeting) {
+            MeetingFragment meetingFragment = new MeetingFragment();
+            fragmentTransaction.replace(R.id.fragment_container, meetingFragment).commit();
+        } else if (id == R.id.nav_gallery) {
+            GalleryFragment galleryFragment = new GalleryFragment();
+            fragmentTransaction.replace(R.id.fragment_container, galleryFragment).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -228,10 +222,9 @@ public class HomeActivity extends AppCompatActivity
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
         setContentView(R.layout.activity_home);
     }
-
 
 
 }

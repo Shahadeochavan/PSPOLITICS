@@ -31,7 +31,7 @@ public class PersonalInfoFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PersonalInfoAdapter adapter;
-    private static String url = "http://192.168.2.102:8080/PSPolitics/json/personalinfo/get";
+    private static String url = "http://192.168.2.103:8080/PSPolitics/json/personalinfo/get";
     private List<PersonalInfoPojo> personalInfoList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

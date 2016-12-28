@@ -28,7 +28,7 @@ public  class NewsFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     NewsAdapter adapter;
-    private static String url = "http://192.168.2.102:8080/PSPolitics/json/news/get";
+    private static String url = "http://192.168.2.103:8080/PSPolitics/json/news/get";
     private List<NewsListPojo> newsList = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

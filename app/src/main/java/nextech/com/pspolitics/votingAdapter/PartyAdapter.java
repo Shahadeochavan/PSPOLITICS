@@ -41,11 +41,13 @@ public class PartyAdapter extends  RecyclerView.Adapter<PartyAdapter.PartyViewHo
         TextView textdesgination;
         ImageView imagePerson;
         TextView textPartyName;
+        TextView textAboutParty;
         ImageView imagePartyImages;
         PartyViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             textPersonName = (TextView)itemView.findViewById(R.id.party_person_name);
+            textAboutParty = (TextView)itemView.findViewById(R.id.about_party);
             textdesgination = (TextView)itemView.findViewById(R.id.party_desgination);
             imagePerson = (ImageView)itemView.findViewById(R.id.person_photo_party);
             textPartyName = (TextView)itemView.findViewById(R.id.party_name);
@@ -78,6 +80,7 @@ public class PartyAdapter extends  RecyclerView.Adapter<PartyAdapter.PartyViewHo
         partyViewHolder.textPersonName.setText(partyPojos.get(i).getPersonName());
         partyViewHolder.textdesgination.setText(partyPojos.get(i).getDesgination());
         partyViewHolder.textPartyName.setText(partyPojos.get(i).getPartyName());
+        partyViewHolder.textAboutParty.setText(partyPojos.get(i).getAboutParty());
 
     }
 

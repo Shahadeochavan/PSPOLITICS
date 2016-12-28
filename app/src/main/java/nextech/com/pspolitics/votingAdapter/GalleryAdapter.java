@@ -23,14 +23,18 @@ public class GalleryAdapter extends ArrayAdapter<GalleryPojo> {
     //private final ColorMatrixColorFilter grayscaleFilter;
     private Context mContext;
     private int layoutResourceId;
+    private LayoutInflater inflater;
     private ArrayList<GalleryPojo> mGridData = new ArrayList<GalleryPojo>();
 
-    public GalleryAdapter(Context mContext, int layoutResourceId, ArrayList<GalleryPojo> galleryPojos) {
-        super(mContext, layoutResourceId, galleryPojos);
+    public GalleryAdapter(Context mContext, int layoutResourceId, ArrayList<GalleryPojo> data) {
+        super(mContext, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.mContext = mContext;
         this.galleryPojos = galleryPojos;
+        System.out.println("I am in download task");
     }
+
+
     public void setGridData(ArrayList<GalleryPojo> galleryPojos) {
         this.galleryPojos = galleryPojos;
         notifyDataSetChanged();
@@ -46,13 +50,14 @@ public class GalleryAdapter extends ArrayAdapter<GalleryPojo> {
             row = inflater.inflate(layoutResourceId, parent, false);
             holder = new ViewHolder();
             holder.imageView = (ImageView) row.findViewById(R.id.grid_item_image);
+
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();
         }
-
-        new DownloadImageTask(holder.imageView).execute(galleryPojos.get(position).getImages());
-
+        if (holder.imageView != null) {
+            new DownloadImageTask(holder.imageView).execute(galleryPojos.get(position).getImages());
+        }
         return row;
     }
 
@@ -62,11 +67,12 @@ public class GalleryAdapter extends ArrayAdapter<GalleryPojo> {
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
-        public DownloadImageTask(ImageView bmImage) {
+        public DownloadImageTask(ImageView bmImage)  {
             this.bmImage = bmImage;
         }
         protected Bitmap doInBackground(String... urls) {
             String urldisplay = urls[0];
+            System.out.println("I am in download task");
             Bitmap mIcon = null;
             try {
                 InputStream in = new java.net.URL(urldisplay).openStream();

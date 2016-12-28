@@ -9,6 +9,16 @@ public class PartyPojo {
     private String partyName;
     private String partyImage;
     private String desgination;
+
+    public String getAboutParty() {
+        return aboutParty;
+    }
+
+    public void setAboutParty(String aboutParty) {
+        this.aboutParty = aboutParty;
+    }
+
+    private String aboutParty;
     public String getPersonImage() {
         return personImage;
     }

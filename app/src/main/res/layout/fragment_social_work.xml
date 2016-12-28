@@ -15,22 +15,11 @@
             android:padding="10dp"
             >
             <TextView
-                android:id="@+id/text_tree_plan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:text="@string/SocialWorkOfNitin"/>
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/socila_information"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
-                android:layout_below="@+id/text_tree_plan"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -41,8 +30,8 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorPrimary"
                 android:text="@string/SocailDate"
-                android:textSize="20dp"
-                android:textStyle="italic"
+                android:textSize="15sp"
+                android:textStyle="normal"
                 android:layout_marginTop="10dp"
                 android:layout_below="@+id/socila_information"/>
             <TextView
@@ -55,8 +44,8 @@
                 android:layout_toRightOf="@+id/text_date"
                 android:textColor="@color/colorPrimary"
                 android:layout_below="@+id/socila_information"
-                android:textSize="20sp"
-                android:textStyle="italic" />
+                android:textSize="15sp"
+                android:textStyle="normal" />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
