@@ -40,33 +40,35 @@ public class AboutFragment extends Fragment {
     private RecyclerView rv;
     AboutAdapter adapter;
     private static String url = "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/get";
-    private static String urlmr= "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/mr/get";
-    private static String urlhn= "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/hn/get";
+    private static String urlmr = "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/mr/get";
+    private static String urlhn = "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/hn/get";
     SharedPreferences mPrefs1;
-    private String lanuagemr="mr";
-    private  String languagehn="hn";
-    private String languageen="en";
+    private String lanuagemr = "mr";
+    private String languagehn = "hi";
+    private String languageen = "en";
     private List<AboutPojo> votingScheduleList = new ArrayList<>();
+
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         getActivity().setTitle(R.string.AboutNitinShelke);
-        View rootView= inflater.inflate(R.layout.fragment_rally, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_rally, container, false);
         mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this.getContext());
-        rv=(RecyclerView)rootView.findViewById(R.id.rv);
-        AsynkAbout asynkParty=new AsynkAbout(rv);
+        rv = (RecyclerView) rootView.findViewById(R.id.rv);
+        AsynkAbout asynkParty = new AsynkAbout(rv);
         asynkParty.execute();
-        return  rootView;
+        return rootView;
     }
+
     public class AsynkAbout extends AsyncTask<String, String, String> {
 
         private RecyclerView recyclerView;
         private ProgressDialog pdLoading = new ProgressDialog(AboutFragment.this.getContext());
 
 
-        public  AsynkAbout(RecyclerView recyclerView){
+        public AsynkAbout(RecyclerView recyclerView) {
 
             this.recyclerView = recyclerView;
         }
@@ -84,13 +86,13 @@ public class AboutFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... params) {
-            NetClientGet netClientGet=new NetClientGet();
+            NetClientGet netClientGet = new NetClientGet();
             String languageToLoad = mPrefs1.getString("languagePref", Locale.getDefault().getLanguage());
-            if(languageToLoad.equals(lanuagemr)){
-                resp=netClientGet.netClientGet(urlmr);
-            }else if(languageToLoad.equals(languagehn)) {
+            if (languageToLoad.equals(lanuagemr)) {
+                resp = netClientGet.netClientGet(urlmr);
+            } else if (languageToLoad.equals(languagehn)) {
                 resp = netClientGet.netClientGet(urlhn);
-            }else {
+            } else {
                 resp = netClientGet.netClientGet(url);
             }
             System.out.println("Respsone is : " + resp);
@@ -101,14 +103,14 @@ public class AboutFragment extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             pdLoading.dismiss();
-            List<AboutPojo> data=new ArrayList<>();
+            List<AboutPojo> data = new ArrayList<>();
 
             pdLoading.dismiss();
             try {
 
                 JSONObject aboutResponse = new JSONObject(result);
                 JSONArray jArray = aboutResponse.getJSONArray("aboutNitins");
-                for(int i=0;i<jArray.length();i++){
+                for (int i = 0; i < jArray.length(); i++) {
                     JSONObject json_data = jArray.getJSONObject(i);
                     AboutPojo aboutPojo = new AboutPojo();
                     aboutPojo.setAboutNitin(json_data.getString("aboutNitin"));

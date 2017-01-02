@@ -1,5 +1,6 @@
 
 package nextech.com.pspolitics.votingAdapter;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,70 +10,84 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import java.io.InputStream;
-import java.util.ArrayList;
+import java.util.List;
 
 import nextech.com.pspolitics.R;
 import nextech.com.pspolitics.votinglistpojo.GalleryPojo;
 
-public class GalleryAdapter extends ArrayAdapter<GalleryPojo> {
-    ArrayList<GalleryPojo> galleryPojos;
-    //private final ColorMatrixColorFilter grayscaleFilter;
-    private Context mContext;
-    private int layoutResourceId;
+public class GalleryAdapter extends BaseAdapter {
+    private LayoutInflater mInflater;
+    private Context context;
     private LayoutInflater inflater;
-    private ArrayList<GalleryPojo> mGridData = new ArrayList<GalleryPojo>();
-
-    public GalleryAdapter(Context mContext, int layoutResourceId, ArrayList<GalleryPojo> data) {
-        super(mContext, layoutResourceId, data);
-        this.layoutResourceId = layoutResourceId;
-        this.mContext = mContext;
-        this.galleryPojos = galleryPojos;
-        System.out.println("I am in download task");
-    }
-
-
-    public void setGridData(ArrayList<GalleryPojo> galleryPojos) {
-        this.galleryPojos = galleryPojos;
-        notifyDataSetChanged();
+    public GalleryAdapter(Context context,List<GalleryPojo> results){
+        this.context=context;
+        //inflater= LayoutInflater.from(context);
+        this.galleryPojos=results;
+        inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View row = convertView;
-        ViewHolder holder;
+    public int getCount() {
+        // TODO Auto-generated method stub
+        return galleryPojos.size();
 
-        if (row == null) {
-            LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
-            holder = new ViewHolder();
-            holder.imageView = (ImageView) row.findViewById(R.id.grid_item_image);
-
-            row.setTag(holder);
-        } else {
-            holder = (ViewHolder) row.getTag();
-        }
-        if (holder.imageView != null) {
-            new DownloadImageTask(holder.imageView).execute(galleryPojos.get(position).getImages());
-        }
-        return row;
     }
 
-    static class ViewHolder {
-        ImageView imageView;
+    @Override
+    public Object getItem(int arg0) {
+        // TODO Auto-generated method stub
+        return galleryPojos.get(arg0);
+    }
+
+    @Override
+    public long getItemId(int arg0) {
+        // TODO Auto-generated method stub
+        return arg0;
+    }
+
+    List<GalleryPojo> galleryPojos;
+
+    public GalleryAdapter(List<GalleryPojo> galleryPojos){
+        this.galleryPojos = galleryPojos;
+        System.out.println("Respsone is : ");
+    }
+    public View getView(int position, View itemView, ViewGroup parent) {
+        // TODO Auto-generated method stub
+        ViewHolder holder;
+        if(itemView == null){
+            System.out.println("Respsone is : ");
+
+            LayoutInflater lInflater = (LayoutInflater)context.getSystemService(
+                    Activity.LAYOUT_INFLATER_SERVICE);
+            itemView = inflater.inflate(R.layout.gallery_list, parent, false);
+            holder = new ViewHolder();
+            holder.imgGallery = (ImageView) itemView.findViewById(R.id.grid_item_image);
+
+            itemView.setTag(holder);
+        } else {
+            holder = (ViewHolder) itemView.getTag();
+        }
+        new DownloadImageTask(holder.imgGallery).execute(galleryPojos.get(position).getImages());
+
+        return itemView;
+    }
+
+    static class ViewHolder{
+        ImageView imgGallery;
     }
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
-        public DownloadImageTask(ImageView bmImage)  {
+        public DownloadImageTask(ImageView bmImage) {
             this.bmImage = bmImage;
         }
         protected Bitmap doInBackground(String... urls) {
             String urldisplay = urls[0];
-            System.out.println("I am in download task");
+
             Bitmap mIcon = null;
             try {
                 InputStream in = new java.net.URL(urldisplay).openStream();

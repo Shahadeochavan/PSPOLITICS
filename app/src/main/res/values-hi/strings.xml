@@ -112,10 +112,10 @@
     <string name="text_meeting_start">सभा स्टार्ट:</string>
     <string name="text_meeting_end">सभा अंत :</string>
     <string name="text_meeting_location">सभा  स्थान:</string>
-    <string name="text_nitin_shelke">नाम:नितीन शेळके</string>
-    <string name="text_education">शिक्षा:बी.ए.</string>
-    <string name="text_working">व्यवसाय :किसान</string>
-    <string name="text_address">पता :वाडेगाव</string>
+    <string name="text_nitin_shelke">नाम:</string>
+    <string name="text_education">शिक्ष:</string>
+    <string name="text_working">व्यवसाय </string>
+    <string name="text_address">पता :</string>
     <string name="ok">ठीक</string>
     <!-- Preference framework strings. -->
     <string name="cancel">रद्द करना</string>
@@ -125,6 +125,8 @@
     <string name="no_no">नाही</string>
     <string name="really_exit">वास्तव में से बाहर निकलें?</string>
     <string name="sure_exit">क्या आप निश्चित हैं आपकी बाहर निकलने की इच्छा है?</string>
+    <string name="about">
+पार्टी के बारे में</string>
     <string-array name="lang_select">
         <item>English</item>
         <item>Hindi</item>

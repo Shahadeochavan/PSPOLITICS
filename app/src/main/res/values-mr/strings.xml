@@ -16,7 +16,7 @@
     <string name="NitinShelkePhotosAtStudio">स्टुडिओ वेळी नितीन शेळके </string>
     <string name="Communicate">संवाद</string>
     <string name="TreePlantationAtWadego">पुणे येथे वृक्षारोपण</string>
-    <string name="NitinShelke">नितीन शेळके</string>
+    <string name="NitinShelke">नितीन शेळके </string>
     <string name="address">पत्ता:</string>
     <string name="Location">स्थान:</string>
     <string name="StartTime">सुरवातीची वेळ:</string>
@@ -47,7 +47,7 @@
         शाळेत एक सरासरी विद्यार्थी असले, तरी शेळके लायब्ररी मध्ये तास खर्च आणि मजबूत वाद घालणारा म्हणून ओळखले जात होते.
         त्याच्या लवकर युवकासाठी, तो अखिल भारतीय विद्यार्थी परिषदेचे सामील झाले,
         राष्ट्रीय स्वयंसेवक संघाचे विद्यार्थी विंग (RSS),
-        हिंदू राष्ट्रवादी राजकीय पक्ष.</string>
+        हिंदू राष्ट्रवादी राजकीय पक्ष    .</string>
     <string name="about_party_bjp">
 
 भाजपचे उद्भव, भारतीय जनसंघाचे पहात श्यामा
@@ -96,7 +96,7 @@
     <string name="party_name">पार्टी नाव:</string>
     <string name="desgination">पद:</string>
     <string name="about_party">पक्ष बद्दल:</string>
-    <string name="b_j_p">भारतीय जनता पक्षाचे</string>
+    <string name="b_j_p">भारतीय जनता पक्षाचे </string>
     <string name="nagar_sevek">महापालिका सेवक</string>
     <string name="shahadeo_chavan">शहादेव चव्हाण</string>
     <string name="date_of_news">१२/१२/२०१६</string>
@@ -120,10 +120,10 @@
     <string name="text_meeting_start">सभा प्रारंभ:</string>
     <string name="text_meeting_end">सभा अंत :</string>
     <string name="text_meeting_location">सभा स्थान:</string>
-    <string name="text_nitin_shelke">नाव:नितीन शेळके</string>
-    <string name="text_education">शिक्षण:बी.ए.</string>
-    <string name="text_working">व्यवसाय :शेतकरी</string>
-    <string name="text_address">पत्ता :वाडेगाव</string>
+    <string name="text_nitin_shelke">नाव:</string>
+    <string name="text_education">शिक्षण:</string>
+    <string name="text_working">व्यवसाय:</string>
+    <string name="text_address">पत्त:</string>
     <string name="ok">ठीक आहे</string>
     <!-- Preference framework strings. -->
     <string name="cancel">रद्द</string>
@@ -133,6 +133,7 @@
     <string name="no_no">नाही</string>
     <string name="really_exit">खरोखर बाहेर पडा?</string>
     <string name="sure_exit">आपण मधून निर्गमन करू इच्छिता खात्री आहे?</string>
+    <string name="about">पक्ष बद्दल</string>
     <!-- Language select dialog -->
     <string-array name="lang_select">
         <item>English</item>

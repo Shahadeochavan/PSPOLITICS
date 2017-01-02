@@ -54,7 +54,11 @@
                 android:id="@+id/nav_voting_list"
                 android:icon="@drawable/ic_av_my_library_music"
                 android:title="@string/VotingList"/>
-            </group>
+            <item
+                android:id="@+id/nav_ask_questions"
+                android:icon="@drawable/ic_av_my_library_music"
+                android:title="@string/ask_questions"/>
+        </group>
         </menu>
     </item>
 

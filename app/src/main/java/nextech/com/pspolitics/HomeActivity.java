@@ -208,6 +208,10 @@ public class HomeActivity extends AppCompatActivity
             GalleryFragment galleryFragment = new GalleryFragment();
             fragmentTransaction.replace(R.id.fragment_container, galleryFragment).commit();
         }
+        else if (id == R.id.nav_ask_questions) {
+            AskQuestinsFragment askQuestinsFragment = new AskQuestinsFragment();
+            fragmentTransaction.replace(R.id.fragment_container, askQuestinsFragment).commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -120,7 +120,7 @@ Español</string>
     <string name="shivaji_vidyalya">Shivaji Vidyalya</string>
     <string name="shubhangi_dhole">Shubhangi Dhole</string>
     <string name="priyanka_patil">Priyanka Patil</string>
-    <string name="meeting_person_name">Meeting Person Name:</string>
+    <string name="meeting_person_name">Person Name:</string>
     <string name="Meeting">Meeting</string>
     <string name="meeting_date">12/12/2016</string>
     <string name="meeting_day">Sunday</string>
@@ -140,4 +140,6 @@ Español</string>
     <string name="sure_exit">Are you sure you want to exit?</string>
     <string name="no_no">No</string>
     <string name="yes_yes">Yes</string>
+    <string name="about">About Party</string>
+    <string name="ask_questions">Ask Questions</string>
 </resources>

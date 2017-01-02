@@ -4,10 +4,11 @@
     android:layout_marginTop="5dp"
     android:orientation="vertical"
     android:padding="5dp">
+
     <ImageView
         android:id="@+id/grid_item_image"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:scaleType="fitCenter"
-        android:layout_height="100dp" />
+        android:layout_height="120dp" />
 
 </LinearLayout>

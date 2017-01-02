@@ -97,6 +97,7 @@ public class AboutAdapter extends RecyclerView.Adapter<AboutAdapter.AboutViewHol
 
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
+
         }
     }
 }

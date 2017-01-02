@@ -76,6 +76,9 @@ public  class NewsFragment extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             pdLoading.dismiss();
+            if (result.length()>1) {
+                Toast.makeText(NewsFragment.this.getContext(),"Your msg",  Toast.LENGTH_SHORT).show();
+            }
             List<NewsListPojo> data=new ArrayList<>();
 
             pdLoading.dismiss();

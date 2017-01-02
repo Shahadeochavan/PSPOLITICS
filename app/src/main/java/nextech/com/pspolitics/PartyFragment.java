@@ -36,7 +36,7 @@ public class PartyFragment extends Fragment {
     private static String urlhn= "http://192.168.2.103:8080/PSPolitics/json/party/hn/get";
     SharedPreferences mPrefs1;
     private String lanuagemr="mr";
-    private  String languagehn="hn";
+    private  String languagehn="hi";
     private String languageen="en";
     private List<PartyPojo> partyList = new ArrayList<>();
 
