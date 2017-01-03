@@ -1,142 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cv"
-    android:background="@drawable/text_border"
-    >
+    android:background="@drawable/text_border">
 
     <RelativeLayout
         android:id="@+id/card"
-        android:padding="10dp"
-        android:background="@drawable/text_border"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_border"
+        android:padding="10dp">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_action_room"
+            android:id="@+id/icon_address"/>
+        <TextView
             android:id="@+id/text_address_name"
-            android:text="@string/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"
-            android:layout_toRightOf="@+id/person_photo"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            />
+            android:layout_toRightOf="@+id/icon_address"
+            android:text="@string/address"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            android:textStyle="normal" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/text_address"
-            android:textColor="@color/fent_red_dark"
-            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="zcxcc"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/text_address_name"
-            />
-        <TextView
+            android:text="zcxcc"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_address"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_action_room"
+            android:id="@+id/icon_location"/>
+
+        <TextView
             android:id="@+id/text_location_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_address"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/icon_location"
             android:text="@string/Location"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/text_address_name"
-            android:textColor="@color/fent_red_dark"
-            android:layout_toRightOf="@+id/person_photo"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            />
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/text_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_address"
             android:layout_marginLeft="5dp"
-            android:textColor="@color/fent_red_dark"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="asxcxc"
             android:layout_toRightOf="@+id/text_location_name"
-            android:layout_below="@+id/text_address"
-            />
-        <TextView
+            android:text="asxcxc"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_date"
-            android:text="@string/Date"
+            android:layout_below="@+id/icon_location"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"
-            android:layout_below="@+id/text_location_name"
-            android:layout_toRightOf="@+id/person_photo"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            />
+            android:src="@drawable/ic_action_event"
+            android:id="@+id/icon_date"/>
+
         <TextView
+            android:id="@+id/text_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_location"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/icon_date"
+            android:text="@string/Date"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <TextView
             android:id="@+id/date"
-            android:layout_below="@id/text_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_location"
+            android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/text_date"
             android:text="zxcxzcxc"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"/>
-        <TextView
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_start_time"
-            android:text="@string/StartTime"
+            android:layout_below="@+id/icon_date"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"
-            android:layout_below="@+id/text_date"
-            android:layout_toRightOf="@+id/person_photo"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            />
+            android:src="@drawable/ic_image_wb_sunny"
+            android:id="@+id/icon_start_time"/>
         <TextView
+            android:id="@+id/text_start_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_date"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/icon_start_time"
+            android:text="@string/StartTime"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <TextView
             android:id="@+id/start_time"
-            android:layout_below="@id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_date"
+            android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/text_start_time"
             android:text="zxcxzcxc"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"/>
-        <TextView
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_end_time"
-            android:text="@string/EndTime"
+            android:layout_below="@+id/icon_start_time"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"
-            android:layout_below="@+id/text_start_time"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            />
+            android:src="@drawable/ic_image_wb_sunny"
+            android:id="@+id/icon_end_time"/>
+
         <TextView
+            android:id="@+id/text_end_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_start_time"
+            android:layout_marginLeft="10dp"
+            android:text="@string/EndTime"
+            android:layout_toRightOf="@+id/icon_end_time"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <TextView
             android:id="@+id/end_time"
-            android:layout_below="@id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon_start_time"
+            android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/text_end_time"
             android:text="zxcxzcxc"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/fent_red_dark"/>
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="normal" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

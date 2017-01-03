@@ -134,6 +134,15 @@
     <string name="really_exit">खरोखर बाहेर पडा?</string>
     <string name="sure_exit">आपण मधून निर्गमन करू इच्छिता खात्री आहे?</string>
     <string name="about">पक्ष बद्दल</string>
+    <string name="ask_questions">Ask Questions</string>
+    <string name="contact_number">
+संपर्क क्रमांक :</string>
+    <string name="office_address">
+कार्यालय पत्ता :</string>
+    <string name="personal_address">वैयक्तिक पत्ता :</string>
+    <string name="college">महाविद्यालय   :</string>
+    <string name="school">
+शाळा :</string>
     <!-- Language select dialog -->
     <string-array name="lang_select">
         <item>English</item>

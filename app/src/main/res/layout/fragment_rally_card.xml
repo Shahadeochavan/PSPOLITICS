@@ -13,15 +13,23 @@
             android:src="@drawable/text_border"
             android:padding="10dp"
             >
-            <TextView
+            <ImageView
+                android:id="@+id/icon_location"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/fent_red_dark"
+                android:src="@drawable/ic_action_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/gray"
                 android:id="@+id/text_start"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/icon_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textStyle="normal"
                 android:text="@string/Rally_start_point"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -29,64 +37,84 @@
                 android:id="@+id/start_place_name"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
-                android:textColor="@color/fent_red_dark"
+                android:textColor="@color/black"
                 android:layout_toRightOf="@+id/text_start"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="17sp"
+                android:textStyle="normal" />
+            <ImageView
+                android:id="@+id/icon_location_end"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_action_room"
+                android:layout_below="@+id/icon_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/text_start"
-                android:textColor="@color/fent_red_dark"
+                android:layout_below="@+id/icon_location"
+                android:textColor="@color/gray"
                 android:id="@+id/text_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:layout_toRightOf="@+id/icon_location"
+                android:textSize="17sp"
+                android:textStyle="normal"
                 android:text="@string/Rally_End_point"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/end_place_name"
-                android:textColor="@color/fent_red_dark"
+                android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/text_end"
-                android:layout_below="@+id/text_start"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/text_end"
-                android:textColor="@color/fent_red_dark"
-                android:id="@+id/text_date"
+                android:layout_below="@+id/icon_location"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/icon_location_end"
+                android:src="@drawable/ic_action_event"
+                android:id="@+id/icon_date"/>
+            <TextView
+                android:layout_below="@+id/icon_location_end"
+                android:textColor="@color/gray"
+                android:id="@+id/text_date"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/icon_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="normal"
                 android:text="@string/Rally_Date"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rally_date"
-                android:layout_toRightOf="@+id/text_date"
+                android:layout_toRightOf="@+id/text_day"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/fent_red_dark"
-                android:layout_below="@+id/end_place_name"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/text_date"
-                android:textColor="@color/fent_red_dark"
-                android:id="@+id/text_day"
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_location_end"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/icon_date"
+                android:src="@drawable/ic_image_wb_sunny"
+                android:id="@+id/icon_day"/>
+            <TextView
+                android:layout_below="@+id/icon_date"
+                android:textColor="@color/gray"
+                android:id="@+id/text_day"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/icon_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="normal"
                 android:text="@string/Rally_day"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -94,55 +122,67 @@
                 android:id="@+id/rally_day"
                 android:layout_toRightOf="@+id/text_day"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/fent_red_dark"
-                android:layout_below="@+id/rally_date"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_date"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/icon_day"
+                android:src="@drawable/ic_action_query_builder"
+                android:id="@+id/icon_start_time"/>
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/text_day"
-                android:textColor="@color/fent_red_dark"
+                android:layout_below="@+id/icon_day"
+                android:layout_toRightOf="@id/icon_start_time"
+                android:textColor="@color/gray"
                 android:id="@+id/text_start_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textStyle="normal"
                 android:text="@string/Rally_start_time"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rally_start_time"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/text_start_time"
-                android:textColor="@color/fent_red_dark"
-                android:layout_below="@+id/rally_day"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_day"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/icon_start_time"
+                android:src="@drawable/ic_action_query_builder"
+                android:id="@+id/icon_end_time"/>
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/text_start_time"
-                android:textColor="@color/fent_red_dark"
+                android:layout_below="@+id/icon_start_time"
+                android:layout_toRightOf="@id/icon_start_time"
+                android:gravity="center"
+                android:textColor="@color/gray"
                 android:id="@+id/text_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textStyle="normal"
                 android:text="@string/Rally_end_time"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/text_end_time"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/rally_end_time"
-                android:textColor="@color/fent_red_dark"
-                android:layout_below="@+id/rally_start_time"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_start_time"
+                android:textSize="17sp"
+                android:textStyle="normal" />
 
         </RelativeLayout>
 

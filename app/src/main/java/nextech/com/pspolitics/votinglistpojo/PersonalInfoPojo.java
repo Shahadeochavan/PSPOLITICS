@@ -9,6 +9,42 @@ public class PersonalInfoPojo {
     private String education;
     private String working;
     private String address;
+    private String school;
+    private String college;
+    private String contact;
+    private  String officeAddres;
+
+    public String getOfficeAddres() {
+        return officeAddres;
+    }
+
+    public void setOfficeAddres(String officeAddres) {
+        this.officeAddres = officeAddres;
+    }
+
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
 
     public String getImageNitin() {
         return imageNitin;

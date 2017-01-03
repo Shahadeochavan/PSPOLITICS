@@ -12,15 +12,23 @@
         android:background="@drawable/text_border"
         android:padding="10dp"
         >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_image_wb_sunny"
+            android:id="@+id/icon_person_name"/>
         <TextView
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/gray"
+            android:layout_toRightOf="@+id/icon_person_name"
             android:id="@+id/text_meeting_person"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textStyle="normal"
             android:text="@string/meeting_person_name"/>
         <TextView
             android:layout_width="wrap_content"
@@ -31,18 +39,25 @@
             android:text="Nitin"
             android:textColor="@color/black"
             android:layout_toRightOf="@+id/text_meeting_person"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/icon_person_name"
+            android:src="@drawable/ic_action_event"
+            android:id="@+id/icon_meeting_date"/>
         <TextView
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_meeting_person"
-            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/icon_meeting_date"
+            android:layout_below="@+id/icon_person_name"
+            android:textColor="@color/gray"
             android:id="@+id/text_meeting_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textStyle="normal"
             android:text="@string/text_meeting_date"/>
         <TextView
             android:layout_width="wrap_content"
@@ -51,21 +66,27 @@
             android:textColor="@color/black"
             android:text="1213213"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/text_meeting_date"
-            android:layout_below="@+id/meeting_person_name"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/icon_person_name"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/icon_meeting_date"
+            android:src="@drawable/ic_image_wb_sunny"
+            android:id="@+id/icon_meeting_day"/>
         <TextView
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_meeting_date"
-            android:textColor="@color/black"
+            android:layout_below="@+id/icon_meeting_date"
+            android:layout_toRightOf="@+id/icon_meeting_day"
+            android:textColor="@color/gray"
             android:id="@+id/text_meeting_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textStyle="normal"
             android:text="@string/text_meeting_day"/>
         <TextView
             android:layout_width="wrap_content"
@@ -74,21 +95,27 @@
             android:text="sunday"
             android:layout_toRightOf="@+id/text_meeting_date"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
             android:textColor="@color/black"
-            android:layout_below="@+id/meeting_date"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/icon_meeting_date"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/icon_meeting_day"
+            android:src="@drawable/ic_image_wb_sunny"
+            android:id="@+id/icon_meeting_start"/>
         <TextView
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_meeting_day"
-            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/icon_meeting_start"
+            android:layout_below="@+id/icon_meeting_day"
+            android:textColor="@color/gray"
             android:id="@+id/text_meeting_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textStyle="normal"
             android:text="@string/text_meeting_start"/>
         <TextView
             android:layout_width="wrap_content"
@@ -97,57 +124,68 @@
             android:text="12"
             android:layout_toRightOf="@+id/text_meeting_start"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
             android:textColor="@color/black"
-            android:layout_below="@+id/meeting_day"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/icon_meeting_day"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/icon_meeting_start"
+            android:src="@drawable/ic_image_wb_sunny"
+            android:id="@+id/icon_meeting_end"/>
         <TextView
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_meeting_start"
-            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/icon_meeting_end"
+            android:layout_below="@+id/icon_meeting_start"
+            android:textColor="@color/gray"
             android:id="@+id/text_meeting_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textStyle="normal"
             android:text="@string/text_meeting_end"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/meeting_end"
-            android:layout_marginTop="5dp"
             android:text="12"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/text_meeting_start"
             android:textColor="@color/black"
-            android:layout_below="@+id/meeting_start"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/icon_meeting_start"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/icon_meeting_end"
+            android:src="@drawable/ic_action_room"
+            android:id="@+id/icon_meeting_location"/>
         <TextView
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/text_meeting_end"
-            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/icon_meeting_location"
+            android:layout_below="@+id/icon_meeting_end"
+            android:textColor="@color/gray"
             android:id="@+id/text_meeting_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textStyle="normal"
             android:text="@string/text_meeting_location"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/text_meeting_location"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:text="waddego"
             android:id="@+id/meeting_location"
             android:textColor="@color/black"
-            android:layout_below="@+id/meeting_end"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/icon_meeting_end"
+            android:textSize="17sp"
+            android:textStyle="normal" />
 
     </RelativeLayout>
 

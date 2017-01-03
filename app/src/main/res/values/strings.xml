@@ -142,4 +142,9 @@ Español</string>
     <string name="yes_yes">Yes</string>
     <string name="about">About Party</string>
     <string name="ask_questions">Ask Questions</string>
+    <string name="contact_number">Contact Number :</string>
+    <string name="office_address">Office Address :</string>
+    <string name="personal_address">Personal Address :</string>
+    <string name="college">College :</string>
+    <string name="school">School :</string>
 </resources>

@@ -39,9 +39,9 @@ public class AboutFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     AboutAdapter adapter;
-    private static String url = "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/get";
-    private static String urlmr = "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/mr/get";
-    private static String urlhn = "http://192.168.2.103:8080/PSPolitics/json/aboutnitin/hn/get";
+    private static String url = "http://192.168.2.107:8080/PSPolitics/json/aboutnitin/get";
+    private static String urlmr = "http://192.168.2.107:8080/PSPolitics/json/aboutnitin/mr/get";
+    private static String urlhn = "http://192.168.2.107:8080/PSPolitics/json/aboutnitin/hn/get";
     SharedPreferences mPrefs1;
     private String lanuagemr = "mr";
     private String languagehn = "hi";

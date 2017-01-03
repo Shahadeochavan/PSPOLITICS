@@ -43,6 +43,10 @@ public class PersonalInfoAdapter extends  RecyclerView.Adapter<PersonalInfoAdapt
         TextView texteducation;
         TextView textWorking;
         TextView textAddress;
+        TextView textschool;
+        TextView textcollege;
+        TextView textcontact;
+        TextView textofficeAddress;
         ImageView imgNitin;
 
         PersonalViewHolder(View itemView) {
@@ -51,7 +55,11 @@ public class PersonalInfoAdapter extends  RecyclerView.Adapter<PersonalInfoAdapt
             textPersonName = (TextView) itemView.findViewById(R.id.text_nitin_name);
             texteducation = (TextView) itemView.findViewById(R.id.text_education_nitin);
             textWorking = (TextView) itemView.findViewById(R.id.text_working_nitin);
-            textAddress = (TextView) itemView.findViewById(R.id.text_address_nitin);
+            textAddress = (TextView) itemView.findViewById(R.id.text_personal_address);
+            textschool = (TextView) itemView.findViewById(R.id.text_school_nitin);
+            textcollege = (TextView) itemView.findViewById(R.id.text_college_nitin);
+            textcontact = (TextView) itemView.findViewById(R.id.text_contact_number);
+            textofficeAddress = (TextView) itemView.findViewById(R.id.text_office_address);
             imgNitin=(ImageView)itemView.findViewById(R.id.imageViewnitin);
         }
     }
@@ -81,6 +89,10 @@ public class PersonalInfoAdapter extends  RecyclerView.Adapter<PersonalInfoAdapt
         partyViewHolder.texteducation.setText(personalInfoPojos.get(i).getEducation());
         partyViewHolder.textWorking.setText(personalInfoPojos.get(i).getWorking());
         partyViewHolder.textAddress.setText(personalInfoPojos.get(i).getAddress());
+        partyViewHolder.textschool.setText(personalInfoPojos.get(i).getSchool());
+        partyViewHolder.textcollege.setText(personalInfoPojos.get(i).getCollege());
+        partyViewHolder.textcontact.setText(personalInfoPojos.get(i).getContact());
+        partyViewHolder.textofficeAddress.setText(personalInfoPojos.get(i).getOfficeAddres());
     }
 
     @Override
