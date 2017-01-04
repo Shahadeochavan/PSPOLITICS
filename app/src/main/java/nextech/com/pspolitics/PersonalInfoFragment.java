@@ -34,9 +34,9 @@ public class PersonalInfoFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PersonalInfoAdapter adapter;
-    private static String url = "http://192.168.2.107:8080/PSPolitics/json/personalinfo/get";
-    private static String urlmr= "http://192.168.2.107:8080/PSPolitics/json/personalinfo/mr/get";
-    private static String urlhn= "http://192.168.2.107:8080/PSPolitics/json/personalinfo/hn/get";
+    private static String url = "http://192.168.2.104:8080/PSPolitics/json/personalinfo/get";
+    private static String urlmr= "http://192.168.2.104:8080/PSPolitics/json/personalinfo/mr/get";
+    private static String urlhn= "http://192.168.2.104:8080/PSPolitics/json/personalinfo/hn/get";
     SharedPreferences mPrefs1;
     private String lanuagemr="mr";
     private  String languagehn="hi";
@@ -114,6 +114,7 @@ public class PersonalInfoFragment extends Fragment {
                     personalInfoPojo.setCollege(json_data.getString("college"));
                     personalInfoPojo.setContact(json_data.getString("contact"));
                     personalInfoPojo.setOfficeAddres(json_data.getString("officeAddress"));
+                    personalInfoPojo.setBackGroundImage(json_data.getString("backGroundImage"));
 
                     data.add(personalInfoPojo);
                 }

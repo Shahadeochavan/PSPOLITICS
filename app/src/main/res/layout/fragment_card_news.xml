@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:id="@+id/card"
-        android:background="@drawable/text_border"
+        android:background="@drawable/text_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -73,7 +73,7 @@
             android:layout_below="@+id/news_photo"
             android:id="@+id/share"
             android:padding="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="320dp"
             android:src="@drawable/ic_menu_share"
             android:layout_width="wrap_content"

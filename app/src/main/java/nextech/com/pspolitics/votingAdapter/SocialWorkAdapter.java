@@ -39,6 +39,7 @@ public class SocialWorkAdapter extends RecyclerView.Adapter<SocialWorkAdapter.So
         CardView cv;
         ImageView textsocialPhots;
         TextView  textsocialinformation;
+        TextView textshortInfo;
         TextView textsocialDate;
 
         SocialViewHolder(View itemView) {
@@ -46,6 +47,7 @@ public class SocialWorkAdapter extends RecyclerView.Adapter<SocialWorkAdapter.So
             cv = (CardView)itemView.findViewById(R.id.cv);
             textsocialPhots = (ImageView)itemView.findViewById(R.id.social_phots);
             textsocialinformation = (TextView)itemView.findViewById(R.id.socila_information);
+            textshortInfo = (TextView)itemView.findViewById(R.id.text_shortinfo);
             textsocialDate = (TextView)itemView.findViewById(R.id.social_date);
 
         }
@@ -74,6 +76,7 @@ public class SocialWorkAdapter extends RecyclerView.Adapter<SocialWorkAdapter.So
       //  socialViewHolder.textsocialPhots.setImageResource(socialWorkPojos.get(i).getSocialPhotos());
         new DownloadImageTask(socialViewHolder.textsocialPhots).execute(socialWorkPojos.get(i).getSocialPhotos());
         socialViewHolder.textsocialinformation.setText(socialWorkPojos.get(i).getSocialInformation());
+        socialViewHolder.textshortInfo.setText(socialWorkPojos.get(i).getShortInfo());
         socialViewHolder.textsocialDate.setText(socialWorkPojos.get(i).getSocialDate());
     }
 

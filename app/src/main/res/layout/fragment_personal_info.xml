@@ -17,14 +17,15 @@
             android:id="@+id/img_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-340sp"
-            android:src="@drawable/nature"/>
+            android:layout_marginTop="-100dp"/>
     <ImageView
         android:id="@+id/imageViewnitin"
         android:layout_gravity="center"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
+        android:layout_marginLeft="100dp"
         android:layout_height="150dp"
-        android:layout_marginTop="120sp"
+        android:layout_marginTop="140sp"
+        android:background="@drawable/text_bor"
         android:src="@drawable/nitin13"
         android:layout_marginBottom="5dp"/>
 

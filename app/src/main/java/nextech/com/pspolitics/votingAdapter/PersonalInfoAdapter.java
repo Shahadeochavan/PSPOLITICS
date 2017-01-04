@@ -47,7 +47,7 @@ public class PersonalInfoAdapter extends  RecyclerView.Adapter<PersonalInfoAdapt
         TextView textcollege;
         TextView textcontact;
         TextView textofficeAddress;
-        ImageView imgNitin;
+        ImageView imgNitin,imgbackImage;
 
         PersonalViewHolder(View itemView) {
             super(itemView);
@@ -61,6 +61,7 @@ public class PersonalInfoAdapter extends  RecyclerView.Adapter<PersonalInfoAdapt
             textcontact = (TextView) itemView.findViewById(R.id.text_contact_number);
             textofficeAddress = (TextView) itemView.findViewById(R.id.text_office_address);
             imgNitin=(ImageView)itemView.findViewById(R.id.imageViewnitin);
+            imgbackImage=(ImageView)itemView.findViewById(R.id.img_background);
         }
     }
 
@@ -85,6 +86,7 @@ public class PersonalInfoAdapter extends  RecyclerView.Adapter<PersonalInfoAdapt
     @Override
     public void onBindViewHolder(PersonalViewHolder partyViewHolder, int i) {
         new DownloadImageTask(partyViewHolder.imgNitin).execute(personalInfoPojos.get(i).getImageNitin());
+        new DownloadImageTask(partyViewHolder.imgbackImage).execute(personalInfoPojos.get(i).getBackGroundImage());
         partyViewHolder.textPersonName.setText(personalInfoPojos.get(i).getName());
         partyViewHolder.texteducation.setText(personalInfoPojos.get(i).getEducation());
         partyViewHolder.textWorking.setText(personalInfoPojos.get(i).getWorking());

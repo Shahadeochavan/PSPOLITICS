@@ -14,44 +14,77 @@
             android:background="@drawable/text_border"
             android:padding="10dp"
             >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon_socialinfo"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_action_event"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/socila_information"
-                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/icon_socialinfo"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:text="nitin"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon_date"
+                android:layout_below="@+id/icon_socialinfo"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_action_event"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_date"
+                android:layout_toRightOf="@id/icon_date"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/black"
                 android:text="@string/SocailDate"
                 android:textSize="15sp"
                 android:textStyle="normal"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/socila_information"/>
+                android:layout_below="@+id/icon_socialinfo"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/social_date"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
                 android:text="asxacsacscsc"
                 android:layout_toRightOf="@+id/text_date"
-                android:textColor="@color/colorPrimary"
-                android:layout_below="@+id/socila_information"
-                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_socialinfo"
+                android:textSize="17sp"
                 android:textStyle="normal" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon_short_info"
+                android:layout_below="@+id/icon_date"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_action_room"/>
+            <TextView
+                android:id="@+id/text_shortinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/icon_date"
+                android:layout_below="@+id/icon_date"
+                android:text="shortInfo"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/social_phots"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/text_date"
+                android:textSize="17sp"
+                android:textStyle="normal"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/icon_short_info"
                 android:src="@drawable/social_work" />
 
         </RelativeLayout>

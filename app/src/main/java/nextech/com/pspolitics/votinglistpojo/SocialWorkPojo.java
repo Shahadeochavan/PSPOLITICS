@@ -8,6 +8,17 @@ public class SocialWorkPojo {
     private String socialInformation;
     private String socialDate;
 
+    public String getShortInfo() {
+        return shortInfo;
+    }
+
+    public void setShortInfo(String shortInfo) {
+        this.shortInfo = shortInfo;
+    }
+
+    private String shortInfo;
+
+
     public String getSocialDate() {
         return socialDate;
     }

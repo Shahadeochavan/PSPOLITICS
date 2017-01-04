@@ -16,11 +16,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/ic_image_wb_sunny"
             android:id="@+id/icon_day"/>
             <TextView
                 android:id="@+id/text_voting_day"
                 android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/icon_day"
                 android:layout_height="wrap_content"
                 android:text="@string/VotingDay"
                 android:layout_marginTop="10dp"
@@ -38,21 +40,22 @@
                 android:layout_marginLeft="5dp"
                 android:textSize="17sp"
                 android:textStyle="normal"
-                android:textColor="@color/gray"
+                android:textColor="@color/black"
                 />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_image_wb_sunny"
+            android:src="@drawable/ic_action_event"
+            android:layout_below="@+id/icon_day"
             android:id="@+id/icon_date"/>
             <TextView
                 android:id="@+id/text_voting_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/VotingDate"
-                android:layout_below="@+id/text_voting_day"
-                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/icon_date"
+                android:layout_below="@+id/icon_day"
                 android:textSize="17sp"
                 android:textColor="@color/gray"
                 android:textStyle="normal"
@@ -61,21 +64,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_date"
-                android:textColor="@color/gray"
-                android:layout_marginTop="10sp"
-                android:layout_below="@id/voting_day"
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_day"
                 android:layout_toRightOf="@+id/text_voting_date"
                 android:layout_marginLeft="5dp"
                 android:textSize="17sp"
                 android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_action_query_builder"
+            android:layout_below="@+id/icon_date"
+            android:id="@+id/icon_start_time"/>
             <TextView
                 android:id="@+id/text_voting_start_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/VotingStartTime"
-                android:layout_toRightOf="@+id/text_start_time"
-                android:layout_below="@+id/voting_date"
-                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/icon_start_time"
+                android:layout_below="@+id/icon_date"
                 android:textColor="@color/gray"
                 android:textStyle="normal"
                 android:textSize="17sp"
@@ -84,21 +92,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_start"
-                android:layout_marginTop="10sp"
                 android:layout_marginLeft="5dp"
-                android:textColor="@color/gray"
+                android:textColor="@color/black"
                 android:layout_toRightOf="@+id/text_voting_start_time"
-                android:layout_below="@+id/voting_date"
+                android:layout_below="@+id/icon_date"
                 android:textSize="17sp"
                 android:textStyle="normal" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_action_query_builder"
+            android:layout_below="@+id/icon_start_time"
+            android:id="@+id/icon_end_time"/>
             <TextView
                 android:id="@+id/text_voting_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/VotingEndTime"
-                android:layout_toRightOf="@+id/text_start_time"
-                android:layout_below="@+id/text_voting_start_time"
-                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/icon_end_time"
+                android:layout_below="@+id/icon_start_time"
                 android:textColor="@color/gray"
                 android:textStyle="normal"
                 android:textSize="17sp"
@@ -107,19 +120,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/voting_end"
-                android:layout_marginTop="10sp"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/text_voting_end_time"
-                android:textColor="@color/gray"
-                android:layout_below="@+id/voting_start"
+                android:textColor="@color/black"
+                android:layout_below="@+id/icon_start_time"
                 android:textSize="17sp"
                 android:textStyle="normal" />
-        <ImageView
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/voting_end"
-            android:src="@drawable/bjp"/>
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

@@ -13,6 +13,15 @@ public class PersonalInfoPojo {
     private String college;
     private String contact;
     private  String officeAddres;
+    private String backGroundImage;
+
+    public String getBackGroundImage() {
+        return backGroundImage;
+    }
+
+    public void setBackGroundImage(String backGroundImage) {
+        this.backGroundImage = backGroundImage;
+    }
 
     public String getOfficeAddres() {
         return officeAddres;

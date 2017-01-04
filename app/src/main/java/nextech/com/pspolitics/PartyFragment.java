@@ -31,9 +31,9 @@ public class PartyFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     PartyAdapter adapter;
-    private static String url = "http://192.168.2.107:8080/PSPolitics/json/party/get";
-    private static String urlmr= "http://192.168.2.107:8080/PSPolitics/json/party/mr/get";
-    private static String urlhn= "http://192.168.2.107:8080/PSPolitics/json/party/hn/get";
+    private static String url = "http://192.168.2.104:8080/PSPolitics/json/party/get";
+    private static String urlmr= "http://192.168.2.104:8080/PSPolitics/json/party/mr/get";
+    private static String urlhn= "http://192.168.2.104:8080/PSPolitics/json/party/hn/get";
     SharedPreferences mPrefs1;
     private String lanuagemr="mr";
     private  String languagehn="hi";
