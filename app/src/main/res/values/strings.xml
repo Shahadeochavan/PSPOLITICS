@@ -147,4 +147,18 @@ Español</string>
     <string name="personal_address">Personal Address :</string>
     <string name="college">College :</string>
     <string name="school">School :</string>
+    <string name="first_name">Please Enter First Name </string>
+    <string name="benef">
+        <![CDATA[
+        <html>
+        <head></head>
+        <body style="text-align:justify;color:gray;background-color:black;">
+         "1.some text\n
+          2.some text\n
+          .............
+ </body>
+</html>
+]]>
+</string>
+    <string name="entervalidnumber">Please Enter valid contact number</string>
 </resources>

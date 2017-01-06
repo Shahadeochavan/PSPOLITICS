@@ -3,13 +3,135 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context="nextech.com.pspolitics.AskQuestinsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <EditText
-        android:layout_marginTop="10dp"
+    <TextView
+        android:id="@+id/text_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:layout_marginLeft="10dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:text="First Name :"/>
+    <EditText
+        android:id="@+id/text_first"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:hint="First Name"
+        android:layout_toRightOf="@+id/text_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/text_last_name"
+        android:layout_below="@+id/text_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:text="Last Name :"/>
+    <EditText
+        android:id="@+id/text_last"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:hint="Last Name"
+        android:layout_below="@+id/text_first_name"
+        android:layout_toRightOf="@+id/text_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:layout_below="@+id/text_last_name"
+        android:text="Email           :"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:hint="Email"
+        android:layout_below="@+id/text_last_name"
+        android:layout_toRightOf="@+id/text_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/text_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:layout_below="@+id/text_email"
+        android:text="Phone Number"/>
+    <EditText
+        android:id="@+id/text_phone"
+        android:layout_marginTop="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        android:hint="Phone Number"
+        android:layout_below="@+id/email"
+        android:layout_toRightOf="@+id/text_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+   <EditText
+       android:id="@+id/edt_ask"
+       android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+       android:layout_below="@+id/text_phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ask Questions"/>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_marginTop="20dp"
+        android:text="Submit"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_ask"/>
 
 </RelativeLayout>
