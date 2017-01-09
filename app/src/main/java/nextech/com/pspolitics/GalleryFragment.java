@@ -29,7 +29,7 @@ public class GalleryFragment extends Fragment {
     private GridView lv;
     GalleryAdapter galleryAdapter;
     private ArrayList<GalleryPojo> mGridData;
-    private static String url = "http://192.168.2.104:8080/PSPolitics/json/gallery/get";
+    private static String url = "http://192.168.2.105:8080/PSPolitics/json/gallery/get";
     private List<GalleryPojo> galleryPojosList = new ArrayList<>();
 
     @Override

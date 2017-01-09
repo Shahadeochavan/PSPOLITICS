@@ -30,7 +30,7 @@ public class VotingListFragment extends Fragment {
     private String resp;
     private RecyclerView rv;
     VotingListAdapter adapter;
-    private static String url = "http://192.168.2.104:8080/PSPolitics/json/votinglist/get";
+    private static String url = "http://192.168.2.105:8080/PSPolitics/json/votinglist/get";
     private List<VotingListPojo> meetingPojoList = new ArrayList<>();
     @TargetApi(Build.VERSION_CODES.M)
     @Override

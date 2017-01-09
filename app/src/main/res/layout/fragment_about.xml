@@ -8,7 +8,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/text_border"
+        android:background="@drawable/text_news"
         android:padding="10dp">
 
         <ImageView
@@ -18,8 +18,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/nitin3" />/>
-
+            android:src="@drawable/nitin3" />
         <TextView
             android:id="@+id/about_nitin"
             android:layout_width="wrap_content"
@@ -29,7 +28,12 @@
             android:layout_marginTop="10dp"
             android:text="@string/about_party"
             android:gravity="clip_horizontal"
-            android:textSize="20dp" />
+            android:textSize="17sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/about_nitin"/>
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

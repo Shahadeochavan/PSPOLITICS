@@ -20,6 +20,7 @@ public class NetClientGet {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json; charset=utf-8");
+            conn.setConnectTimeout(6000);
 
             if (conn.getResponseCode() != 200) {
                 throw new RuntimeException("Failed : HTTP error code : "

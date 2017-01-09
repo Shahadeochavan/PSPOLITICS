@@ -134,7 +134,8 @@ Español</string>
     <string name="text_meeting_location">Meeting Location:</string>
     <string name="text_nitin_shelke">Name:</string>
     <string name="text_education">Education:</string>
-    <string name="text_working">Working :</string>
+    <string name="text_working">Working          :</string>
+    <string name="personal_address">Personal Address :</string>
     <string name="text_address">Address :</string>
     <string name="really_exit">Really Exit?</string>
     <string name="sure_exit">Are you sure you want to exit?</string>
@@ -144,7 +145,7 @@ Español</string>
     <string name="ask_questions">Ask Questions</string>
     <string name="contact_number">Contact Number :</string>
     <string name="office_address">Office Address :</string>
-    <string name="personal_address">Personal Address :</string>
+
     <string name="college">College :</string>
     <string name="school">School :</string>
     <string name="first_name">Please Enter First Name </string>

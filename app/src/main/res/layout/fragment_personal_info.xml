@@ -10,7 +10,7 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/text_border">
+        android:background="@drawable/text_news">
 
         <ImageView
             android:id="@+id/img_background"
@@ -74,7 +74,7 @@
             android:layout_below="@+id/text_nitin_name"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:text="@string/text_education"
+            android:text="Education              :"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_nitin_name"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/text_education"
             android:text="nitin"
@@ -107,7 +107,7 @@
             android:layout_below="@+id/text_education_nitin"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:text="@string/school"
+            android:text="School                    :"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -117,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_education_nitin"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/text_education"
             android:text="school"
@@ -140,7 +140,7 @@
             android:layout_below="@+id/text_school"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:text="@string/college"
+            android:text="College                  :"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_school"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/text_college"
             android:text="college"
@@ -173,7 +173,7 @@
             android:layout_below="@+id/text_college"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:text="@string/text_working"
+            android:text="Working                  :"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -183,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_college"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/text_working"
             android:text="sdfsdaf"
@@ -216,7 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_working_nitin"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/personal_address"
             android:text="xxcszxc"
@@ -239,7 +239,7 @@
             android:layout_below="@+id/personal_address"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:text="@string/office_address"
+            android:text="Office Address      :"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -249,7 +249,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/personal_address"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/office_address"
             android:text="xxcszxc"
@@ -272,7 +272,7 @@
             android:layout_below="@+id/text_office_address"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:text="@string/contact_number"
+            android:text="Contact Number   :"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -282,12 +282,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/office_address"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/office_address"
             android:text="xxcszxc"
             android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="normal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_contact_number"
+            android:layout_marginTop="10dp"/>
     </RelativeLayout>
 </android.support.v7.widget.CardView>
